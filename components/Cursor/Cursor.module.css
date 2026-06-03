@@ -1,0 +1,15 @@
+.cursor {
+  display: none; /* shown via JS only — JS is the sole visibility gate */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
+  border: 1px solid #0A0A0A;
+  border-radius: 50% !important; /* override global border-radius: 0 */
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  will-change: transform;
+}
