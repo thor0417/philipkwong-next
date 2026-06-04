@@ -137,13 +137,6 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
             </div>
           )}
         </div>
-
-        <div className={styles.contentRight}>
-          <span className="t-registry">
-            <strong>[TYPE:]</strong> {data?.type ?? ''}
-          </span>
-          <p className={styles.descriptors}>{data?.descriptors ?? ''}</p>
-        </div>
       </div>
     </div>
   );

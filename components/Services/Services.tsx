@@ -34,7 +34,7 @@ export function Services() {
       <div className="grid-stage">
 
         <p className="section-label reveal reveal--fade" style={{ gridColumn: '1 / -1' }}>
-          <span className="reveal__inner">03 — WHAT I DO</span>
+          <span className="reveal__inner">WHAT I DO</span>
         </p>
         <h2 id="services-heading" className="sr-only">Services</h2>
 

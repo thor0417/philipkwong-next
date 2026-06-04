@@ -68,10 +68,6 @@ export function Contact() {
     <section id="contact" className={styles.contact} data-theme="dark" aria-labelledby="contact-heading">
       <div className="grid-stage">
 
-        <p className="section-label reveal reveal--fade" style={{ gridColumn: '1 / -1' }}>
-          <span className="reveal__inner">05 — CONTACT</span>
-        </p>
-
         <h2
           id="contact-heading"
           className={`contact-cta reveal ${styles.cta}`}

@@ -38,9 +38,6 @@ export function About() {
     <section id="about" className={styles.about} aria-labelledby="about-heading">
       <div className="grid-stage">
 
-        <p className="section-label reveal reveal--fade" style={{ gridColumn: '1 / -1' }}>
-          <span className="reveal__inner">02 — ABOUT</span>
-        </p>
         <h2 id="about-heading" className="sr-only">About</h2>
 
         <div className={styles.body} style={{ gridColumn: '1 / -1' }}>

@@ -14,9 +14,6 @@ export function WritingIndex() {
     <section id="writing" className={styles.writing} aria-labelledby="writing-heading">
       <div className="grid-stage">
 
-        <p className="section-label" style={{ gridColumn: '1 / -1' }}>
-          05 — WRITING
-        </p>
         <h1 id="writing-heading" className="sr-only">Writing</h1>
 
         {categories.map((cat) => (

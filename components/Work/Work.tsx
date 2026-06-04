@@ -45,7 +45,7 @@ function WorkEntry({ id, client, tag, onCaseOpen, isMobile }: WorkEntryProps) {
       <span className={styles.client}>{client}</span>
       <motion.span
         className={styles.tag}
-        animate={{ color: hovered && !isMobile ? '#B34700' : 'rgba(10, 10, 10, 0.6)' }}
+        animate={{ color: hovered && !isMobile ? '#B34700' : 'rgba(10, 10, 10, 0.65)' }}
         transition={{ duration: 0.2 }}
       >
         {tag}
@@ -82,7 +82,7 @@ export function Work({ onCaseOpen }: WorkProps) {
       <div className="grid-stage">
 
         <p className="section-label reveal reveal--fade" style={{ gridColumn: '1 / -1' }}>
-          <span className="reveal__inner">04 — SELECTED WORK</span>
+          <span className="reveal__inner">SELECTED WORK</span>
         </p>
         <h2 id="work-heading" className="sr-only">Selected Work</h2>
 

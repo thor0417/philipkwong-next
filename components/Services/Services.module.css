@@ -28,10 +28,10 @@
 .number {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 14px;
-  letter-spacing: var(--tracking-label);
+  font-size: 16px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(10, 10, 10, 0.35);
+  color: rgba(10, 10, 10, 0.5);
   flex-shrink: 0;
   width: 3rem;
   transition: color 300ms;

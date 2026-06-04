@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   min-height: 100svh;
-  padding-block: var(--space-16) clamp(3rem, 6vw, 5rem);
+  padding-block: var(--space-16) clamp(4rem, 8vw, 8rem);
   display: grid;
   align-content: end;
   overflow: visible;

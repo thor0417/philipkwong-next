@@ -153,10 +153,6 @@ export function Hero() {
     <section id="hero" ref={sectionRef} className={styles.hero} aria-labelledby="hero-heading">
       <div className="grid-stage">
 
-        <p className={`section-label ${styles.sectionLabel}`} style={{ gridColumn: '1 / -1' }}>
-          01 — HOME
-        </p>
-
         {/* Row 1: Clocks — Vancouver left, Bangkok right */}
         <div
           className={styles.clockRow}
@@ -203,7 +199,6 @@ export function Hero() {
         <div
           className={styles.heroMeta}
           aria-label="Professional credentials"
-          data-scroll-speed="0.6"
           style={{ gridColumn: '1 / -1' }}
         >
           <span className="t-registry">

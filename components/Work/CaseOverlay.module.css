@@ -51,31 +51,16 @@
 .closeBtn:hover { color: #F9F9F9; }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: clamp(3rem, 6vw, 8rem);
-  align-items: start;
+  display: block;
   padding-block: 4rem;
+  padding-inline: 0;
   overflow-y: auto;
-  min-height: 0;
   height: 100%;
+  min-height: 0;
 }
 
 .contentLeft {
-  min-width: 0;
-}
-
-.contentRight {
-  position: sticky;
-  top: 4rem;
-  align-self: start;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: var(--space-4);
-  min-height: 200px;
-  flex-shrink: 0;
-  width: 320px;
+  max-width: 65ch;
 }
 
 .client {
@@ -86,7 +71,6 @@
   letter-spacing: -0.01em;
   color: #F9F9F9;
   word-break: keep-all;
-  white-space: nowrap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -104,15 +88,6 @@
   font-size: 18px;
   line-height: 1.7;
   color: #F9F9F9;
-}
-
-.descriptors {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(249, 249, 249, 0.65);
 }
 
 .overlayImage {
@@ -136,24 +111,8 @@
   color: var(--accent);
 }
 
-.contentRight :global(.t-registry) {
-  font-size: 15px;
-}
-
 /* ── Mobile ── */
 @media (max-width: 767px) {
-  .content {
-    grid-template-columns: 1fr;
-    overflow-y: auto;
-  }
-
-  .contentLeft { grid-row: 1; }
-
-  .contentRight {
-    grid-row: 2;
-    position: static;
-  }
-
   .client {
     font-size: clamp(2.5rem, 12vw, 5rem);
   }
