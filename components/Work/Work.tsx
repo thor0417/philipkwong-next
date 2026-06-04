@@ -45,7 +45,7 @@ function WorkEntry({ id, client, tag, onCaseOpen, isMobile }: WorkEntryProps) {
       <span className={styles.client}>{client}</span>
       <motion.span
         className={styles.tag}
-        animate={{ color: hovered && !isMobile ? '#B34700' : 'rgba(10, 10, 10, 0.4)' }}
+        animate={{ color: hovered && !isMobile ? '#B34700' : 'rgba(10, 10, 10, 0.6)' }}
         transition={{ duration: 0.2 }}
       >
         {tag}

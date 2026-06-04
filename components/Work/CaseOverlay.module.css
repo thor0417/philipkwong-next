@@ -28,8 +28,8 @@
 .subsection {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 0.12em;
+  font-size: 14px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(249, 249, 249, 0.4);
 }
@@ -52,11 +52,13 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 320px;
   gap: clamp(3rem, 6vw, 8rem);
   align-items: start;
   padding-block: 4rem;
   overflow-y: auto;
+  min-height: 0;
+  height: 100%;
 }
 
 .contentLeft {
@@ -69,16 +71,22 @@
   align-self: start;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: var(--space-4);
+  min-height: 200px;
+  flex-shrink: 0;
+  width: 320px;
 }
 
 .client {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(4rem, 10vw, 12rem);
+  font-size: clamp(4rem, 10vw, 9rem);
   line-height: 0.88;
   letter-spacing: -0.01em;
   color: #F9F9F9;
+  word-break: keep-all;
+  white-space: nowrap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -101,10 +109,10 @@
 .descriptors {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 14px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(249, 249, 249, 0.4);
+  color: rgba(249, 249, 249, 0.65);
 }
 
 .overlayImage {
@@ -126,6 +134,10 @@
 
 .overlay :global(.t-registry strong) {
   color: var(--accent);
+}
+
+.contentRight :global(.t-registry) {
+  font-size: 15px;
 }
 
 /* ── Mobile ── */
