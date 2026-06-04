@@ -141,6 +141,12 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
         <div className={styles.rule} aria-hidden="true" />
         <p className={styles.editorial}>{data?.editorial ?? ''}</p>
         <p className={styles.descriptors}>{data?.descriptors ?? ''}</p>
+        {data?.image && (
+          <div className={styles.overlayImage}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={data.image} alt={data.client} />
+          </div>
+        )}
       </div>
 
       <div ref={footerRef} className={styles.footer}>

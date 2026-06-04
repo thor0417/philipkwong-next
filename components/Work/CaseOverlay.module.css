@@ -94,6 +94,18 @@
   color: rgba(249, 249, 249, 0.4);
 }
 
+.overlayImage {
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.overlayImage img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  filter: grayscale(20%);
+}
+
 .footer {
   padding-block: 2rem;
   border-top: 0.5px solid #333333;

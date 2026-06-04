@@ -2,24 +2,21 @@
   position: relative;
   min-height: 100svh;
   padding-block: var(--space-16) var(--space-24);
-  padding-inline: var(--grid-margin);
   display: grid;
   align-content: end;
   overflow: visible;
-  border-top: none;
 }
 
 .sectionLabel {
   grid-column: 1 / -1;
 }
 
-.clockEngine {
+/* Row 1: Clocks */
+.clockRow {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: var(--space-8);
-  grid-column: 1 / 5;
-  align-self: end;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
   padding-bottom: var(--space-4);
 }
 
@@ -48,13 +45,10 @@
   color: var(--text-main);
 }
 
-.lineWrap {
-  display: block;
-}
-
+/* Row 2: Headline centered */
 .headline {
   display: block;
-  grid-column: 1 / 9;
+  text-align: center;
   font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(4rem, 12vw, 14rem);
@@ -64,18 +58,29 @@
   z-index: var(--z-content);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin-block: var(--space-8);
 }
 
+.lineWrap {
+  display: block;
+  will-change: transform;
+}
+
+/* Row 3: Registry tags horizontal */
 .heroMeta {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+  justify-content: center;
+  gap: clamp(2rem, 6vw, 6rem);
   padding-top: var(--space-6);
   border-top: var(--border-hairline);
-  grid-column: 9 / 13;
-  align-self: center;
   position: relative;
   z-index: var(--z-content);
+}
+
+.heroMeta :global(.t-registry) {
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 0;
 }
 
 /* ── Mobile ── */
@@ -98,10 +103,14 @@
     margin-bottom: clamp(1rem, 3vw, 1.5rem);
   }
 
-  .clockEngine {
+  .clockRow {
     order: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
     margin-bottom: clamp(2rem, 7vw, 3.5rem);
     padding-bottom: 0;
+    justify-content: flex-start;
   }
 
   .clockCity {
@@ -116,8 +125,8 @@
 
   .headline {
     order: 2;
-    grid-column: unset;
-    font-size: clamp(4.5rem, 26vw, 7rem);
+    font-size: clamp(3.5rem, 22vw, 6rem);
+    text-align: center;
     line-height: 0.85;
     letter-spacing: -0.01em;
     margin-bottom: clamp(2rem, 7vw, 3rem);
@@ -125,19 +134,15 @@
 
   .heroMeta {
     order: 3;
-    grid-column: unset;
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-1);
+    align-items: center;
+    gap: var(--space-2);
     padding-top: var(--space-4);
     border-top: var(--border-hairline);
-    text-align: left;
   }
-}
 
-/* ── Large mobile / small tablet ── */
-@media (min-width: 480px) and (max-width: 767px) {
-  .headline {
-    font-size: clamp(5rem, 22vw, 7rem);
+  .heroMeta :global(.t-registry) {
+    font-size: 14px;
+    text-align: center;
   }
 }

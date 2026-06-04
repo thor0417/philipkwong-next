@@ -8,9 +8,9 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
-    slug: 'market-entry-in-regulated-environments',
-    title: 'Market Entry in Regulated Southeast Asian Markets',
-    description: 'What founders get wrong when expanding into Thailand, Vietnam, and the Philippines.',
+    slug: 'ai-in-regulated-business-operations',
+    title: 'How AI Changes the Way Regulated Businesses Operate',
+    description: 'The practical implications for compliance, documentation, and operational decision-making.',
     date: '2026',
     readTime: 5,
   },

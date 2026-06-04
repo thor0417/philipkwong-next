@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useState, useEffect } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import styles from './Services.module.css';
 
 const SERVICES = [
@@ -14,20 +13,14 @@ const SERVICES = [
 ];
 
 export function Services() {
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768) return;
-    gsap.registerPlugin(ScrollTrigger);
+  const prefersReduced = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(true);
 
-    document.querySelectorAll<HTMLElement>('#services .service-item').forEach((el) => {
-      gsap.fromTo(el,
-        { x: -10, opacity: 0 },
-        {
-          x: 0, opacity: 1, ease: 'none',
-          scrollTrigger: { trigger: el, start: 'top 88%', end: 'top 62%', scrub: 0.8 },
-        }
-      );
-    });
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
   }, []);
+
+  const shouldAnimate = !prefersReduced && !isMobile;
 
   return (
     <section id="services" className={styles.services} aria-labelledby="services-heading">
@@ -40,12 +33,21 @@ export function Services() {
 
         <ol className={styles.list} style={{ gridColumn: '1 / -1' }} role="list">
           {SERVICES.map((title, i) => (
-            <li key={title} className={`service-item ${styles.item}`}>
+            <motion.li
+              key={title}
+              className={`service-item ${styles.item}`}
+              initial={shouldAnimate ? { clipPath: 'inset(100% 0 0 0)' } : undefined}
+              whileInView={shouldAnimate ? { clipPath: 'inset(0% 0 0 0)' } : undefined}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.7,
+                delay: i * 0.08,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
               <span className={styles.number}>{String(i + 1).padStart(2, '0')}</span>
-              <span className={`reveal ${styles.title}`}>
-                <span className="reveal__inner">{title}</span>
-              </span>
-            </li>
+              <span className={styles.title}>{title}</span>
+            </motion.li>
           ))}
         </ol>
 

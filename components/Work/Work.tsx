@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useState, useEffect } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { WORK_ENTRIES } from '@/lib/cases';
 import styles from './Work.module.css';
 
@@ -11,20 +10,14 @@ interface WorkProps {
 }
 
 export function Work({ onCaseOpen }: WorkProps) {
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768) return;
-    gsap.registerPlugin(ScrollTrigger);
+  const prefersReduced = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(true);
 
-    document.querySelectorAll<HTMLElement>('#work .work-entry').forEach((el) => {
-      gsap.fromTo(el,
-        { x: -6, opacity: 0 },
-        {
-          x: 0, opacity: 1, ease: 'none',
-          scrollTrigger: { trigger: el, start: 'top 88%', end: 'top 62%', scrub: 0.8 },
-        }
-      );
-    });
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
   }, []);
+
+  const shouldAnimate = !prefersReduced && !isMobile;
 
   const handleKeyDown = (e: React.KeyboardEvent, id: string) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -32,6 +25,27 @@ export function Work({ onCaseOpen }: WorkProps) {
       onCaseOpen(id);
     }
   };
+
+  const renderEntries = (entries: typeof WORK_ENTRIES.strategy) =>
+    entries.map(({ id, client }, i) => (
+      <motion.article
+        key={id}
+        className={`work-entry ${styles.entry}`}
+        data-case-id={id}
+        role="button"
+        tabIndex={0}
+        aria-label={`Open ${client} case study`}
+        onClick={() => onCaseOpen(id)}
+        onKeyDown={(e) => handleKeyDown(e, id)}
+        initial={shouldAnimate ? { opacity: 0, x: -6 } : undefined}
+        whileInView={shouldAnimate ? { opacity: 1, x: 0 } : undefined}
+        whileHover={!isMobile ? { scale: 1.01 } : undefined}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <span className={styles.client}>{client}</span>
+      </motion.article>
+    ));
 
   return (
     <section id="work" className={styles.work} aria-labelledby="work-heading">
@@ -42,59 +56,23 @@ export function Work({ onCaseOpen }: WorkProps) {
         </p>
         <h2 id="work-heading" className="sr-only">Selected Work</h2>
 
-        {/* Strategy & Standards */}
         <div className={styles.subsection} style={{ gridColumn: '1 / -1' }}>
           <p className={`reveal reveal--fade ${styles.categoryLabel}`}>
             <span className="reveal__inner">STRATEGY &amp; STANDARDS</span>
           </p>
           <div className={styles.entriesTrack}>
-            {WORK_ENTRIES.strategy.map(({ id, client, descriptor }, i) => (
-              <article
-                key={id}
-                className={`work-entry ${styles.entry}`}
-                data-case-id={id}
-                role="button"
-                tabIndex={0}
-                aria-label={`Open ${client} case study`}
-                onClick={() => onCaseOpen(id)}
-                onKeyDown={(e) => handleKeyDown(e, id)}
-                style={{ '--reveal-delay': `${i * 0.06}s` } as React.CSSProperties}
-              >
-                <span className={`reveal ${styles.client}`} style={{ '--reveal-delay': `${i * 0.06}s` } as React.CSSProperties}>
-                  <span className="reveal__inner">{client}</span>
-                </span>
-                <span className={styles.descriptor}>{descriptor}</span>
-              </article>
-            ))}
+            {renderEntries(WORK_ENTRIES.strategy)}
           </div>
         </div>
 
         <div className="divider" style={{ gridColumn: '1 / -1' }} role="separator" aria-hidden="true" />
 
-        {/* Engagements */}
         <div className={styles.subsection} style={{ gridColumn: '1 / -1' }}>
           <p className={`reveal reveal--fade ${styles.categoryLabel}`}>
             <span className="reveal__inner">ENGAGEMENTS</span>
           </p>
           <div className={styles.entriesTrack}>
-            {WORK_ENTRIES.engagements.map(({ id, client, descriptor }, i) => (
-              <article
-                key={id}
-                className={`work-entry ${styles.entry}`}
-                data-case-id={id}
-                role="button"
-                tabIndex={0}
-                aria-label={`Open ${client} case study`}
-                onClick={() => onCaseOpen(id)}
-                onKeyDown={(e) => handleKeyDown(e, id)}
-                style={{ '--reveal-delay': `${i * 0.06}s` } as React.CSSProperties}
-              >
-                <span className={`reveal ${styles.client}`} style={{ '--reveal-delay': `${i * 0.06}s` } as React.CSSProperties}>
-                  <span className="reveal__inner">{client}</span>
-                </span>
-                <span className={styles.descriptor}>{descriptor}</span>
-              </article>
-            ))}
+            {renderEntries(WORK_ENTRIES.engagements)}
           </div>
         </div>
 

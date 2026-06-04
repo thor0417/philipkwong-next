@@ -3,39 +3,38 @@ import './globals.css';
 import { SmoothScrollProvider } from '@/providers/SmoothScrollProvider';
 import { Nav } from '@/components/Nav/Nav';
 import { Cursor } from '@/components/Cursor/Cursor';
+import { PageTransition } from '@/components/PageTransition/PageTransition';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://philipkwong.com'),
   title: {
-    default: 'Philip Kwong — Strategy & Compliance Consultant',
+    default: 'Philip Kwong — Strategy and Compliance Consultant',
     template: '%s — Philip Kwong',
   },
   description:
-    'Philip Kwong is a strategy and regulatory compliance consultant operating between Vancouver and Bangkok. Specializing in market entry, QMS architecture, technical standards, and corporate strategy.',
+    'Philip Kwong is a strategy and regulatory compliance consultant operating between Vancouver and Bangkok. Market entry, QMS architecture, corporate strategy, and technical standards.',
   keywords: [
-    'regulatory compliance consultant',
-    'corporate strategy consultant',
-    'market entry ASEAN',
-    'QMS architecture',
+    'regulatory compliance',
+    'corporate strategy',
+    'market entry',
+    'QMS',
     'cannabis regulation',
     'ISO standards',
-    'Vancouver consultant',
-    'Bangkok consultant',
-    'Southeast Asia market entry',
+    'Vancouver',
+    'Bangkok',
   ],
   openGraph: {
-    type: 'website',
+    title: 'Philip Kwong — Strategy and Compliance Consultant',
+    description: 'Strategy and regulatory compliance consultant operating between Vancouver and Bangkok.',
     url: 'https://philipkwong.com',
-    title: 'Philip Kwong — Strategy & Compliance Consultant',
-    description:
-      'Philip Kwong is a strategy and regulatory compliance consultant operating between Vancouver and Bangkok.',
     siteName: 'Philip Kwong',
+    locale: 'en_CA',
+    type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Philip Kwong — Strategy & Compliance Consultant',
-    description:
-      'Strategy and regulatory compliance consulting between Vancouver and Bangkok.',
+    card: 'summary',
+    title: 'Philip Kwong — Strategy and Compliance Consultant',
+    description: 'Strategy and regulatory compliance consultant operating between Vancouver and Bangkok.',
   },
   robots: {
     index: true,
@@ -47,12 +46,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Preload critical fonts */}
         <link rel="preload" href="/fonts/DharmaGothicE_Heavy_R.woff" as="font" type="font/woff" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/DharmaGothicE_ExBold_R.woff" as="font" type="font/woff" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/DMMono-Medium.ttf" as="font" type="font/truetype" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/PPNeueMontreal-Regular.otf" as="font" type="font/otf" crossOrigin="anonymous" />
-        {/* Schema markup */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -60,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Philip Kwong',
-              jobTitle: 'Strategy & Compliance Consultant',
+              jobTitle: 'Strategy and Compliance Consultant',
               url: 'https://philipkwong.com',
               knowsAbout: [
                 'Regulatory Compliance',
@@ -69,7 +66,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 'Quality Management Systems',
                 'Technical Standards',
                 'Cannabis Regulation',
-                'ASEAN Market Entry',
+                'ISO Standards Development',
+                'Pharmaceutical Regulation',
+                'Health Professions Regulation',
+                'Extraction Technology Compliance',
+                'QMS Architecture',
+                'Go-to-Market Strategy',
               ],
               workLocation: [
                 { '@type': 'Place', name: 'Vancouver, Canada' },
@@ -82,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <SmoothScrollProvider>
           <Nav />
-          {children}
+          <PageTransition>{children}</PageTransition>
           <Cursor />
         </SmoothScrollProvider>
       </body>
