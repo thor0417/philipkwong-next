@@ -4,6 +4,7 @@ export interface Article {
   description: string;
   date: string;
   readTime: number;
+  category: string;
 }
 
 export const ARTICLES: Article[] = [
@@ -13,6 +14,7 @@ export const ARTICLES: Article[] = [
     description: 'The practical implications for compliance, documentation, and operational decision-making.',
     date: '2026',
     readTime: 5,
+    category: 'TECHNOLOGY',
   },
   {
     slug: 'why-compliance-work-requires-strategy',
@@ -20,6 +22,7 @@ export const ARTICLES: Article[] = [
     description: 'The difference between companies that get licensed and companies that scale.',
     date: '2026',
     readTime: 5,
+    category: 'COMPLIANCE',
   },
   {
     slug: 'qms-architecture-for-emerging-regulatory-frameworks',
@@ -27,5 +30,6 @@ export const ARTICLES: Article[] = [
     description: 'Building quality management systems before the rules are finalized.',
     date: '2026',
     readTime: 5,
+    category: 'STANDARDS',
   },
 ];

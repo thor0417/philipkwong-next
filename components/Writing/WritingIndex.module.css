@@ -4,138 +4,65 @@
   min-height: 100svh;
 }
 
-.hero {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: clamp(3rem, 8vw, 10rem);
-  line-height: 0.88;
-  letter-spacing: -0.01em;
-  color: var(--text-main);
-  margin-bottom: clamp(3rem, 6vw, 6rem);
-  margin-top: var(--space-8);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.categoryBlock {
+  margin-bottom: var(--space-12);
 }
 
-/* Featured */
-.featured {
-  border-top: var(--border-hairline);
-  padding-top: var(--space-8);
-}
-
-.featuredLink {
+.categoryLabel {
   display: block;
-  text-decoration: none;
-  color: inherit;
-  padding-bottom: var(--space-8);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.4);
+  padding-block: var(--space-4);
+  border-bottom: var(--border-hairline);
+  margin-bottom: 0;
 }
 
-.featuredTitle {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: clamp(2.5rem, 6vw, 7rem);
-  line-height: 0.88;
-  letter-spacing: -0.01em;
-  color: var(--text-main);
-  margin-bottom: var(--space-4);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: opacity 300ms;
-}
-
-.featuredLink:hover .featuredTitle {
-  opacity: 0.7;
-}
-
-.featuredDesc {
-  font-family: var(--font-readable);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.5;
-  color: rgba(10, 10, 10, 0.6);
-  max-width: 52ch;
-  margin-bottom: var(--space-4);
-}
-
-.featuredMeta {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-6);
-}
-
-.rule {
-  height: 0;
-  border-top: var(--border-hairline);
-  margin-block: var(--space-8);
-}
-
-/* Grid */
-.grid {
+.entry {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-8);
+  align-items: baseline;
+  width: 100%;
+  padding-block: var(--space-6);
+  border-bottom: var(--border-hairline);
+  cursor: pointer;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  text-align: left;
+  transition: border-color 300ms;
 }
 
-.card {
-  border-top: var(--border-hairline);
-  padding-top: var(--space-6);
-  padding-bottom: var(--space-8);
+.entry:hover {
+  border-bottom-color: rgba(10, 10, 10, 0.3);
 }
 
-.card:nth-child(odd) {
-  border-right: var(--border-hairline);
-  padding-right: clamp(2rem, 4vw, 4rem);
-}
-
-.card:nth-child(even) {
-  padding-left: clamp(2rem, 4vw, 4rem);
-}
-
-.cardLink {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  height: 100%;
-}
-
-.cardTitle {
+.entryTitle {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(1.25rem, 2.5vw, 2.5rem);
   line-height: 0.92;
   letter-spacing: var(--tracking-display);
   color: var(--text-main);
-  margin-bottom: var(--space-4);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: opacity 300ms;
 }
 
-.cardLink:hover .cardTitle {
-  opacity: 0.7;
+.entryTag {
+  flex-shrink: 0;
+  white-space: nowrap;
+  text-align: right;
 }
 
-.cardDesc {
-  font-family: var(--font-readable);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgba(10, 10, 10, 0.6);
-  margin-bottom: var(--space-4);
-}
-
-.cardMeta {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-4);
-}
-
-.metaDate {
-  font-family: var(--font-body);
-  font-weight: 400;
+.entryTag :global(.t-registry) {
   font-size: 13px;
-  letter-spacing: 0.04em;
-  color: rgba(10, 10, 10, 0.4);
+  margin-bottom: 0;
+  display: inline;
 }
 
 /* ── Mobile ── */
@@ -145,34 +72,23 @@
     padding-inline: 5vw;
   }
 
-  .hero {
-    font-size: clamp(2.5rem, 14vw, 5rem);
-    margin-bottom: clamp(2rem, 6vw, 3rem);
+  .entry {
+    display: block;
+    padding-block: 1.25rem;
   }
 
-  .featuredTitle {
-    font-size: clamp(2rem, 10vw, 4rem);
+  .entryTitle {
+    display: block;
+    font-size: clamp(1.25rem, 6vw, 2rem);
+    margin-bottom: var(--space-1);
   }
 
-  .featuredDesc,
-  .cardDesc {
-    font-size: 14px;
+  .entryTag {
+    display: block;
+    text-align: left;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card:nth-child(odd) {
-    border-right: none;
-    padding-right: 0;
-  }
-
-  .card:nth-child(even) {
-    padding-left: 0;
-  }
-
-  .cardTitle {
-    font-size: clamp(1.5rem, 6.5vw, 2.25rem);
+  .entryTag :global(.t-registry) {
+    font-size: 11px;
   }
 }

@@ -1,23 +1,39 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
-import { CASES } from '@/lib/cases';
-import styles from './CaseOverlay.module.css';
+import { Article } from '@/lib/articles';
+import styles from './ArticleOverlay.module.css';
 
-interface CaseOverlayProps {
-  caseId: string | null;
+interface ArticleOverlayProps {
+  article: Article | null;
   onClose: () => void;
 }
 
-export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
+export function ArticleOverlay({ article, onClose }: ArticleOverlayProps) {
   const overlayRef  = useRef<HTMLDivElement>(null);
   const topBarRef   = useRef<HTMLDivElement>(null);
   const contentRef  = useRef<HTMLDivElement>(null);
   const activeTlRef = useRef<gsap.core.Timeline | null>(null);
   const isOpenRef   = useRef(false);
+  const [htmlContent, setHtmlContent] = useState('');
+  const [loading, setLoading]         = useState(false);
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  /* Fetch article content when slug changes */
+  useEffect(() => {
+    if (!article) return;
+    setLoading(true);
+    setHtmlContent('');
+    fetch(`/api/article/${article.slug}`)
+      .then((r) => r.json())
+      .then((d: { content: string }) => {
+        setHtmlContent(d.content);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [article?.slug]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const openOverlay = useCallback(() => {
     const overlay = overlayRef.current;
@@ -72,9 +88,9 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
   }, [isMobile, onClose]);
 
   useEffect(() => {
-    if (caseId) openOverlay();
+    if (article) openOverlay();
     else closeOverlay();
-  }, [caseId, openOverlay, closeOverlay]);
+  }, [article, openOverlay, closeOverlay]);
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -89,7 +105,6 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
     if (!overlay) return;
 
     let touchStartY = 0;
-
     const onTouchStart = (e: TouchEvent) => { touchStartY = e.touches[0].clientY; };
     const onTouchMove  = (e: TouchEvent) => {
       if (!isOpenRef.current) return;
@@ -105,45 +120,34 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
     };
   }, [closeOverlay]);
 
-  const data = caseId ? CASES[caseId] : null;
-
   return (
     <div
       ref={overlayRef}
       className={styles.overlay}
-      id="case-overlay"
+      id="article-overlay"
       aria-hidden="true"
       role="dialog"
       aria-modal="true"
-      aria-label="Case study"
+      aria-label={article?.title ?? 'Article'}
       onClick={(e) => { if (e.target === overlayRef.current) closeOverlay(); }}
     >
       <div ref={topBarRef} className={styles.topBar}>
-        <span className={styles.subsection}>{data?.subsection ?? ''}</span>
-        <button className={styles.closeBtn} onClick={closeOverlay} aria-label="Close case study">
+        <span className={styles.category}>{article?.category ?? ''}</span>
+        <button className={styles.closeBtn} onClick={closeOverlay} aria-label="Close article">
           [ CLOSE ]
         </button>
       </div>
 
-      <div ref={contentRef} className={styles.content} id="case-content">
-        <div className={styles.contentLeft}>
-          <h2 className={styles.client}>{data?.client ?? ''}</h2>
-          <div className={styles.rule} aria-hidden="true" />
-          <p className={styles.editorial}>{data?.editorial ?? ''}</p>
-          {data?.image && (
-            <div className={styles.overlayImage}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={data.image} alt={data.client} />
-            </div>
-          )}
-        </div>
-
-        <div className={styles.contentRight}>
-          <span className="t-registry">
-            <strong>[TYPE:]</strong> {data?.type ?? ''}
-          </span>
-          <p className={styles.descriptors}>{data?.descriptors ?? ''}</p>
-        </div>
+      <div ref={contentRef} className={styles.content}>
+        <h2 className={styles.title}>{article?.title ?? ''}</h2>
+        <div className={styles.rule} aria-hidden="true" />
+        {loading && <p className={styles.loadingMsg}>Loading...</p>}
+        {!loading && htmlContent && (
+          <div
+            className={styles.body}
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
+        )}
       </div>
     </div>
   );

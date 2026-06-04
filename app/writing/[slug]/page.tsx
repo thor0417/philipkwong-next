@@ -35,25 +35,22 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <main className={styles.main}>
-      <article className={styles.article}>
-        <header className={styles.header}>
-          <p className="section-label">{article.date} · {article.readTime} MIN READ</p>
-          <h1 className={styles.title}>{article.title}</h1>
-          <p className={styles.description}>{article.description}</p>
-          <div className={styles.rule} aria-hidden="true" />
-        </header>
-
+      <div className={styles.article}>
+        <aside className={styles.meta}>
+          <p className="section-label">{article.date}</p>
+          <h1 className={styles.metaTitle}>{article.title}</h1>
+          <span className="t-registry" style={{ display: 'block', marginBottom: '1rem' }}>
+            <strong>[READ:]</strong> {article.readTime} MIN
+          </span>
+          <Link href="/writing" className={styles.back}>
+            Back to Writing
+          </Link>
+        </aside>
         <div
           className={styles.body}
           dangerouslySetInnerHTML={{ __html: content }}
         />
-
-        <footer className={styles.footer}>
-          <Link href="/writing" className={styles.back}>
-            ← Writing
-          </Link>
-        </footer>
-      </article>
+      </div>
     </main>
   );
 }

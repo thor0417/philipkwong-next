@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Services.module.css';
 
 const SERVICES = [
@@ -13,14 +14,20 @@ const SERVICES = [
 ];
 
 export function Services() {
-  const prefersReduced = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(true);
-
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, []);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768) return;
+    gsap.registerPlugin(ScrollTrigger);
 
-  const shouldAnimate = !prefersReduced && !isMobile;
+    document.querySelectorAll<HTMLElement>('.service-item').forEach((el) => {
+      gsap.fromTo(el,
+        { opacity: 0, y: 16 },
+        {
+          opacity: 1, y: 0, ease: 'none',
+          scrollTrigger: { trigger: el, start: 'top 90%', end: 'top 65%', scrub: 0.8 },
+        }
+      );
+    });
+  }, []);
 
   return (
     <section id="services" className={styles.services} aria-labelledby="services-heading">
@@ -33,21 +40,10 @@ export function Services() {
 
         <ol className={styles.list} style={{ gridColumn: '1 / -1' }} role="list">
           {SERVICES.map((title, i) => (
-            <motion.li
-              key={title}
-              className={`service-item ${styles.item}`}
-              initial={shouldAnimate ? { clipPath: 'inset(100% 0 0 0)' } : undefined}
-              whileInView={shouldAnimate ? { clipPath: 'inset(0% 0 0 0)' } : undefined}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.7,
-                delay: i * 0.08,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            >
+            <li key={title} className={`service-item ${styles.item}`}>
               <span className={styles.number}>{String(i + 1).padStart(2, '0')}</span>
               <span className={styles.title}>{title}</span>
-            </motion.li>
+            </li>
           ))}
         </ol>
 

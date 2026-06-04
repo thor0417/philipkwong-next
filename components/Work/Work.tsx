@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'framer-motion';
 import { WORK_ENTRIES } from '@/lib/cases';
 import styles from './Work.module.css';
 
@@ -9,43 +11,71 @@ interface WorkProps {
   onCaseOpen: (id: string) => void;
 }
 
-export function Work({ onCaseOpen }: WorkProps) {
-  const prefersReduced = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(true);
+interface WorkEntryProps {
+  id: string;
+  client: string;
+  tag: string;
+  onCaseOpen: (id: string) => void;
+  isMobile: boolean;
+}
 
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, []);
+function WorkEntry({ id, client, tag, onCaseOpen, isMobile }: WorkEntryProps) {
+  const [hovered, setHovered] = useState(false);
 
-  const shouldAnimate = !prefersReduced && !isMobile;
-
-  const handleKeyDown = (e: React.KeyboardEvent, id: string) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       onCaseOpen(id);
     }
   };
 
-  const renderEntries = (entries: typeof WORK_ENTRIES.strategy) =>
-    entries.map(({ id, client }, i) => (
-      <motion.article
-        key={id}
-        className={`work-entry ${styles.entry}`}
-        data-case-id={id}
-        role="button"
-        tabIndex={0}
-        aria-label={`Open ${client} case study`}
-        onClick={() => onCaseOpen(id)}
-        onKeyDown={(e) => handleKeyDown(e, id)}
-        initial={shouldAnimate ? { opacity: 0, x: -6 } : undefined}
-        whileInView={shouldAnimate ? { opacity: 1, x: 0 } : undefined}
-        whileHover={!isMobile ? { scale: 1.01 } : undefined}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+  return (
+    <motion.article
+      className={`work-entry ${styles.entry}`}
+      data-case-id={id}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open ${client} case study`}
+      onClick={() => onCaseOpen(id)}
+      onKeyDown={handleKeyDown}
+      whileHover={!isMobile ? { scale: 1.01 } : undefined}
+      onHoverStart={() => { if (!isMobile) setHovered(true); }}
+      onHoverEnd={() => setHovered(false)}
+    >
+      <span className={styles.client}>{client}</span>
+      <motion.span
+        className={styles.tag}
+        animate={{ color: hovered && !isMobile ? '#B34700' : 'rgba(10, 10, 10, 0.4)' }}
+        transition={{ duration: 0.2 }}
       >
-        <span className={styles.client}>{client}</span>
-      </motion.article>
-    ));
+        {tag}
+      </motion.span>
+    </motion.article>
+  );
+}
+
+export function Work({ onCaseOpen }: WorkProps) {
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  /* ── GSAP scroll entrances — desktop only ── */
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll<HTMLElement>('.work-entry').forEach((el) => {
+      gsap.fromTo(el,
+        { opacity: 0, y: 12 },
+        {
+          opacity: 1, y: 0, ease: 'none',
+          scrollTrigger: { trigger: el, start: 'top 90%', end: 'top 65%', scrub: 0.8 },
+        }
+      );
+    });
+  }, []);
 
   return (
     <section id="work" className={styles.work} aria-labelledby="work-heading">
@@ -61,7 +91,16 @@ export function Work({ onCaseOpen }: WorkProps) {
             <span className="reveal__inner">STRATEGY &amp; STANDARDS</span>
           </p>
           <div className={styles.entriesTrack}>
-            {renderEntries(WORK_ENTRIES.strategy)}
+            {WORK_ENTRIES.strategy.map(({ id, client, tag }) => (
+              <WorkEntry
+                key={id}
+                id={id}
+                client={client}
+                tag={tag}
+                onCaseOpen={onCaseOpen}
+                isMobile={isMobile}
+              />
+            ))}
           </div>
         </div>
 
@@ -72,7 +111,16 @@ export function Work({ onCaseOpen }: WorkProps) {
             <span className="reveal__inner">ENGAGEMENTS</span>
           </p>
           <div className={styles.entriesTrack}>
-            {renderEntries(WORK_ENTRIES.engagements)}
+            {WORK_ENTRIES.engagements.map(({ id, client, tag }) => (
+              <WorkEntry
+                key={id}
+                id={id}
+                client={client}
+                tag={tag}
+                onCaseOpen={onCaseOpen}
+                isMobile={isMobile}
+              />
+            ))}
           </div>
         </div>
 

@@ -103,20 +103,20 @@ export const CASES: Record<string, Case> = {
 
 export const WORK_ENTRIES = {
   strategy: [
-    { id: 'ul-canada-tg', client: 'UL Canada TG 4400-2'   },
-    { id: 'iso-iwa',      client: 'ISO IWA 37-1'           },
-    { id: 'ul-ulc',       client: 'UL/ULC/ANSI/CAN/1389'  },
+    { id: 'ul-canada-tg', client: 'UL Canada TG 4400-2',   tag: 'CHAIR'       },
+    { id: 'iso-iwa',      client: 'ISO IWA 37-1',           tag: 'VICE CONVENER' },
+    { id: 'ul-ulc',       client: 'UL/ULC/ANSI/CAN/1389',  tag: 'STP MEMBER'  },
   ],
   engagements: [
-    { id: 'bc-pharmacy',   client: 'BC Pharmacy Regulation'   },
-    { id: 'ul-canada',     client: 'UL Canada'                },
-    { id: 'grant-leisure', client: 'Grant Leisure International' },
-    { id: 'aurora',        client: 'Aurora Cannabis'          },
-    { id: 'organigram',    client: 'Organigram'               },
-    { id: 'valens',        client: 'The Valens Company'       },
-    { id: 'adastra',       client: 'Adastra Labs'             },
-    { id: 'ets',           client: 'ExtractionTek Stainless'  },
-    { id: 'veritas',       client: 'Veritas Pharma'           },
-    { id: 'embark',        client: 'Embark Health'            },
+    { id: 'bc-pharmacy',   client: 'BC Pharmacy Regulation',     tag: 'COMPLIANCE'  },
+    { id: 'ul-canada',     client: 'UL Canada',                  tag: 'STRATEGY'    },
+    { id: 'grant-leisure', client: 'Grant Leisure International', tag: 'OPERATIONS'  },
+    { id: 'aurora',        client: 'Aurora Cannabis',             tag: 'COMPLIANCE'  },
+    { id: 'organigram',    client: 'Organigram',                  tag: 'COMPLIANCE'  },
+    { id: 'valens',        client: 'The Valens Company',          tag: 'OPERATIONS'  },
+    { id: 'adastra',       client: 'Adastra Labs',                tag: 'COMPLIANCE'  },
+    { id: 'ets',           client: 'ExtractionTek Stainless',     tag: 'MARKET ENTRY' },
+    { id: 'veritas',       client: 'Veritas Pharma',              tag: 'STRATEGY'    },
+    { id: 'embark',        client: 'Embark Health',               tag: 'COMPLIANCE'  },
   ],
 };
