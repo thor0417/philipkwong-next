@@ -188,8 +188,8 @@ button { cursor: pointer; }
 .t-registry {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 0.04em;
+  font-size: 15px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-main);
   display: block;
@@ -205,10 +205,10 @@ button { cursor: pointer; }
   display: block;
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 14px;
-  letter-spacing: var(--tracking-label);
+  font-size: 15px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(10, 10, 10, 0.4);
+  color: rgba(10, 10, 10, 0.55);
   margin-bottom: var(--space-4);
 }
 

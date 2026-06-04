@@ -60,7 +60,7 @@
 }
 
 .contentLeft {
-  max-width: 65ch;
+  width: 100%;
 }
 
 .client {

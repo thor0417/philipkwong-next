@@ -5,19 +5,19 @@
   z-index: var(--z-overlay);
   background: #0A0A0A;
   display: none;
-  grid-template-rows: auto 1fr;
+  flex-direction: column;
   padding-inline: 5vw;
   overflow: hidden;
   pointer-events: none;
 }
 
-/* is-open: display: grid */
-.isOpen {
-  display: grid;
+.overlay.isOpen {
+  display: flex;
   pointer-events: all;
 }
 
 .topBar {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,11 +51,11 @@
 .closeBtn:hover { color: #F9F9F9; }
 
 .content {
+  flex: 1;
   overflow-y: auto;
-  height: 100%;
-  min-height: 0;
   padding-block: 4rem;
   padding-bottom: var(--space-16);
+  width: 100%;
 }
 
 .title {
