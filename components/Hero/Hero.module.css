@@ -17,7 +17,7 @@
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(1.5rem, 2.5vw, 3rem);
   padding-bottom: var(--space-4);
 }
 
@@ -88,8 +88,8 @@
 @media (max-width: 767px) {
   .hero {
     min-height: 100svh;
-    padding-block: 5rem clamp(1.5rem, 5vw, 2.5rem);
-    align-content: unset;
+    padding-block: 5rem clamp(2rem, 6vw, 3rem);
+    align-content: start;
     overflow: hidden;
   }
 
@@ -108,9 +108,8 @@
     order: 1;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-4);
-    margin-bottom: clamp(2rem, 7vw, 3.5rem);
-    padding-bottom: 0;
+    gap: var(--space-2);
+    margin-bottom: clamp(2rem, 8vw, 3rem);
     justify-content: flex-start;
   }
 
@@ -130,7 +129,7 @@
     text-align: center;
     line-height: 0.85;
     letter-spacing: -0.01em;
-    margin-bottom: clamp(2rem, 7vw, 3rem);
+    margin-block: clamp(1.5rem, 5vw, 2.5rem);
   }
 
   .heroMeta {

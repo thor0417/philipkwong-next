@@ -75,7 +75,7 @@
   .subsection { margin-bottom: var(--space-8); }
 
   .categoryLabel {
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     padding-block: 0.75rem;
     margin-bottom: var(--space-2);
@@ -86,7 +86,7 @@
     gap: var(--space-1);
     padding-block: 1.25rem;
     border-left: 2px solid transparent;
-    transition: border-color 300ms, border-left-color 150ms ease;
+    transition: border-left-color 150ms ease;
   }
 
   .entry:active {
@@ -99,11 +99,15 @@
 
   .client {
     font-size: clamp(1.75rem, 8.5vw, 3rem);
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
   }
 
   .tag {
-    font-size: 11px;
+    font-size: 12px;
     text-align: left;
+    color: rgba(10, 10, 10, 0.6);
   }
 }
 

@@ -147,6 +147,7 @@ export function ArticleOverlay({ article, onClose }: ArticleOverlayProps) {
       onClick={(e) => { if (e.target === overlayRef.current) closeOverlay(); }}
     >
       <div ref={topBarRef} className={styles.topBar}>
+        <div className={styles.dragHandle} aria-hidden="true" />
         <span className={styles.category}>{article?.category ?? ''}</span>
         <button className={styles.closeBtn} onClick={closeOverlay} aria-label="Close article">
           [ CLOSE ]

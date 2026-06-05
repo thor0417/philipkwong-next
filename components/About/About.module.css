@@ -31,8 +31,8 @@
 /* ── Mobile ── */
 @media (max-width: 767px) {
   .about {
-    padding-block: var(--section-block);
-    padding-inline: 5vw;
+    padding-block: var(--space-16) var(--space-12);
+    padding-inline: 6vw;
   }
 
   .about :global(.grid-stage) {
@@ -42,7 +42,7 @@
   }
 
   .body {
-    font-size: clamp(1rem, 4.5vw, 1.125rem);
+    font-size: 16px;
     line-height: 1.6;
     max-width: 100%;
   }

@@ -113,10 +113,23 @@
 
 .body strong { font-weight: 600; }
 
+.dragHandle {
+  display: none;
+}
+
 /* ── Mobile ── */
 @media (max-width: 767px) {
+  .dragHandle {
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: rgba(249, 249, 249, 0.3);
+    border-radius: 2px !important;
+    margin: 0.75rem auto 0;
+  }
+
   .title {
-    font-size: clamp(2.5rem, 12vw, 5rem);
+    font-size: clamp(2rem, 10vw, 4rem);
   }
 
   .body {

@@ -342,4 +342,30 @@ h1, h2 {
   .reveal__inner {
     transition-duration: 0.75s;
   }
+
+  /* Revert contact to normal document flow so iOS Safari does not break */
+  #card-contact {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    z-index: auto;
+  }
+
+  #card-work {
+    margin-bottom: 0;
+  }
+
+  /* Global tap highlight suppression */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* 44px minimum touch targets */
+  a, button, [role="button"] {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
 }

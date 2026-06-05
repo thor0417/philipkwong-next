@@ -121,8 +121,9 @@
 /* ── Mobile ── */
 @media (max-width: 767px) {
   .contact {
-    padding-block: var(--section-block);
-    padding-inline: 5vw;
+    padding-block: var(--space-16) var(--space-12);
+    padding-inline: 6vw;
+    min-height: 100svh;
   }
 
   .contact :global(.grid-stage) {
@@ -132,9 +133,9 @@
   }
 
   .cta {
-    font-size: clamp(3.5rem, 18vw, 6rem);
+    font-size: clamp(2.5rem, 14vw, 5rem);
     line-height: 0.88;
-    margin-bottom: 0;
+    margin-bottom: var(--space-8);
     grid-column: unset;
   }
 
@@ -150,13 +151,15 @@
 
   .input,
   .textarea {
+    padding-block: 1rem;
     font-size: 16px;
   }
 
   .submit {
     align-self: stretch;
+    width: 100%;
     text-align: center;
-    padding-block: var(--space-4);
+    padding-block: 1.25rem;
     -webkit-tap-highlight-color: transparent;
   }
 

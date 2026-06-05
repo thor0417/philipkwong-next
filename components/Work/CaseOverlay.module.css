@@ -111,14 +111,33 @@
   color: var(--accent);
 }
 
+.dragHandle {
+  display: none;
+}
+
 /* ── Mobile ── */
 @media (max-width: 767px) {
+  .overlay {
+    padding-inline: 5vw;
+  }
+
+  .dragHandle {
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: rgba(249, 249, 249, 0.3);
+    border-radius: 2px !important;
+    margin: 0.75rem auto 0;
+  }
+
   .client {
     font-size: clamp(2.5rem, 12vw, 5rem);
+    word-break: break-word;
   }
 
   .editorial {
     font-size: 16px;
+    line-height: 1.6;
   }
 
   .closeBtn { font-size: 11px; }

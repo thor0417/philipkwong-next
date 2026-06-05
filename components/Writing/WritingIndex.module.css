@@ -70,8 +70,12 @@
 /* ── Mobile ── */
 @media (max-width: 767px) {
   .writing {
-    padding-block: var(--section-block);
-    padding-inline: 5vw;
+    padding-block: var(--space-16) var(--space-12);
+    padding-inline: 6vw;
+  }
+
+  .categoryLabel {
+    font-size: 13px;
   }
 
   .entry {
@@ -91,6 +95,6 @@
   }
 
   .entryTag :global(.t-registry) {
-    font-size: 11px;
+    font-size: 12px;
   }
 }

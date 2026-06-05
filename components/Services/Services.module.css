@@ -70,8 +70,9 @@
   .number { width: auto; }
 
   .title {
-    font-size: clamp(1.75rem, 8.5vw, 2.5rem);
-    line-height: 0.92;
+    margin-left: 0;
+    text-align: left;
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
     white-space: normal;
   }
 }
