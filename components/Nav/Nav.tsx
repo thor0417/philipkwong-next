@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { getLenis } from '@/providers/SmoothScrollProvider';
 import styles from './Nav.module.css';
 
 export function Nav() {
@@ -10,31 +11,27 @@ export function Nav() {
   const isWritingPage = pathname?.startsWith('/writing') ?? false;
   const [isDark, setIsDark] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
-  /* Dark state — go dark only once #card-work has fully scrolled out of the top.
-     Re-runs on pathname changes so the observer reinitialises after client navigation. */
+  /* Dark state — go dark when #card-work has scrolled past the nav (contact underlay exposed).
+     Uses Lenis scroll event; falls back to native scroll on the first render cycle
+     before Lenis has initialised. Re-runs on pathname changes. */
   useEffect(() => {
-    const cardWork = document.getElementById('card-work');
-    if (!cardWork) {
-      setIsDark(false); // writing page and other routes have no card-work
-      return;
+    const check = () => {
+      const cardWork = document.getElementById('card-work');
+      if (!cardWork) { setIsDark(false); return; }
+      setIsDark(cardWork.getBoundingClientRect().bottom <= 80);
+    };
+
+    const lenis = getLenis();
+    if (lenis) {
+      lenis.on('scroll', check);
+      check();
+      return () => lenis.off('scroll', check);
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setIsDark(false);
-          } else {
-            // top < 0 → scrolled past top (contact underlay exposed); top > 0 → not yet reached
-            setIsDark(e.boundingClientRect.top < 0);
-          }
-        });
-      },
-      { threshold: 0 }
-    );
-
-    observer.observe(cardWork);
-    return () => observer.disconnect();
+    // Lenis not yet initialised on this render cycle — use native scroll
+    window.addEventListener('scroll', check, { passive: true });
+    check();
+    return () => window.removeEventListener('scroll', check);
   }, [pathname]);
 
   /* Escape key closes mobile nav */

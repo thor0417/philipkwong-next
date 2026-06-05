@@ -17,6 +17,7 @@
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
+  padding-top: clamp(5rem, 8vw, 8rem);
   padding-bottom: var(--space-4);
 }
 

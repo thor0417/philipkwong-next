@@ -53,9 +53,11 @@
 .content {
   flex: 1;
   overflow-y: auto;
-  padding: clamp(2rem, 5vw, 6rem);
-  max-width: 72ch;
   width: 100%;
+  padding-left: clamp(2rem, 5vw, 5rem);
+  padding-right: clamp(2rem, 5vw, 5rem);
+  padding-top: clamp(2rem, 4vw, 4rem);
+  padding-bottom: clamp(2rem, 5vw, 5rem);
 }
 
 .title {
@@ -92,7 +94,7 @@
   line-height: 1.7;
   color: #F9F9F9;
   width: 100%;
-  max-width: 100%;
+  max-width: 68ch;
 }
 
 .body h2 {
