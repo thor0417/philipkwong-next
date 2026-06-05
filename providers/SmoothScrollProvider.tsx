@@ -7,6 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+let _lenis: Lenis | null = null;
+export function getLenis() { return _lenis; }
+
 export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
 
@@ -21,6 +24,7 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     });
 
     lenisRef.current = lenis;
+    _lenis = lenis;
 
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value?: number) {
@@ -48,6 +52,7 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
       gsap.ticker.remove(rafHandler);
       lenis.destroy();
       lenisRef.current = null;
+      _lenis = null;
     };
   }, []);
 

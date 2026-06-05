@@ -13,9 +13,9 @@ const MAX_X      = 24;
 const MAX_Y      = 12;
 
 const HEADLINE_LINES = [
-  { text: 'There Are',   multiplier: 1.0, accent: false, delay: '0.1s'  },
-  { text: 'No',          multiplier: 0.7, accent: true,  delay: '0.25s' },
-  { text: 'Shortcuts.',  multiplier: 1.2, accent: false, delay: '0.4s'  },
+  { text: 'There Are',   multiplier: 1.0, accent: false },
+  { text: 'No',          multiplier: 0.7, accent: true  },
+  { text: 'Shortcuts.',  multiplier: 1.2, accent: false },
 ];
 
 function ScrambledBracket({ text, delay }: { text: string; delay: number }) {
@@ -176,21 +176,20 @@ export function Hero() {
           data-scroll-speed="1"
           style={{ gridColumn: '1 / -1' }}
         >
-          {HEADLINE_LINES.map(({ text, accent, delay }, i) => (
+          {HEADLINE_LINES.map(({ text, accent }, i) => (
             <motion.span
               key={i}
               className={styles.lineWrap}
               style={{ x: springX[i], y: springY[i] }}
               ref={(el) => { lineRefs.current[i] = el; }}
             >
-              <span
-                className="reveal"
-                style={{ '--reveal-delay': delay } as React.CSSProperties}
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="reveal__inner">
-                  {accent ? <span className="t-accent">{text}</span> : text}
-                </span>
-              </span>
+                {accent ? <span className="t-accent">{text}</span> : text}
+              </motion.span>
             </motion.span>
           ))}
         </h1>

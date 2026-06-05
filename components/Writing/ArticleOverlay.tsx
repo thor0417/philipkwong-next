@@ -3,6 +3,7 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
 import { Article } from '@/lib/articles';
+import { getLenis } from '@/providers/SmoothScrollProvider';
 import styles from './ArticleOverlay.module.css';
 
 interface ArticleOverlayProps {
@@ -39,6 +40,8 @@ export function ArticleOverlay({ article, onClose }: ArticleOverlayProps) {
     const overlay = overlayRef.current;
     if (!overlay || isOpenRef.current) return;
     isOpenRef.current = true;
+
+    getLenis()?.stop();
 
     overlay.setAttribute('aria-hidden', 'false');
     overlay.classList.add(styles.isOpen);
@@ -80,6 +83,7 @@ export function ArticleOverlay({ article, onClose }: ArticleOverlayProps) {
             overlay.classList.remove(styles.isOpen);
             overlay.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            getLenis()?.start();
             onClose();
           },
         },
