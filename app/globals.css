@@ -205,10 +205,10 @@ button { cursor: pointer; }
   display: block;
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(10, 10, 10, 0.55);
+  color: rgba(10, 10, 10, 0.9);
   margin-bottom: var(--space-4);
 }
 
@@ -288,6 +288,11 @@ h1, h2 {
    CARD SCROLL — stacked section effect
    ------------------------------------------------------------ */
 .scroll-stage {
+  position: relative;
+}
+
+/* Constrains sticky behavior to each pair's height */
+.card-pair {
   position: relative;
 }
 
