@@ -10,20 +10,26 @@ export function Nav() {
   const isWritingPage = pathname?.startsWith('/writing') ?? false;
   const [isDark, setIsDark] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
-  /* Dark state — watch contact section */
+  /* Dark state — go dark only once #card-work has fully scrolled out of the top */
   useEffect(() => {
-    const contact = document.getElementById('contact');
-    if (!contact) return;
+    const cardWork = document.getElementById('card-work');
+    if (!cardWork) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const anyDark = entries.some((e) => e.isIntersecting);
-        setIsDark(anyDark);
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setIsDark(false);
+          } else {
+            // top < 0 → scrolled past (contact exposed); top > 0 → not yet reached
+            setIsDark(e.boundingClientRect.top < 0);
+          }
+        });
       },
-      { threshold: 0.1 }
+      { threshold: 0 }
     );
 
-    observer.observe(contact);
+    observer.observe(cardWork);
     return () => observer.disconnect();
   }, []);
 
