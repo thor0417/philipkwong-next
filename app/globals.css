@@ -291,36 +291,8 @@ h1, h2 {
   position: relative;
 }
 
-/* Constrains sticky behavior to each pair's height */
-.card-pair {
-  position: relative;
-}
-
 .card-wrap {
   position: relative;
-  z-index: 1;
-}
-
-#card-hero {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
-
-#card-work {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
-
-#card-about {
-  position: relative;
-  z-index: 3;
-}
-
-#card-contact {
-  position: relative;
-  z-index: 3;
 }
 
 /* ------------------------------------------------------------

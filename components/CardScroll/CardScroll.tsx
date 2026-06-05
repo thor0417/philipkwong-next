@@ -9,29 +9,61 @@ export function CardScroll() {
     if (window.innerWidth < 768) return;
     gsap.registerPlugin(ScrollTrigger);
 
-    const pairs = [
-      { trigger: '#card-about',   card: '#card-hero' },
-      { trigger: '#card-contact', card: '#card-work' },
-    ];
-
     const triggers: ScrollTrigger[] = [];
 
-    pairs.forEach(({ trigger, card }) => {
-      const tween = gsap.to(card, {
-        scale:   0.95,
-        opacity: 0.7,
-        ease:    'none',
-        scrollTrigger: {
-          trigger,
-          start: 'top bottom',
-          end:   'top top',
-          scrub: true,
-        },
-      });
-      if (tween.scrollTrigger) triggers.push(tween.scrollTrigger);
+    // Hero pins while About slides up over it
+    const heroPin = ScrollTrigger.create({
+      trigger: '#card-hero',
+      start: 'top top',
+      endTrigger: '#card-about',
+      end: 'top top',
+      pin: true,
+      pinSpacing: false,
     });
+    triggers.push(heroPin);
 
-    return () => triggers.forEach((t) => t.kill());
+    // Scale and fade hero as About rises
+    const heroFade = gsap.to('#card-hero', {
+      scale: 0.95,
+      opacity: 0.7,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#card-about',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true,
+      },
+    });
+    triggers.push(heroFade.scrollTrigger!);
+
+    // Work pins while Contact slides up over it
+    const workPin = ScrollTrigger.create({
+      trigger: '#card-work',
+      start: 'top top',
+      endTrigger: '#card-contact',
+      end: 'top top',
+      pin: true,
+      pinSpacing: false,
+    });
+    triggers.push(workPin);
+
+    // Scale and fade work as Contact rises
+    const workFade = gsap.to('#card-work', {
+      scale: 0.95,
+      opacity: 0.7,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#card-contact',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true,
+      },
+    });
+    triggers.push(workFade.scrollTrigger!);
+
+    return () => {
+      triggers.forEach(t => t?.kill());
+    };
   }, []);
 
   return null;

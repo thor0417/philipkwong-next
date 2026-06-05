@@ -15,32 +15,11 @@ export default function HomePage() {
   return (
     <main>
       <div className="scroll-stage">
-
-        {/* Hero lifts into About */}
-        <div className="card-pair" id="pair-hero">
-          <div className="card-wrap" id="card-hero">
-            <Hero />
-          </div>
-          <div className="card-wrap" id="card-about">
-            <About />
-          </div>
-        </div>
-
-        {/* Services — outside both pairs, no sticky interference */}
-        <div className="card-wrap" id="card-services">
-          <Services />
-        </div>
-
-        {/* Work lifts into Contact */}
-        <div className="card-pair" id="pair-work">
-          <div className="card-wrap" id="card-work">
-            <Work onCaseOpen={setActiveCaseId} />
-          </div>
-          <div className="card-wrap" id="card-contact">
-            <Contact />
-          </div>
-        </div>
-
+        <div className="card-wrap" id="card-hero"><Hero /></div>
+        <div className="card-wrap" id="card-about"><About /></div>
+        <div className="card-wrap" id="card-services"><Services /></div>
+        <div className="card-wrap" id="card-work"><Work onCaseOpen={setActiveCaseId} /></div>
+        <div className="card-wrap" id="card-contact"><Contact /></div>
       </div>
       <CaseOverlay caseId={activeCaseId} onClose={() => setActiveCaseId(null)} />
       <CardScroll />
