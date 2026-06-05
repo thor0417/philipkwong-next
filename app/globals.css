@@ -290,6 +290,8 @@ h1, h2 {
 .scroll-stage {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-wrap {
@@ -297,27 +299,32 @@ h1, h2 {
   width: 100%;
 }
 
-#card-hero {
-  z-index: 1;
+#card-hero,
+#card-about,
+#card-services {
+  position: relative;
+  z-index: 2;
+  background-color: var(--bg-primary);
 }
 
 #card-about {
-  z-index: 2;
   background-color: var(--bg-warm);
 }
 
-#card-services {
-  z-index: 3;
-  background-color: var(--bg-primary);
-}
-
 #card-work {
-  z-index: 4;
+  position: relative;
+  z-index: 2;
   background-color: var(--bg-primary);
+  margin-bottom: 100vh; /* Creates structural space to roll over contact */
 }
 
 #card-contact {
-  z-index: 5;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
   background-color: var(--bg-dark);
 }
 

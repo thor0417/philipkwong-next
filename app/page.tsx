@@ -7,7 +7,7 @@ import { Services } from '@/components/Services/Services';
 import { Work } from '@/components/Work/Work';
 import { CaseOverlay } from '@/components/Work/CaseOverlay';
 import { Contact } from '@/components/Contact/Contact';
-import { CardScroll } from '@/components/CardScroll/CardScroll';
+import CardScroll from '@/components/CardScroll/CardScroll';
 
 export default function HomePage() {
   const [activeCaseId, setActiveCaseId] = useState<string | null>(null);
