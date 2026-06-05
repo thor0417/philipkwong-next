@@ -45,7 +45,7 @@
 .entryTitle {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 3.5rem);
   line-height: 0.92;
   letter-spacing: var(--tracking-display);
   color: var(--text-main);

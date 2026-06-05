@@ -104,6 +104,17 @@ export function ArticleOverlay({ article, onClose }: ArticleOverlayProps) {
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [closeOverlay]);
 
+  /* Prevent Lenis from intercepting wheel events over the content div.
+     Lenis calls e.preventDefault() before checking isStopped, so stop()
+     alone is not enough — stopping propagation here keeps events native. */
+  useEffect(() => {
+    const content = contentRef.current;
+    if (!content) return;
+    const stopWheel = (e: WheelEvent) => e.stopPropagation();
+    content.addEventListener('wheel', stopWheel);
+    return () => content.removeEventListener('wheel', stopWheel);
+  }, []);
+
   useEffect(() => {
     const overlay = overlayRef.current;
     if (!overlay) return;

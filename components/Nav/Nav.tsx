@@ -10,10 +10,14 @@ export function Nav() {
   const isWritingPage = pathname?.startsWith('/writing') ?? false;
   const [isDark, setIsDark] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
-  /* Dark state — go dark only once #card-work has fully scrolled out of the top */
+  /* Dark state — go dark only once #card-work has fully scrolled out of the top.
+     Re-runs on pathname changes so the observer reinitialises after client navigation. */
   useEffect(() => {
     const cardWork = document.getElementById('card-work');
-    if (!cardWork) return;
+    if (!cardWork) {
+      setIsDark(false); // writing page and other routes have no card-work
+      return;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -21,7 +25,7 @@ export function Nav() {
           if (e.isIntersecting) {
             setIsDark(false);
           } else {
-            // top < 0 → scrolled past (contact exposed); top > 0 → not yet reached
+            // top < 0 → scrolled past top (contact underlay exposed); top > 0 → not yet reached
             setIsDark(e.boundingClientRect.top < 0);
           }
         });
@@ -31,7 +35,7 @@ export function Nav() {
 
     observer.observe(cardWork);
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   /* Escape key closes mobile nav */
   useEffect(() => {
