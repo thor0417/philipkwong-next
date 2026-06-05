@@ -289,10 +289,36 @@ h1, h2 {
    ------------------------------------------------------------ */
 .scroll-stage {
   position: relative;
+  width: 100%;
 }
 
 .card-wrap {
   position: relative;
+  width: 100%;
+}
+
+#card-hero {
+  z-index: 1;
+}
+
+#card-about {
+  z-index: 2;
+  background-color: var(--bg-warm);
+}
+
+#card-services {
+  z-index: 3;
+  background-color: var(--bg-primary);
+}
+
+#card-work {
+  z-index: 4;
+  background-color: var(--bg-primary);
+}
+
+#card-contact {
+  z-index: 5;
+  background-color: var(--bg-dark);
 }
 
 /* ------------------------------------------------------------

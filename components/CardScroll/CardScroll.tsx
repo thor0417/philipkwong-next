@@ -11,7 +11,6 @@ export function CardScroll() {
 
     const triggers: ScrollTrigger[] = [];
 
-    // Hero pins while About slides up over it
     const heroPin = ScrollTrigger.create({
       trigger: '#card-hero',
       start: 'top top',
@@ -19,10 +18,10 @@ export function CardScroll() {
       end: 'top top',
       pin: true,
       pinSpacing: false,
+      scrub: true,
     });
     triggers.push(heroPin);
 
-    // Scale and fade hero as About rises
     const heroFade = gsap.to('#card-hero', {
       scale: 0.95,
       opacity: 0.7,
@@ -34,9 +33,8 @@ export function CardScroll() {
         scrub: true,
       },
     });
-    triggers.push(heroFade.scrollTrigger!);
+    if (heroFade.scrollTrigger) triggers.push(heroFade.scrollTrigger);
 
-    // Work pins while Contact slides up over it
     const workPin = ScrollTrigger.create({
       trigger: '#card-work',
       start: 'top top',
@@ -44,10 +42,10 @@ export function CardScroll() {
       end: 'top top',
       pin: true,
       pinSpacing: false,
+      scrub: true,
     });
     triggers.push(workPin);
 
-    // Scale and fade work as Contact rises
     const workFade = gsap.to('#card-work', {
       scale: 0.95,
       opacity: 0.7,
@@ -59,10 +57,10 @@ export function CardScroll() {
         scrub: true,
       },
     });
-    triggers.push(workFade.scrollTrigger!);
+    if (workFade.scrollTrigger) triggers.push(workFade.scrollTrigger);
 
     return () => {
-      triggers.forEach(t => t?.kill());
+      triggers.forEach((t) => t?.kill());
     };
   }, []);
 
