@@ -9,7 +9,7 @@ import styles from './About.module.css';
 export function About() {
   const eightRef = useRef<HTMLSpanElement>(null);
   const isInView  = useInView(eightRef, { once: true });
-  const [count, setCount]  = useState(0);
+  const [count, setCount]  = useState(8);
 
   useEffect(() => {
     if (!isInView) return;
@@ -45,7 +45,7 @@ export function About() {
             I work with founders, operators, and leadership teams on the problems that require both strategic clarity and operational follow-through.{' '}
             <span className={styles.displayWord}>Active.</span>{' '}
             <span className={styles.displayWord}>
-              <span ref={eightRef}>{count} years.</span>
+              <span ref={eightRef} suppressHydrationWarning>{count} years.</span>
             </span>{' '}
             The work spans market entry, regulatory compliance, corporate strategy, and the systems that make execution stick.{' '}
             <span className={styles.displayWord}>Vancouver and Bangkok.</span>{' '}
