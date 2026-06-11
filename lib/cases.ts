@@ -103,20 +103,20 @@ export const CASES: Record<string, Case> = {
 
 export const WORK_ENTRIES = {
   strategy: [
-    { id: 'ul-canada-tg', client: 'UL Canada TG 4400-2',   scope: 'TECHNICAL GUIDE',  tag: 'CHAIR'         },
-    { id: 'iso-iwa',      client: 'ISO IWA 37-1',           scope: 'INTL STANDARD',    tag: 'VICE CONVENER' },
-    { id: 'ul-ulc',       client: 'UL/ULC/ANSI/CAN/1389',  scope: 'SAFETY STANDARDS', tag: 'STP MEMBER'    },
+    { id: 'ul-canada-tg', client: 'UL Canada TG 4400-2',  scope: 'TECHNICAL GUIDE',    tag: 'CHAIR'             },
+    { id: 'iso-iwa',      client: 'ISO IWA 37-1',          scope: 'WORKSHOP AGREEMENT', tag: 'VICE CONVENER'     },
+    { id: 'ul-ulc',       client: 'UL/ULC/ANSI/CAN/1389', scope: 'SAFETY STANDARD',    tag: 'STP MEMBER'        },
   ],
   engagements: [
-    { id: 'bc-pharmacy',   client: 'BC Pharmacy Regulation',     scope: 'REGULATORY',    tag: 'COMPLIANCE'   },
-    { id: 'ul-canada',     client: 'UL Canada',                  scope: 'ADVISORY',      tag: 'STRATEGY'     },
-    { id: 'grant-leisure', client: 'Grant Leisure International', scope: 'DEPLOYMENT',    tag: 'OPERATIONS'   },
-    { id: 'aurora',        client: 'Aurora Cannabis',             scope: 'QMS',           tag: 'COMPLIANCE'   },
-    { id: 'organigram',    client: 'Organigram',                  scope: 'QMS',           tag: 'COMPLIANCE'   },
-    { id: 'valens',        client: 'The Valens Company',          scope: 'FACILITY',      tag: 'OPERATIONS'   },
-    { id: 'adastra',       client: 'Adastra Labs',                scope: 'LICENSING',     tag: 'COMPLIANCE'   },
-    { id: 'ets',           client: 'ExtractionTek Stainless',     scope: 'NORTH AMERICA', tag: 'MARKET ENTRY' },
-    { id: 'veritas',       client: 'Veritas Pharma',              scope: 'CORPORATE',     tag: 'STRATEGY'     },
-    { id: 'embark',        client: 'Embark Health',               scope: 'LICENSING',     tag: 'COMPLIANCE'   },
+    { id: 'bc-pharmacy',   client: 'BC Pharmacy Regulation',     scope: 'QMS ARCHITECTURE',      tag: 'COMPLIANCE'        },
+    { id: 'ul-canada',     client: 'UL Canada',                  scope: 'COMMERCIALIZATION',     tag: 'STRATEGY'          },
+    { id: 'grant-leisure', client: 'Grant Leisure International', scope: 'TRANSFORMATION',        tag: 'DIRECTOR'          },
+    { id: 'aurora',        client: 'Aurora Cannabis',             scope: 'SOP ARCHITECTURE',      tag: 'COMPLIANCE'        },
+    { id: 'organigram',    client: 'Organigram',                  scope: 'FACILITY INFRASTRUCTURE', tag: 'COMPLIANCE'      },
+    { id: 'valens',        client: 'The Valens Company',          scope: 'OPERATIONAL WORKFLOW',  tag: 'OPERATIONS'        },
+    { id: 'adastra',       client: 'Adastra Labs',                scope: 'REGULATORY PATHWAY',    tag: 'COMPLIANCE'        },
+    { id: 'ets',           client: 'ExtractionTek Stainless',     scope: 'MARKET ENTRY',          tag: 'REGULATORY AFFAIRS' },
+    { id: 'veritas',       client: 'Veritas Pharma',              scope: 'RESEARCH PROGRAM',      tag: 'STRATEGY'          },
+    { id: 'embark',        client: 'Embark Health',               scope: 'FACILITY APPROVALS',    tag: 'COMPLIANCE'        },
   ],
 };

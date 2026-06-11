@@ -104,6 +104,29 @@
   .indexRow:hover .indexRole {
     color: #F9F9F9;
   }
+
+  /* ── Full variant overrides (used on /work page) ── */
+  .indexRowFull {
+    padding-block: 2rem;
+    grid-template-columns: 6% 50% 30% 14%;
+  }
+
+  .indexClientFull {
+    font-size: clamp(2.25rem, 3.5vw, 4rem);
+  }
+
+  .indexNoFull {
+    color: rgba(10, 10, 10, 0.45);
+  }
+
+  .indexScopeFull {
+    color: rgba(10, 10, 10, 0.55);
+  }
+
+  /* scopeRole span — desktop: always hidden (mobile-only combined line) */
+  .indexScopeRole {
+    display: none;
+  }
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -169,6 +192,25 @@
   }
 
   .indexScope {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(10, 10, 10, 0.6);
+  }
+
+  /* Full variant mobile: larger client, combined scope·role line */
+  .indexRowFull .indexClient {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .indexRowFull .indexScope {
+    display: none;
+  }
+
+  .indexRowFull .indexScopeRole {
+    display: block;
     font-family: var(--font-body);
     font-weight: 400;
     font-size: 12px;

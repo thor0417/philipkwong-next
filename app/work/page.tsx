@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import styles from './page.module.css';
+import { WorkPageContent } from '@/components/Work/WorkPageContent';
 
 export const metadata: Metadata = {
   title: 'Selected Work',
@@ -19,12 +19,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <main>
-      <section className={styles.page}>
-        <div className="grid-stage">
-          <p className="section-label" style={{ gridColumn: '1 / -1' }}>Selected Work</p>
-          <h1 className={styles.heading} style={{ gridColumn: '1 / -1' }}>The Record.</h1>
-        </div>
-      </section>
+      <WorkPageContent />
     </main>
   );
 }
