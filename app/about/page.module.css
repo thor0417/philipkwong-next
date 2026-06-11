@@ -1,0 +1,24 @@
+.page {
+  padding-block: var(--space-32);
+  padding-inline: var(--grid-margin);
+  min-height: 100svh;
+  border-top: var(--border-hairline);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-display-xl);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding-block: var(--space-16) var(--space-12);
+    padding-inline: 5vw;
+  }
+}

@@ -8,9 +8,12 @@ import styles from './Nav.module.css';
 
 export function Nav() {
   const pathname = usePathname();
-  const isWritingPage = pathname?.startsWith('/writing') ?? false;
+  const isHome    = pathname === '/';
+  const isSubpage = !isHome;
+
   const [isDark, setIsDark] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+
   /* Dark state — go dark when #card-work has scrolled past the nav (contact underlay exposed).
      Uses Lenis scroll event; falls back to native scroll on the first render cycle
      before Lenis has initialised. Re-runs on pathname changes. */
@@ -28,7 +31,6 @@ export function Nav() {
       return () => lenis.off('scroll', check);
     }
 
-    // Lenis not yet initialised on this render cycle — use native scroll
     window.addEventListener('scroll', check, { passive: true });
     check();
     return () => window.removeEventListener('scroll', check);
@@ -51,30 +53,37 @@ export function Nav() {
 
   const navClass = [
     styles.nav,
-    isDark ? styles.isDark : '',
-    isWritingPage ? styles.isWritingPage : '',
+    isDark    ? styles.isDark    : '',
+    isSubpage ? styles.isSubpage : '',
   ].filter(Boolean).join(' ');
+
+  const isAboutActive   = pathname === '/about';
+  const isWorkActive    = pathname?.startsWith('/work') ?? false;
+  const isWritingActive = pathname?.startsWith('/writing') ?? false;
 
   return (
     <>
       <nav className={navClass} aria-label="Primary navigation">
-        <Link href={isWritingPage ? '/' : '#hero'} className={styles.wordmark}>
+        <Link href={isHome ? '#hero' : '/'} className={styles.wordmark}>
           Philip Kwong
         </Link>
 
         <ul className={styles.links} role="list">
           <li>
-            <Link href={isWritingPage ? '/#about' : '#about'} className={styles.link}>
+            <Link
+              href="/about"
+              className={styles.link}
+              {...(isAboutActive ? { 'aria-current': 'page' as const } : {})}
+            >
               About
             </Link>
           </li>
           <li>
-            <Link href={isWritingPage ? '/#services' : '#services'} className={styles.link}>
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link href={isWritingPage ? '/#work' : '#work'} className={styles.link}>
+            <Link
+              href="/work"
+              className={styles.link}
+              {...(isWorkActive ? { 'aria-current': 'page' as const } : {})}
+            >
               Work
             </Link>
           </li>
@@ -82,13 +91,13 @@ export function Nav() {
             <Link
               href="/writing"
               className={styles.link}
-              {...(isWritingPage ? { 'aria-current': 'page' as const } : {})}
+              {...(isWritingActive ? { 'aria-current': 'page' as const } : {})}
             >
               Writing
             </Link>
           </li>
           <li>
-            <Link href={isWritingPage ? '/#contact' : '#contact'} className={styles.link}>
+            <Link href={isHome ? '#contact' : '/#contact'} className={styles.link}>
               Contact
             </Link>
           </li>
@@ -115,11 +124,10 @@ export function Nav() {
       >
         <nav aria-label="Mobile navigation">
           {[
-            { href: isWritingPage ? '/#about' : '#about', label: 'About' },
-            { href: isWritingPage ? '/#services' : '#services', label: 'Services' },
-            { href: isWritingPage ? '/#work' : '#work', label: 'Work' },
-            { href: '/writing', label: 'Writing' },
-            { href: isWritingPage ? '/#contact' : '#contact', label: 'Contact' },
+            { href: '/about',                    label: 'About'   },
+            { href: '/work',                     label: 'Work'    },
+            { href: '/writing',                  label: 'Writing' },
+            { href: isHome ? '#contact' : '/#contact', label: 'Contact' },
           ].map(({ href, label }) => (
             <Link
               key={label}

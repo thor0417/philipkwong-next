@@ -88,12 +88,12 @@
   border-bottom-color: #FFFFFF;
 }
 
-/* Writing page — mute non-active links */
-.isWritingPage .link {
+/* Subpage — mute non-active links */
+.isSubpage .link {
   color: rgba(10, 10, 10, 0.6);
 }
 
-.isWritingPage .link[aria-current='page'] {
+.isSubpage .link[aria-current='page'] {
   color: var(--text-main);
   border-bottom-color: var(--text-main);
 }
