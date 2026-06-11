@@ -120,7 +120,11 @@
   }
 
   .indexScopeFull {
-    color: rgba(10, 10, 10, 0.55);
+    color: #0A0A0A;
+  }
+
+  .indexRowFull:hover .indexScopeFull {
+    color: #F9F9F9;
   }
 
   /* scopeRole span — desktop: always hidden (mobile-only combined line) */
@@ -149,7 +153,7 @@
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(10, 10, 10, 0.4);
+    color: rgba(10, 10, 10, 0.7);
   }
 
   .indexHeader span:last-child {
