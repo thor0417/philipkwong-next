@@ -6,9 +6,9 @@ import { WorkIndex, type WorkFilter } from './WorkIndex';
 import styles from './WorkPageContent.module.css';
 
 const FILTERS: { key: WorkFilter; label: string }[] = [
-  { key: 'all',          label: '[ALL]'          },
-  { key: 'standards',    label: '[STANDARDS]'    },
-  { key: 'engagements',  label: '[ENGAGEMENTS]'  },
+  { key: 'all',         label: 'ALL'         },
+  { key: 'standards',   label: 'STANDARDS'   },
+  { key: 'engagements', label: 'ENGAGEMENTS' },
 ];
 
 export function WorkPageContent() {

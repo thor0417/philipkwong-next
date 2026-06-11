@@ -95,9 +95,16 @@ export function WorkIndex({ onCaseOpen, variant, filter = 'all' }: WorkIndexProp
     }
   };
 
-  let n = 0;
-  const strategyRows   = WORK_ENTRIES.strategy.map(e    => ({ ...e, num: ++n }));
-  const engagementRows = WORK_ENTRIES.engagements.map(e => ({ ...e, num: ++n }));
+  const strategyRows = WORK_ENTRIES.strategy.map((e, i) => ({
+    ...e,
+    num: filter === 'engagements' ? 0 : i + 1,
+  }));
+  const engagementRows = WORK_ENTRIES.engagements.map((e, i) => ({
+    ...e,
+    num: filter === 'standards' ? 0
+       : filter === 'all' ? WORK_ENTRIES.strategy.length + i + 1
+       : i + 1,
+  }));
 
   const rowClass    = variant === 'full'
     ? `${styles.indexRow} ${styles.indexRowFull}`
@@ -136,15 +143,26 @@ export function WorkIndex({ onCaseOpen, variant, filter = 'all' }: WorkIndexProp
     </li>
   );
 
+  const ulClass = [styles.index, variant === 'full' ? styles.indexFull : ''].filter(Boolean).join(' ');
+
   return (
     <ul
       ref={indexRef}
-      className={styles.index}
+      className={ulClass}
       role="list"
       style={{ gridColumn: '1 / -1' }}
     >
+      {variant === 'full' && (
+        <li className={styles.indexHeader} aria-hidden="true">
+          <span />
+          <span>Client</span>
+          <span>Scope</span>
+          <span>Role</span>
+        </li>
+      )}
+
       <li className={styles.indexDivider} data-divider="standards" aria-hidden="true">
-        <span className={styles.indexDividerLabel}>Strategy &amp; Standards</span>
+        <span className={styles.indexDividerLabel}>Standards</span>
       </li>
 
       {strategyRows.map(row => renderRow(row, 'standards'))}

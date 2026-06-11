@@ -127,6 +127,34 @@
   .indexScopeRole {
     display: none;
   }
+
+  /* Full variant — divider label upgrade */
+  .indexFull .indexDividerLabel {
+    font-size: 14px;
+    color: rgba(10, 10, 10, 0.6);
+  }
+
+  /* Header row — full variant, desktop only */
+  .indexHeader {
+    display: grid;
+    grid-template-columns: 6% 50% 30% 14%;
+    align-items: center;
+    border-bottom: 0.5px solid var(--border-light);
+    padding-block: 0.75rem;
+  }
+
+  .indexHeader span {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(10, 10, 10, 0.4);
+  }
+
+  .indexHeader span:last-child {
+    text-align: right;
+  }
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -198,6 +226,11 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: rgba(10, 10, 10, 0.6);
+  }
+
+  /* Header row — hidden on mobile */
+  .indexHeader {
+    display: none;
   }
 
   /* Full variant mobile: larger client, combined scope·role line */
