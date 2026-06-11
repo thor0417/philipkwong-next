@@ -103,20 +103,20 @@ export const CASES: Record<string, Case> = {
 
 export const WORK_ENTRIES = {
   strategy: [
-    { id: 'ul-canada-tg', client: 'UL Canada TG 4400-2',   tag: 'CHAIR'       },
-    { id: 'iso-iwa',      client: 'ISO IWA 37-1',           tag: 'VICE CONVENER' },
-    { id: 'ul-ulc',       client: 'UL/ULC/ANSI/CAN/1389',  tag: 'STP MEMBER'  },
+    { id: 'ul-canada-tg', client: 'UL Canada TG 4400-2',   scope: 'TECHNICAL GUIDE',  tag: 'CHAIR'         },
+    { id: 'iso-iwa',      client: 'ISO IWA 37-1',           scope: 'INTL STANDARD',    tag: 'VICE CONVENER' },
+    { id: 'ul-ulc',       client: 'UL/ULC/ANSI/CAN/1389',  scope: 'SAFETY STANDARDS', tag: 'STP MEMBER'    },
   ],
   engagements: [
-    { id: 'bc-pharmacy',   client: 'BC Pharmacy Regulation',     tag: 'COMPLIANCE'  },
-    { id: 'ul-canada',     client: 'UL Canada',                  tag: 'STRATEGY'    },
-    { id: 'grant-leisure', client: 'Grant Leisure International', tag: 'OPERATIONS'  },
-    { id: 'aurora',        client: 'Aurora Cannabis',             tag: 'COMPLIANCE'  },
-    { id: 'organigram',    client: 'Organigram',                  tag: 'COMPLIANCE'  },
-    { id: 'valens',        client: 'The Valens Company',          tag: 'OPERATIONS'  },
-    { id: 'adastra',       client: 'Adastra Labs',                tag: 'COMPLIANCE'  },
-    { id: 'ets',           client: 'ExtractionTek Stainless',     tag: 'MARKET ENTRY' },
-    { id: 'veritas',       client: 'Veritas Pharma',              tag: 'STRATEGY'    },
-    { id: 'embark',        client: 'Embark Health',               tag: 'COMPLIANCE'  },
+    { id: 'bc-pharmacy',   client: 'BC Pharmacy Regulation',     scope: 'REGULATORY',    tag: 'COMPLIANCE'   },
+    { id: 'ul-canada',     client: 'UL Canada',                  scope: 'ADVISORY',      tag: 'STRATEGY'     },
+    { id: 'grant-leisure', client: 'Grant Leisure International', scope: 'DEPLOYMENT',    tag: 'OPERATIONS'   },
+    { id: 'aurora',        client: 'Aurora Cannabis',             scope: 'QMS',           tag: 'COMPLIANCE'   },
+    { id: 'organigram',    client: 'Organigram',                  scope: 'QMS',           tag: 'COMPLIANCE'   },
+    { id: 'valens',        client: 'The Valens Company',          scope: 'FACILITY',      tag: 'OPERATIONS'   },
+    { id: 'adastra',       client: 'Adastra Labs',                scope: 'LICENSING',     tag: 'COMPLIANCE'   },
+    { id: 'ets',           client: 'ExtractionTek Stainless',     scope: 'NORTH AMERICA', tag: 'MARKET ENTRY' },
+    { id: 'veritas',       client: 'Veritas Pharma',              scope: 'CORPORATE',     tag: 'STRATEGY'     },
+    { id: 'embark',        client: 'Embark Health',               scope: 'LICENSING',     tag: 'COMPLIANCE'   },
   ],
 };

@@ -4,6 +4,189 @@
   border-top: var(--border-hairline);
 }
 
+/* ── Registry index container ── */
+.index {
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   DESKTOP — registry table layout
+   ───────────────────────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .index {
+    border-top: 0.5px solid var(--border-light);
+  }
+
+  .indexRow,
+  .indexDivider {
+    display: grid;
+    grid-template-columns: 6% 54% 28% 12%;
+    align-items: center;
+    border-bottom: 0.5px solid var(--border-light);
+  }
+
+  .indexDivider {
+    padding-block: 2.5rem 0.9rem;
+  }
+
+  .indexDividerLabel {
+    grid-column: 2 / -1;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(10, 10, 10, 0.4);
+  }
+
+  .indexRow {
+    padding-block: 1.1rem;
+    padding-inline: 1rem;
+    margin-inline: -1rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+  }
+
+  .indexRow:hover {
+    background-color: #0A0A0A;
+  }
+
+  .indexNo {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: rgba(10, 10, 10, 0.35);
+    transition: color 0.25s ease;
+  }
+
+  .indexClient {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+    line-height: 1;
+    color: #0A0A0A;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: color 0.25s ease;
+  }
+
+  .indexScope {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(10, 10, 10, 0.4);
+    transition: color 0.25s ease;
+  }
+
+  .indexRole {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #0A0A0A;
+    text-align: right;
+    transition: color 0.25s ease;
+  }
+
+  .indexRow:hover .indexNo,
+  .indexRow:hover .indexScope {
+    color: rgba(249, 249, 249, 0.5);
+  }
+
+  .indexRow:hover .indexClient,
+  .indexRow:hover .indexRole {
+    color: #F9F9F9;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MOBILE — stacked fallback (client + scope only)
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .work {
+    padding-block: var(--section-block);
+    padding-inline: 5vw;
+  }
+
+  .index {
+    display: block;
+    border-top: var(--border-hairline);
+  }
+
+  .indexDivider {
+    display: block;
+    padding-block: 0.75rem 0.5rem;
+    border-bottom: var(--border-hairline);
+  }
+
+  .indexDividerLabel {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(10, 10, 10, 0.4);
+  }
+
+  /* globals.css applies display:flex + align-items:center to [role="button"] on mobile.
+     The !important flags here override that for the stacked list layout. */
+  .indexRow {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.25rem;
+    padding-block: 1.25rem;
+    padding-inline: 0;
+    margin-inline: 0;
+    min-height: unset;
+    border-bottom: var(--border-hairline);
+    cursor: pointer;
+  }
+
+  .indexNo,
+  .indexRole {
+    display: none;
+  }
+
+  .indexClient {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.75rem, 8.5vw, 3rem);
+    line-height: 0.95;
+    color: var(--text-main);
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .indexScope {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(10, 10, 10, 0.6);
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .indexClient {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Legacy — superseded by index table above, kept for reference
+   ───────────────────────────────────────────────────────────── */
 .categoryLabel {
   font-family: var(--font-body);
   font-weight: 700;
@@ -32,10 +215,6 @@
   transition: border-color 300ms;
 }
 
-.entry:hover {
-  border-bottom-color: rgba(10, 10, 10, 0.3);
-}
-
 .client {
   font-family: var(--font-display);
   font-weight: 700;
@@ -58,61 +237,8 @@
   color: rgba(10, 10, 10, 0.65);
   flex-shrink: 0;
   white-space: nowrap;
-  transition: color 200ms;
 }
 
 .subsection {
   margin-bottom: var(--space-12);
-}
-
-/* ── Mobile ── */
-@media (max-width: 767px) {
-  .work {
-    padding-block: var(--section-block);
-    padding-inline: 5vw;
-  }
-
-  .subsection { margin-bottom: var(--space-8); }
-
-  .categoryLabel {
-    font-size: 13px;
-    letter-spacing: 0.2em;
-    padding-block: 0.75rem;
-    margin-bottom: var(--space-2);
-  }
-
-  .entry {
-    grid-template-columns: 1fr;
-    gap: var(--space-1);
-    padding-block: 1.25rem;
-    border-left: 2px solid transparent;
-    transition: border-left-color 150ms ease;
-  }
-
-  .entry:active {
-    border-left-color: var(--accent);
-  }
-
-  .entry:hover {
-    border-bottom: var(--border-hairline);
-  }
-
-  .client {
-    font-size: clamp(1.75rem, 8.5vw, 3rem);
-    white-space: normal;
-    overflow: visible;
-    text-overflow: unset;
-  }
-
-  .tag {
-    font-size: 12px;
-    text-align: left;
-    color: rgba(10, 10, 10, 0.6);
-  }
-}
-
-@media (min-width: 480px) and (max-width: 767px) {
-  .client {
-    font-size: clamp(2rem, 7vw, 3rem);
-  }
 }
