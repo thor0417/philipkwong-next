@@ -97,9 +97,16 @@ export function Nav() {
             </Link>
           </li>
           <li>
-            <Link href={isHome ? '#contact' : '/#contact'} className={styles.link}>
+            <a
+              href="#"
+              className={styles.link}
+              onClick={(e) => {
+                e.preventDefault();
+                getLenis()?.scrollTo(document.body.scrollHeight);
+              }}
+            >
               Contact
-            </Link>
+            </a>
           </li>
         </ul>
 
@@ -124,10 +131,9 @@ export function Nav() {
       >
         <nav aria-label="Mobile navigation">
           {[
-            { href: '/about',                    label: 'About'   },
-            { href: '/work',                     label: 'Work'    },
-            { href: '/writing',                  label: 'Writing' },
-            { href: isHome ? '#contact' : '/#contact', label: 'Contact' },
+            { href: '/about',    label: 'About'   },
+            { href: '/work',     label: 'Work'    },
+            { href: '/writing',  label: 'Writing' },
           ].map(({ href, label }) => (
             <Link
               key={label}
@@ -138,6 +144,17 @@ export function Nav() {
               {label}
             </Link>
           ))}
+          <a
+            href="#"
+            className={styles.overlayLink}
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOverlayOpen(false);
+              getLenis()?.scrollTo(document.body.scrollHeight);
+            }}
+          >
+            Contact
+          </a>
         </nav>
 
         <div className={styles.overlayMeta}>
