@@ -163,7 +163,7 @@
   .trigger { display: none; }
   .overlay { display: none; }
 
-  #hero, #services, #work, #about, #contact {
+  #hero, #draw-in, #work, #contact {
     scroll-margin-top: 4rem;
   }
 }
