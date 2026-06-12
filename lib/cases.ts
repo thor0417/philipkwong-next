@@ -7,6 +7,14 @@ export interface Case {
   image?: string;
 }
 
+export interface WorkEntry {
+  id: string;
+  client: string;
+  scope: string;
+  tag: string;
+  teaserLabel?: string;
+}
+
 export const CASES: Record<string, Case> = {
   'bc-pharmacy': {
     client: 'BC Pharmacy Regulation',
@@ -101,22 +109,22 @@ export const CASES: Record<string, Case> = {
   },
 };
 
-export const WORK_ENTRIES = {
+export const WORK_ENTRIES: { strategy: WorkEntry[]; engagements: WorkEntry[] } = {
   strategy: [
-    { id: 'iso-iwa',      client: 'ISO IWA 37-1',          scope: 'WORKSHOP AGREEMENT', tag: 'VICE CONVENER'      },
-    { id: 'ul-canada-tg', client: 'UL Canada TG 4400-2',   scope: 'TECHNICAL GUIDE',    tag: 'CHAIR'              },
-    { id: 'ul-ulc',       client: 'UL/ULC/ANSI/CAN/1389',  scope: 'SAFETY STANDARD',    tag: 'STP MEMBER'         },
+    { id: 'iso-iwa',      client: 'ISO IWA 37-1',          scope: 'WORKSHOP AGREEMENT', tag: 'VICE CONVENER', teaserLabel: 'VICE CONVENER' },
+    { id: 'ul-canada-tg', client: 'UL Canada TG 4400-2',   scope: 'TECHNICAL GUIDE',    tag: 'CHAIR',         teaserLabel: 'CHAIR'         },
+    { id: 'ul-ulc',       client: 'UL/ULC/ANSI/CAN/1389',  scope: 'SAFETY STANDARD',    tag: 'STP MEMBER'                                  },
   ],
   engagements: [
-    { id: 'ul-canada',     client: 'UL Canada',                  scope: 'COMMERCIALIZATION',       tag: 'STRATEGY'           },
-    { id: 'bc-pharmacy',   client: 'BC Pharmacy Regulation',      scope: 'QMS ARCHITECTURE',        tag: 'COMPLIANCE'         },
-    { id: 'grant-leisure', client: 'Grant Leisure International',  scope: 'TRANSFORMATION',          tag: 'DIRECTOR'           },
-    { id: 'aurora',        client: 'Aurora Cannabis',              scope: 'PRODUCTION SYSTEMS',      tag: 'COMPLIANCE'         },
-    { id: 'ets',           client: 'ExtractionTek Stainless',      scope: 'MARKET ENTRY',            tag: 'REGULATORY AFFAIRS' },
-    { id: 'valens',        client: 'The Valens Company',           scope: 'OPERATIONAL WORKFLOW',    tag: 'OPERATIONS'         },
-    { id: 'organigram',    client: 'Organigram',                   scope: 'FACILITY INFRASTRUCTURE', tag: 'COMPLIANCE'         },
-    { id: 'veritas',       client: 'Veritas Pharma',               scope: 'RESEARCH PROGRAM',        tag: 'STRATEGY'           },
-    { id: 'embark',        client: 'Embark Health',                scope: 'FACILITY APPROVALS',      tag: 'COMPLIANCE'         },
-    { id: 'adastra',       client: 'Adastra Labs',                 scope: 'REGULATORY PATHWAY',      tag: 'COMPLIANCE'         },
+    { id: 'ul-canada',     client: 'UL Canada',                  scope: 'COMMERCIALIZATION',       tag: 'STRATEGY'                                          },
+    { id: 'bc-pharmacy',   client: 'BC Pharmacy Regulation',      scope: 'QMS ARCHITECTURE',        tag: 'COMPLIANCE'                                        },
+    { id: 'grant-leisure', client: 'Grant Leisure International',  scope: 'TRANSFORMATION',          tag: 'DIGITAL PRESENCE', teaserLabel: 'TRANSFORMATION'   },
+    { id: 'aurora',        client: 'Aurora Cannabis',              scope: 'PRODUCTION SYSTEMS',      tag: 'COMPLIANCE',       teaserLabel: 'PRODUCTION SYSTEMS'},
+    { id: 'ets',           client: 'ExtractionTek Stainless',      scope: 'MARKET ENTRY',            tag: 'REGULATORY AFFAIRS'                                },
+    { id: 'valens',        client: 'The Valens Company',           scope: 'OPERATIONAL WORKFLOW',    tag: 'OPERATIONS'                                        },
+    { id: 'organigram',    client: 'Organigram',                   scope: 'FACILITY INFRASTRUCTURE', tag: 'COMPLIANCE'                                        },
+    { id: 'veritas',       client: 'Veritas Pharma',               scope: 'RESEARCH PROGRAM',        tag: 'STRATEGY'                                          },
+    { id: 'embark',        client: 'Embark Health',                scope: 'FACILITY APPROVALS',      tag: 'COMPLIANCE'                                        },
+    { id: 'adastra',       client: 'Adastra Labs',                 scope: 'REGULATORY PATHWAY',      tag: 'COMPLIANCE'                                        },
   ],
 };
