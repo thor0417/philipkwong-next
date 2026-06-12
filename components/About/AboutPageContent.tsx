@@ -7,50 +7,38 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { WORK_ENTRIES } from '@/lib/cases';
 import styles from './AboutPageContent.module.css';
 
-const STANDARDS_COUNT  = String(WORK_ENTRIES.strategy.length).padStart(2, '0');
+const STANDARDS_COUNT   = String(WORK_ENTRIES.strategy.length).padStart(2, '0');
 const ENGAGEMENTS_COUNT = String(WORK_ENTRIES.engagements.length).padStart(2, '0');
 
-const CAPABILITIES = [
+const SERVICES = [
   {
     num: '01',
-    title: 'QMS Architecture',
+    title: 'Compliance',
     description:
-      'End-to-end quality management system design for regulated environments. Documentation hierarchy, SOP development, and audit-ready compliance frameworks.',
+      'Regulatory architecture, compliance frameworks, licensing pathways, quality management systems, and organizational governance.',
   },
   {
     num: '02',
-    title: 'Regulatory Strategy',
+    title: 'Strategy',
     description:
-      'Compliance pathway development and market entry strategy across cannabis, health professions, and emerging regulatory frameworks in Canada and Southeast Asia.',
+      'Commercialization, market entry, stakeholder engagement, positioning, and long-term growth planning for regulated businesses.',
   },
   {
     num: '03',
-    title: 'Technical Standards',
+    title: 'Operations',
     description:
-      'Leadership and participation across national and international standards bodies — ISO IWA, ULC, ANSI/CAN, and NFPA reference systems.',
+      'Project management, workflow architecture, documentation systems, training programs, and the business operations that scale infrastructure.',
   },
   {
     num: '04',
-    title: 'Operational Systems',
+    title: 'Growth',
     description:
-      'Facility planning, production workflow architecture, and operational program development for licensed manufacturers operating at scale.',
-  },
-  {
-    num: '05',
-    title: 'Corporate Transformation',
-    description:
-      'Organizational restructure, go-to-market strategy, and commercialization planning for regulated businesses at inflection points.',
-  },
-  {
-    num: '06',
-    title: 'Stakeholder Engagement',
-    description:
-      'Government relations, regulatory liaison, executive engagement, and cross-jurisdictional stakeholder coordination.',
+      'Organizational transformation, go-to-market development, and the systems that turn ambitious ideas into enduring organizations.',
   },
 ] as const;
 
 export function AboutPageContent() {
-  const capsRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -59,7 +47,7 @@ export function AboutPageContent() {
 
     const triggers: ReturnType<typeof ScrollTrigger.create>[] = [];
 
-    /* Reveal system — mirrors Hero's global querySelectorAll */
+    /* Reveal system */
     const reveals = document.querySelectorAll<HTMLElement>('.reveal');
     reveals.forEach(el => {
       const t = ScrollTrigger.create({
@@ -71,10 +59,10 @@ export function AboutPageContent() {
       triggers.push(t);
     });
 
-    /* Capabilities grid — staggered fade entrance */
-    const grid = capsRef.current;
+    /* Services row — staggered fade entrance */
+    const grid = servicesRef.current;
     if (grid) {
-      const cells = grid.querySelectorAll<HTMLElement>('[data-cap]');
+      const cells = grid.querySelectorAll<HTMLElement>('[data-service]');
       gsap.fromTo(
         cells,
         { opacity: 0, y: 12 },
@@ -106,12 +94,8 @@ export function AboutPageContent() {
       {/* ── A1: Title ─────────────────────────────────────────── */}
       <section className={styles.titleSection}>
         <div className="grid-stage">
-          <p className={`section-label ${styles.sectionLabelMuted}`}>
-            ABOUT
-          </p>
-          <h1 className={styles.heading}>
-            The Operator.
-          </h1>
+          <p className="section-label" style={{ gridColumn: '1 / -1' }}>ABOUT</p>
+          <h1 className={styles.heading} style={{ gridColumn: '1 / -1' }}>The Operator.</h1>
         </div>
       </section>
 
@@ -124,8 +108,7 @@ export function AboutPageContent() {
               style={{ '--reveal-delay': '0s' } as React.CSSProperties}
             >
               <span className="reveal__inner">
-                Regulatory compliance is not a cost of doing business.
-                It is the architecture of every business that scales.
+                Many organizations get built. Few are built to last.
               </span>
             </span>
             <span
@@ -133,8 +116,7 @@ export function AboutPageContent() {
               style={{ '--reveal-delay': '0.12s' } as React.CSSProperties}
             >
               <span className="reveal__inner">
-                I have spent eight years at the exact table where those two worlds meet:
-                technical standards, licensed operations, and corporate strategy.
+                My work sits at the intersection of regulation, operations, standards, and growth, creating the systems that turn ambitious ideas into enduring organizations.
               </span>
             </span>
           </div>
@@ -180,38 +162,35 @@ export function AboutPageContent() {
           {/* Bio — right */}
           <div className={styles.bio}>
             <p>
-              Philip Kwong is a regulatory compliance and corporate strategy consultant
-              with eight years of practice across cannabis, health professions, and
-              emerging regulatory frameworks in Canada and Southeast Asia.
+              Over the last decade, I have worked across international standards development,
+              provincial regulatory frameworks, operational architecture, quality systems,
+              commercialization strategy, and market-entry programs. My work has supported
+              organizations operating in some of the most highly regulated environments
+              in North America.
             </p>
             <p>
-              His work sits at the intersection of technical standards, quality systems,
-              and organizational strategy — supporting licensed producers, standards
-              bodies, and regulated businesses at market-entry, scale-up, and
-              transformation stages.
+              From ISO working groups and national standards committees to licensed
+              manufacturers, healthcare organizations, and emerging industries, the common
+              challenge remains the same:
             </p>
-            <p>
-              He has served as Vice Convener of ISO IWA 37-1, Chair of ULC TG 4400-2,
-              and STP member for UL/ULC/ANSI/CAN/1389. He operates between Vancouver
-              and Bangkok.
+            <p className={styles.pullquote}>
+              translating complexity into execution.
             </p>
           </div>
 
         </div>
       </section>
 
-      {/* ── A5: Capabilities ──────────────────────────────────── */}
-      <section className={styles.capsSection}>
+      {/* ── A5: Services ──────────────────────────────────────── */}
+      <section className={styles.servicesSection}>
         <div className="grid-stage">
-          <p className={`section-label ${styles.sectionLabelMuted} ${styles.capsLabel}`}>
-            WHAT I DO
-          </p>
-          <div ref={capsRef} className={styles.capsGrid}>
-            {CAPABILITIES.map(cap => (
-              <div key={cap.num} className={styles.capCell} data-cap={cap.num}>
-                <span className={styles.capNum}>{cap.num}</span>
-                <h3 className={styles.capTitle}>{cap.title}</h3>
-                <p className={styles.capDesc}>{cap.description}</p>
+          <p className="section-label" style={{ gridColumn: '1 / -1' }}>WHAT I DO</p>
+          <div ref={servicesRef} className={styles.servicesRow} style={{ gridColumn: '1 / -1' }}>
+            {SERVICES.map(svc => (
+              <div key={svc.num} className={styles.serviceCell} data-service={svc.num}>
+                <span className={styles.serviceNum}>{svc.num}</span>
+                <h3 className={styles.serviceTitle}>{svc.title}</h3>
+                <p className={styles.serviceDesc}>{svc.description}</p>
               </div>
             ))}
           </div>
