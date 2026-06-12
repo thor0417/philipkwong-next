@@ -61,8 +61,8 @@
 
   .indexScope {
     font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: 500;
+    font-size: 15px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #0A0A0A;
@@ -72,7 +72,7 @@
   .indexRole {
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #0A0A0A;
