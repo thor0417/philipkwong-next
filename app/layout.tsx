@@ -53,31 +53,37 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Philip Kwong',
-              jobTitle: 'Strategy and Compliance Consultant',
-              url: 'https://philipkwong.com',
-              knowsAbout: [
-                'Regulatory Compliance',
-                'Corporate Strategy',
-                'Market Entry',
-                'Quality Management Systems',
-                'Technical Standards',
-                'Cannabis Regulation',
-                'ISO Standards Development',
-                'Pharmaceutical Regulation',
-                'Health Professions Regulation',
-                'Extraction Technology Compliance',
-                'QMS Architecture',
-                'Go-to-Market Strategy',
-              ],
-              workLocation: [
-                { '@type': 'Place', name: 'Vancouver, Canada' },
-                { '@type': 'Place', name: 'Bangkok, Thailand' },
-              ],
-            }),
+            __html: JSON.stringify([
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Person',
+                '@id': 'https://philipkwong.com/#person',
+                name: 'Philip Kwong',
+                jobTitle: 'Regulatory Compliance and Corporate Strategy Consultant',
+                url: 'https://philipkwong.com',
+                email: 'philip@philipkwong.com',
+                sameAs: [
+                  'LINKEDIN_URL_PLACEHOLDER',
+                ],
+                knowsAbout: [
+                  'Regulatory compliance',
+                  'Technical standards development',
+                  'Quality management systems',
+                  'Market entry strategy',
+                  'Commercialization',
+                ],
+                workLocation: [
+                  { '@type': 'Place', name: 'Vancouver', addressCountry: 'CA' },
+                  { '@type': 'Place', name: 'Bangkok', addressCountry: 'TH' },
+                ],
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'WebSite',
+                name: 'Philip Kwong',
+                url: 'https://philipkwong.com',
+              },
+            ]),
           }}
         />
       </head>

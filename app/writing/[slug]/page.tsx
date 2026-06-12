@@ -46,8 +46,31 @@ export default async function ArticlePage({ params }: Props) {
 
   const content = await getArticleContent(params.slug);
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    datePublished: article.date,
+    url: `https://philipkwong.com/writing/${article.slug}`,
+    author: { '@id': 'https://philipkwong.com/#person' },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home',    item: 'https://philipkwong.com' },
+      { '@type': 'ListItem', position: 2, name: 'Writing', item: 'https://philipkwong.com/writing' },
+      { '@type': 'ListItem', position: 3, name: article.title, item: `https://philipkwong.com/writing/${article.slug}` },
+    ],
+  };
+
   return (
-    <SubpageWithContact>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <SubpageWithContact>
       <main className={styles.main}>
         <div className={styles.article}>
           <aside className={styles.meta}>
@@ -67,5 +90,6 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </main>
     </SubpageWithContact>
+    </>
   );
 }

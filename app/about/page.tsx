@@ -25,10 +25,55 @@ export const metadata: Metadata = {
   },
 };
 
+const professionalServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Philip Kwong Consulting',
+  url: 'https://philipkwong.com',
+  provider: { '@id': 'https://philipkwong.com/#person' },
+  areaServed: ['Canada', 'International'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Consulting Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Compliance',
+        description:
+          'Regulatory architecture, compliance frameworks, licensing pathways, quality management systems, and organizational governance.',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Strategy',
+        description:
+          'Commercialization, market entry, stakeholder engagement, positioning, and long-term growth planning for regulated businesses.',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Operations',
+        description:
+          'Project management, workflow architecture, documentation systems, training programs, and the business operations that scale infrastructure.',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Growth',
+        description:
+          'Organizational transformation, go-to-market development, and the systems that turn ambitious ideas into enduring organizations.',
+      },
+    ],
+  },
+};
+
 export default function AboutPage() {
   return (
-    <SubpageWithContact>
-      <AboutPageContent />
-    </SubpageWithContact>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
+      />
+      <SubpageWithContact>
+        <AboutPageContent />
+      </SubpageWithContact>
+    </>
   );
 }
