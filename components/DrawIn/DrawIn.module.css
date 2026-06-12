@@ -3,7 +3,7 @@
   background-color: var(--bg-dark);
   border-top: 0.5px solid var(--border-dark);
   border-bottom: 0.5px solid var(--border-dark);
-  padding-block: clamp(5rem, 10vw, 10rem);
+  padding-block: clamp(6rem, 12vw, 12rem);
 }
 
 .statement {
@@ -19,8 +19,8 @@
 
 .stampWrap {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 /* ── Mobile — functional fallback ── */
