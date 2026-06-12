@@ -1,0 +1,243 @@
+/* ── Writing page — The Journal. ── */
+
+/* ─────────────────────────────────────────────────────────────
+   B1 — TITLE
+   ───────────────────────────────────────────────────────────── */
+.sectionLabelMuted {
+  color: rgba(10, 10, 10, 0.4);
+}
+
+.titleSection {
+  padding-block: clamp(5rem, 10vw, 10rem) clamp(2.5rem, 4vw, 4rem);
+  border-top: 0.5px solid var(--border-light);
+}
+
+.titleSection :global(.section-label) {
+  grid-column: 1 / -1;
+  margin-bottom: var(--space-6);
+}
+
+.heading {
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-display-xl);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   B2 — LEAD FEATURE
+   ───────────────────────────────────────────────────────────── */
+.leadLink {
+  display: block;
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  border-top: 0.5px solid var(--border-light);
+  border-bottom: 0.5px solid var(--border-light);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.leadLink:hover {
+  background-color: #0A0A0A;
+  border-color: #333333;
+}
+
+/* Meta row — full width, space-between */
+.leadMeta {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: clamp(1.25rem, 2vw, 2rem);
+}
+
+.leadCategory {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.5);
+  transition: color 0.25s ease;
+}
+
+.leadRead {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.5);
+  transition: color 0.25s ease;
+}
+
+.leadTitle {
+  grid-column: 1 / 9;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: var(--tracking-display);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: clamp(1rem, 1.5vw, 1.5rem);
+  transition: color 0.25s ease;
+}
+
+.leadDesc {
+  grid-column: 1 / 7;
+  font-family: var(--font-readable);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(10, 10, 10, 0.65);
+  transition: color 0.25s ease;
+}
+
+/* Hover — invert everything */
+.leadLink:hover .leadCategory,
+.leadLink:hover .leadRead,
+.leadLink:hover .leadTitle {
+  color: #F9F9F9;
+}
+
+.leadLink:hover .leadDesc {
+  color: rgba(249, 249, 249, 0.65);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   B3 — LEDGER
+   ───────────────────────────────────────────────────────────── */
+.ledger {
+  list-style: none;
+  border-bottom: 0.5px solid var(--border-light);
+}
+
+.ledgerRow {
+  display: block;
+  border-top: 0.5px solid var(--border-light);
+  transition: background-color 0.25s ease;
+  cursor: pointer;
+}
+
+.ledgerRow:hover {
+  background-color: #0A0A0A;
+}
+
+/* The grid-stage inside is used for column layout */
+.ledgerRow :global(.grid-stage) {
+  padding-block: clamp(1.75rem, 2.5vw, 2.5rem);
+  align-items: center;
+}
+
+/* Ghost numeral — column 1 */
+.ghostNum {
+  grid-column: 1 / 2;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 4.5vw, 4.5rem);
+  line-height: 1;
+  color: rgba(10, 10, 10, 0.12);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 0.25s ease;
+}
+
+/* Title — columns 2-9 */
+.ledgerTitle {
+  grid-column: 2 / 9;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.4vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: var(--tracking-display);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 0.25s ease;
+}
+
+/* Meta — columns 9-13 */
+.ledgerMeta {
+  grid-column: 9 / 13;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.ledgerCategory {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.45);
+  transition: color 0.25s ease;
+}
+
+.ledgerRead {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.45);
+  transition: color 0.25s ease;
+}
+
+/* Hover — invert */
+.ledgerRow:hover .ledgerTitle {
+  color: #F9F9F9;
+}
+
+.ledgerRow:hover .ghostNum {
+  color: rgba(249, 249, 249, 0.1);
+}
+
+.ledgerRow:hover .ledgerCategory,
+.ledgerRow:hover .ledgerRead {
+  color: rgba(249, 249, 249, 0.5);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MOBILE — functional fallback
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .titleSection {
+    padding-block: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .leadTitle {
+    grid-column: 1 / -1;
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .leadDesc {
+    grid-column: 1 / -1;
+    font-size: 15px;
+  }
+
+  .ghostNum {
+    display: none;
+  }
+
+  .ledgerTitle {
+    grid-column: 1 / 9;
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+  }
+
+  .ledgerMeta {
+    grid-column: 9 / 13;
+    gap: 0.2rem;
+  }
+
+  .ledgerCategory {
+    display: none;
+  }
+}

@@ -1,21 +1,21 @@
 import type { Metadata } from 'next';
-import { WritingIndex } from '@/components/Writing/WritingIndex';
+import { WritingPage } from '@/components/Writing/WritingPage';
 
 export const metadata: Metadata = {
-  title: 'Writing',
+  title: 'The Journal',
   description:
     'Articles by Philip Kwong on regulatory compliance, QMS architecture, corporate strategy, and market entry in regulated environments.',
   openGraph: {
-    title: 'Writing — Philip Kwong',
+    title: 'The Journal — Philip Kwong',
     description:
       'Articles on regulatory compliance, QMS architecture, corporate strategy, and market entry in regulated environments.',
+    url: 'https://philipkwong.com/writing',
+  },
+  alternates: {
+    canonical: 'https://philipkwong.com/writing',
   },
 };
 
-export default function WritingPage() {
-  return (
-    <main>
-      <WritingIndex />
-    </main>
-  );
+export default function WritingPageRoute() {
+  return <WritingPage />;
 }
