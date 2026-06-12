@@ -17,6 +17,7 @@
   pointer-events: all;
 }
 
+/* ── Top bar ── */
 .topBar {
   display: flex;
   align-items: center;
@@ -50,19 +51,15 @@
 
 .closeBtn:hover { color: #F9F9F9; }
 
+/* ── Content scroll area ── */
 .content {
-  display: block;
-  padding-block: 4rem;
-  padding-inline: 0;
+  padding-block: clamp(3rem, 6vw, 5rem);
   overflow-y: auto;
   height: 100%;
   min-height: 0;
 }
 
-.contentLeft {
-  width: 100%;
-}
-
+/* 1. Project name */
 .client {
   font-family: var(--font-display);
   font-weight: 800;
@@ -73,35 +70,75 @@
   word-break: keep-all;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 
-.rule {
-  width: 100%;
-  height: 0;
-  border-top: 0.5px solid #333333;
-  margin-block: 2rem;
+/* 2. Significance */
+.significance {
+  font-family: var(--font-readable);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #F9F9F9;
+  max-width: 68ch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: clamp(2rem, 3vw, 2.5rem);
 }
 
+/* 3. Chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.chip {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F9F9F9;
+  border: 0.5px solid #333333;
+  padding: 0.5rem 0.9rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* 4. Writeup */
 .writeup {
   font-family: var(--font-readable);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.7;
-  color: #F9F9F9;
+  color: rgba(249, 249, 249, 0.8);
+  max-width: 62ch;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
 }
 
-.overlayImage {
-  margin-top: 2rem;
-  overflow: hidden;
+/* 5. Artifact slot */
+.artifact {
+  border: 0.5px solid #333333;
+  padding: clamp(3rem, 8vw, 6rem) 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 62ch;
 }
 
-.overlayImage img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  filter: grayscale(20%);
+.artifactLabel {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(249, 249, 249, 0.25);
 }
 
+/* registry overrides for dark context */
 .overlay :global(.t-registry) {
   color: #F9F9F9;
   margin-bottom: 0;
@@ -135,9 +172,23 @@
     word-break: break-word;
   }
 
+  .significance {
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+  }
+
+  .chips {
+    flex-wrap: wrap;
+  }
+
   .writeup {
     font-size: 16px;
     line-height: 1.6;
+    max-width: none;
+  }
+
+  .artifact {
+    max-width: none;
+    padding-block: 3rem;
   }
 
   .closeBtn { font-size: 11px; }

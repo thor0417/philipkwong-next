@@ -118,6 +118,7 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
       aria-label="Case study"
       onClick={(e) => { if (e.target === overlayRef.current) closeOverlay(); }}
     >
+      {/* Top bar */}
       <div ref={topBarRef} className={styles.topBar}>
         <div className={styles.dragHandle} aria-hidden="true" />
         <span className={styles.subsection}>{data?.subsection ?? ''}</span>
@@ -126,18 +127,36 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
         </button>
       </div>
 
+      {/* Content — vertical order per spec */}
       <div ref={contentRef} className={styles.content} id="case-content">
-        <div className={styles.contentLeft}>
-          <h2 className={styles.client}>{data?.client ?? ''}</h2>
-          <div className={styles.rule} aria-hidden="true" />
-          <p className={styles.writeup}>{data?.writeup ?? ''}</p>
-          {data?.image && (
-            <div className={styles.overlayImage}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={data.image} alt={data.client} />
-            </div>
-          )}
+
+        {/* 1. Project name */}
+        <h2 className={styles.client}>{data?.client ?? ''}</h2>
+
+        {/* 2. Significance */}
+        {data?.significance && (
+          <p className={styles.significance}>{data.significance}</p>
+        )}
+
+        {/* 3. Chips */}
+        {data?.chips && data.chips.some(c => c) && (
+          <div className={styles.chips} aria-label="Project tags">
+            {data.chips.map((chip, i) => (
+              chip ? <span key={i} className={styles.chip}>{chip}</span> : null
+            ))}
+          </div>
+        )}
+
+        {/* 4. Writeup */}
+        {data?.writeup && (
+          <p className={styles.writeup}>{data.writeup}</p>
+        )}
+
+        {/* 5. Artifact slot */}
+        <div className={styles.artifact} aria-label="Artifact — pending">
+          <span className={styles.artifactLabel}>[ARTIFACT: PENDING]</span>
         </div>
+
       </div>
     </div>
   );
