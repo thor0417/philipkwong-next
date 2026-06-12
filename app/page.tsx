@@ -1,26 +1,28 @@
-'use client';
+import type { Metadata } from 'next';
+import { HomeClient } from '@/components/Home/HomeClient';
 
-import { useState } from 'react';
-import { Hero } from '@/components/Hero/Hero';
-import { DrawIn } from '@/components/DrawIn/DrawIn';
-import { Work } from '@/components/Work/Work';
-import { CaseOverlay } from '@/components/Work/CaseOverlay';
-import { Contact } from '@/components/Contact/Contact';
-import CardScroll from '@/components/CardScroll/CardScroll';
+export const metadata: Metadata = {
+  description:
+    'Regulatory compliance and corporate strategy consultant with eight years in technical standards development, quality management systems, and market entry across Canadian and international jurisdictions. Vancouver and Bangkok.',
+  alternates: {
+    canonical: 'https://philipkwong.com',
+  },
+  openGraph: {
+    title: 'Philip Kwong — Regulatory Compliance and Corporate Strategy Consultant',
+    description:
+      'Regulatory compliance and corporate strategy consultant with eight years in technical standards development, quality management systems, and market entry across Canadian and international jurisdictions. Vancouver and Bangkok.',
+    url: 'https://philipkwong.com',
+    siteName: 'Philip Kwong',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Philip Kwong — Regulatory Compliance and Corporate Strategy Consultant',
+    description:
+      'Regulatory compliance and corporate strategy consultant. Eight years in technical standards, QMS architecture, and market entry. Vancouver and Bangkok.',
+  },
+};
 
 export default function HomePage() {
-  const [activeCaseId, setActiveCaseId] = useState<string | null>(null);
-
-  return (
-    <main>
-      <div className="scroll-stage">
-        <div className="card-wrap" id="card-hero"><Hero /></div>
-        <div className="card-wrap" id="card-drawin"><DrawIn /></div>
-        <div className="card-wrap" id="card-work"><Work onCaseOpen={setActiveCaseId} /></div>
-        <div className="card-wrap" id="card-contact"><Contact /></div>
-      </div>
-      <CaseOverlay caseId={activeCaseId} onClose={() => setActiveCaseId(null)} />
-      <CardScroll />
-    </main>
-  );
+  return <HomeClient />;
 }

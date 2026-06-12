@@ -5,15 +5,23 @@ import { SubpageWithContact } from '@/components/CardScroll/SubpageWithContact';
 export const metadata: Metadata = {
   title: 'The Operator',
   description:
-    'Philip Kwong — regulatory compliance and corporate strategy consultant. Eight years at the intersection of technical standards, quality systems, and organizational strategy. Vancouver and Bangkok.',
+    'Eight years at the intersection of ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization strategy. Engagements across cannabis, pharmaceutical, and technology sectors in Canada.',
+  alternates: {
+    canonical: 'https://philipkwong.com/about',
+  },
   openGraph: {
     title: 'The Operator — Philip Kwong',
     description:
-      'Regulatory compliance and corporate strategy at the intersection of technical standards, quality systems, and organizational strategy.',
+      'Eight years at the intersection of ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization strategy.',
     url: 'https://philipkwong.com/about',
+    siteName: 'Philip Kwong',
+    type: 'profile',
   },
-  alternates: {
-    canonical: 'https://philipkwong.com/about',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Operator — Philip Kwong',
+    description:
+      'Eight years at the intersection of ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization strategy.',
   },
 };
 

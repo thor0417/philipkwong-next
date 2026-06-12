@@ -5,15 +5,23 @@ import { SubpageWithContact } from '@/components/CardScroll/SubpageWithContact';
 export const metadata: Metadata = {
   title: 'The Journal',
   description:
-    'Articles by Philip Kwong on regulatory compliance, QMS architecture, corporate strategy, and market entry in regulated environments.',
+    'Articles on regulatory compliance, quality management system architecture, technical standards development, and corporate strategy in regulated industries.',
+  alternates: {
+    canonical: 'https://philipkwong.com/writing',
+  },
   openGraph: {
     title: 'The Journal — Philip Kwong',
     description:
-      'Articles on regulatory compliance, QMS architecture, corporate strategy, and market entry in regulated environments.',
+      'Articles on regulatory compliance, quality management system architecture, technical standards development, and corporate strategy in regulated industries.',
     url: 'https://philipkwong.com/writing',
+    siteName: 'Philip Kwong',
+    type: 'website',
   },
-  alternates: {
-    canonical: 'https://philipkwong.com/writing',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Journal — Philip Kwong',
+    description:
+      'Articles on regulatory compliance, QMS architecture, technical standards development, and corporate strategy in regulated industries.',
   },
 };
 

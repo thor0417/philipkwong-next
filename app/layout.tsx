@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s — Philip Kwong',
   },
   description:
-    'Philip Kwong is a strategy and regulatory compliance consultant operating between Vancouver and Bangkok. Market entry, QMS architecture, corporate strategy, and technical standards.',
+    'Regulatory compliance and corporate strategy consultant with eight years in technical standards development, quality management systems, and market entry across Canadian and international jurisdictions. Vancouver and Bangkok.',
   keywords: [
     'regulatory compliance',
     'corporate strategy',
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary',
-    title: 'Philip Kwong — Strategy and Compliance Consultant',
-    description: 'Strategy and regulatory compliance consultant operating between Vancouver and Bangkok.',
+    card: 'summary_large_image',
+    title: 'Philip Kwong — Regulatory Compliance and Corporate Strategy Consultant',
+    description: 'Regulatory compliance and corporate strategy consultant. Eight years in technical standards, QMS architecture, and market entry. Vancouver and Bangkok.',
   },
   robots: {
     index: true,
