@@ -1,6 +1,6 @@
 'use client';
 
-import { WorkIndex } from './WorkIndex';
+import { WorkTeaser } from './WorkTeaser';
 import styles from './Work.module.css';
 
 interface WorkProps {
@@ -17,7 +17,7 @@ export function Work({ onCaseOpen }: WorkProps) {
         </p>
         <h2 id="work-heading" className="sr-only">Selected Work</h2>
 
-        <WorkIndex variant="home" filter="all" onCaseOpen={onCaseOpen} />
+        <WorkTeaser onCaseOpen={onCaseOpen} />
 
       </div>
     </section>
