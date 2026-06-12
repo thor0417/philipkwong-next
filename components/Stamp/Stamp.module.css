@@ -1,0 +1,36 @@
+.stamp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Dark section stamp — paper fill, ink text */
+.dark {
+  background-color: #F9F9F9;
+  color: #0A0A0A;
+}
+
+/* Light section stamp — ink fill, paper text */
+.light {
+  background-color: #0A0A0A;
+  color: #F9F9F9;
+}
+
+/* Hover — both themes go orange */
+.stamp:hover {
+  background-color: var(--accent);
+  color: #F9F9F9;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}

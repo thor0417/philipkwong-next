@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { WORK_ENTRIES, CASES } from '@/lib/cases';
+import { WORK_ENTRIES } from '@/lib/cases';
+import { Stamp } from '@/components/Stamp/Stamp';
 import styles from './WorkTeaser.module.css';
 
 interface WorkTeaserProps {
@@ -87,10 +87,7 @@ export function WorkTeaser({ onCaseOpen }: WorkTeaserProps) {
       </ul>
 
       <div className={styles.recordWrap}>
-        <Link href="/work" className={styles.recordStamp} aria-label={`View all ${TOTAL_ENTRIES} entries`}>
-          <span className={styles.stampLabel}>THE RECORD</span>
-          <span className={styles.stampCount}>{TOTAL_ENTRIES} ENTRIES</span>
-        </Link>
+        <Stamp href="/work" label="FULL RECORD" theme="light" aria-label={`View all ${TOTAL_ENTRIES} work entries`} />
       </div>
     </div>
   );

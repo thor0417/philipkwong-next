@@ -83,53 +83,11 @@
     color: #F9F9F9;
   }
 
-  /* THE RECORD stamp */
+  /* FULL RECORD stamp — layout only; visual from Stamp component */
   .recordWrap {
     display: flex;
     justify-content: flex-end;
     padding-top: clamp(2rem, 4vw, 3rem);
-  }
-
-  .recordStamp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    width: 180px;
-    height: 180px;
-    border: 0.5px solid var(--border-light);
-    background-color: var(--stamp-bg, transparent);
-    color: var(--text-main);
-    text-decoration: none;
-    cursor: pointer;
-    transition:
-      background-color 200ms ease,
-      color 200ms ease,
-      border-color 200ms ease;
-  }
-
-  .recordStamp:hover {
-    background-color: var(--text-main);
-    color: var(--bg-primary);
-    border-color: var(--text-main);
-  }
-
-  .stampLabel {
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 15px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .stampCount {
-    font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.5;
   }
 }
 
@@ -177,35 +135,5 @@
 
   .recordWrap {
     padding-top: 2rem;
-  }
-
-  .recordStamp {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    width: 160px;
-    height: 160px;
-    border: 0.5px solid var(--border-light);
-    color: var(--text-main);
-    text-decoration: none;
-  }
-
-  .stampLabel {
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .stampCount {
-    font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.5;
   }
 }

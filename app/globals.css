@@ -116,8 +116,6 @@
   --z-cursor:   9998;
   --z-grain:    9999;
 
-  /* Stamp fill — switch to var(--accent) for orange; var(--text-main) for ink */
-  --stamp-bg: transparent;
 
   --duration-base: 300ms;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

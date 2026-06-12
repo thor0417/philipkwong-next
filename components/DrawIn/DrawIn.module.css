@@ -23,40 +23,6 @@
   justify-content: center;
 }
 
-/* Stamp — 180px square, fill color pending Philip's decision */
-.stamp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  width: 180px;
-  height: 180px;
-  border: 0.5px solid var(--bg-primary);
-  background-color: var(--stamp-bg, transparent);
-  color: var(--bg-primary);
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    background-color 200ms ease,
-    color 200ms ease,
-    border-color 200ms ease;
-}
-
-.stamp:hover {
-  background-color: var(--bg-primary);
-  color: var(--bg-dark);
-  border-color: var(--bg-primary);
-}
-
-.stampLabel {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 15px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
 /* ── Mobile — functional fallback ── */
 @media (max-width: 767px) {
   .section :global(.grid-stage) {

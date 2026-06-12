@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Stamp } from '@/components/Stamp/Stamp';
 import styles from './DrawIn.module.css';
 
 export function DrawIn() {
@@ -13,9 +13,7 @@ export function DrawIn() {
         </p>
 
         <div className={styles.stampWrap} style={{ gridColumn: '9 / 13' }}>
-          <Link href="/about" className={styles.stamp} aria-label="About Philip Kwong">
-            <span className={styles.stampLabel}>ABOUT</span>
-          </Link>
+          <Stamp href="/about" label="ABOUT" theme="dark" aria-label="About Philip Kwong" />
         </div>
 
       </div>
