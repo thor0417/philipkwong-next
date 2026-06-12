@@ -1,0 +1,34 @@
+# Philip Kwong
+
+Philip Kwong is a regulatory compliance and corporate strategy consultant operating between Vancouver, Canada and Bangkok, Thailand. He works at the intersection of technical standards development, quality management systems, market entry, and organizational strategy, supporting businesses operating in regulated industries across North America and internationally.
+
+## Standards Leadership
+
+Philip Kwong has held the following leadership roles in international and national standards development:
+
+- ISO IWA 37-1: Vice Convener, Working Group 1. One of the world's first international frameworks addressing cannabis safety, security, and sustainability, representing 22 countries and more than 200 participants.
+- UL Canada TG 4400-2: Chair. Canada's first comprehensive safety guide governing cannabis extraction and processing facilities, covering hydrocarbon, ethanol, and CO2 extraction operations.
+- UL/ULC/ANSI/CAN/1389: Standards Technical Panel Member. The first harmonized Canada-United States safety standard governing plant oil extraction equipment, later referenced within NFPA 1 and the International Fire Code.
+
+## Services
+
+- Compliance: Regulatory architecture, compliance frameworks, licensing pathways, quality management systems, and organizational governance.
+- Strategy: Commercialization, market entry, stakeholder engagement, positioning, and long-term growth planning for regulated businesses.
+- Operations: Project management, workflow architecture, documentation systems, training programs, and the business operations that scale infrastructure.
+- Growth: Organizational transformation, go-to-market development, and the systems that turn ambitious ideas into enduring organizations.
+
+## Consulting Clients
+
+ISO IWA 37-1, UL Canada TG 4400-2, UL/ULC/ANSI/CAN/1389, UL Canada, BC Pharmacy Regulation, Grant Leisure International, Aurora Cannabis, ExtractionTek Stainless, The Valens Company, Organigram, Veritas Pharma, Embark Health, Adastra Labs
+
+## Contact
+
+philip@philipkwong.com
+
+## Site Routes
+
+- /: Home. Overview of Philip Kwong's consulting practice, professional credentials, and four service disciplines.
+- /about: About. Biography, opening statement, photo, bio paragraphs, and the four service disciplines with descriptions.
+- /work: Work. Full record of 13 standards leadership and consulting engagements with client names, scope, and role designations.
+- /writing: Writing. Index of articles on regulatory compliance, quality management systems, technical standards, and corporate strategy, organized by category.
+- /writing/[slug]: Articles. Individual articles with full text content covering compliance, standards, and strategy topics.

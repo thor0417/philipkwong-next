@@ -1,0 +1,131 @@
+# Philip Kwong — Full Record
+
+Philip Kwong is a regulatory compliance and corporate strategy consultant operating between Vancouver, Canada and Bangkok, Thailand. He works at the intersection of technical standards development, quality management systems, market entry, and organizational strategy, supporting businesses operating in regulated industries across North America and internationally.
+
+## Standards Leadership
+
+Philip Kwong has held the following leadership roles in international and national standards development:
+
+- ISO IWA 37-1: Vice Convener, Working Group 1. One of the world's first international frameworks addressing cannabis safety, security, and sustainability, representing 22 countries and more than 200 participants.
+- UL Canada TG 4400-2: Chair. Canada's first comprehensive safety guide governing cannabis extraction and processing facilities, covering hydrocarbon, ethanol, and CO2 extraction operations.
+- UL/ULC/ANSI/CAN/1389: Standards Technical Panel Member. The first harmonized Canada-United States safety standard governing plant oil extraction equipment, later referenced within NFPA 1 and the International Fire Code.
+
+## Services
+
+- Compliance: Regulatory architecture, compliance frameworks, licensing pathways, quality management systems, and organizational governance.
+- Strategy: Commercialization, market entry, stakeholder engagement, positioning, and long-term growth planning for regulated businesses.
+- Operations: Project management, workflow architecture, documentation systems, training programs, and the business operations that scale infrastructure.
+- Growth: Organizational transformation, go-to-market development, and the systems that turn ambitious ideas into enduring organizations.
+
+## Contact
+
+philip@philipkwong.com
+
+## Site Routes
+
+- /: Home. Overview of Philip Kwong's consulting practice, professional credentials, and four service disciplines.
+- /about: About. Biography, opening statement, photo, bio paragraphs, and the four service disciplines with descriptions.
+- /work: Work. Full record of 13 standards leadership and consulting engagements with client names, scope, and role designations.
+- /writing: Writing. Index of articles on regulatory compliance, quality management systems, technical standards, and corporate strategy, organized by category.
+- /writing/[slug]: Articles. Individual articles with full text content covering compliance, standards, and strategy topics.
+
+---
+
+## Full Work Record (13 Entries)
+
+### Strategy and Standards
+
+---
+
+**ISO IWA 37-1**
+Role: Vice Convener
+Significance: One of the world's first international frameworks addressing cannabis safety, security, and sustainability.
+Writeup: Served as Vice Convener of Working Group 1, bringing together more than 200 participants representing 22 countries to establish a globally recognized foundation for emerging legal cannabis markets. The resulting ISO IWA 37 series became an early reference for governments, regulators, and industry stakeholders developing cannabis regulatory infrastructure worldwide.
+
+---
+
+**UL Canada TG 4400-2**
+Role: Chair
+Significance: Canada's first comprehensive safety guide for cannabis extraction and processing facilities.
+Writeup: Chaired the committee responsible for developing best practices for hydrocarbon, ethanol, and CO2 extraction operations, facility design, and process safety. The guide became a foundational reference for regulators, engineers, fire officials, and operators across Canada.
+
+---
+
+**UL/ULC/ANSI/CAN/1389**
+Role: STP Member
+Significance: The first harmonized Canada-United States safety standard governing plant oil extraction equipment.
+Writeup: Served on the Standards Technical Panel responsible for addressing fire, explosion, and worker safety risks associated with volatile extraction technologies. The completed standard was later referenced within NFPA 1 and the International Fire Code, influencing facility design and approval processes throughout North America.
+
+---
+
+### Engagements
+
+---
+
+**UL Canada**
+Role: Corporate Strategy Development
+Significance: A unified certification and compliance platform built from UL's cannabis standards and regulatory initiatives.
+Writeup: Architected the commercialization strategy behind One UL Cannabis. Developed the market strategy, stakeholder engagement model, certification framework, and industry positioning across domestic and international markets. The initiative established a scalable pathway for UL's continued leadership in cannabis safety, certification, and standards development.
+
+---
+
+**BC Pharmacy Regulation**
+Role: Quality Management System, Regulatory Compliance, Documentation
+Significance: A province-wide quality management framework for British Columbia pharmacies entering a new regulatory era.
+Writeup: Architected governance, incident reporting, narcotics management, privacy, training, and operational controls aligned with ISO 9001 principles and directly mapped to provincial bylaws. The framework was designed to support implementation of multiple regulatory milestones under the Health Professions and Occupations Act and associated pharmacy legislation.
+
+---
+
+**Grant Leisure International**
+Role: Brand Identity, Visual Systems, Digital Presence
+Significance: A digital and operational transformation for an international leisure consultancy operating across multiple jurisdictions.
+Writeup: Led the digital rebrand transformation, including redevelopment of corporate identity, digital infrastructure, and operational systems, and accepted the position of Director of Compliance and Business Operations. The result was a scalable operational platform designed to support long-term growth and international expansion.
+
+---
+
+**Aurora Cannabis**
+Role: SOP, Product Development, Regulatory Compliance, Operational Planning
+Significance: Aurora Sky: over 800,000 square feet, designed to produce more than 100,000 kilograms of cannabis annually.
+Writeup: Supported extraction operations, product development, quality systems, manufacturing programs, workforce training, and facility operations during the scale-up of regulated cannabis production at industrial scale. The work contributed to the development of operational systems within a facility that helped define the early evolution of Canada's legal cannabis industry.
+
+---
+
+**ExtractionTek Stainless**
+Role: Market Entry, Regulatory Affairs, Government Relations
+Significance: The Canadian market entry of a Colorado-based hydrocarbon extraction manufacturer entering the legal cannabis sector.
+Writeup: Established regulatory affairs, government relations, sales infrastructure, and stakeholder engagement programs while working closely with regulators, engineers, fire officials, and authorities having jurisdiction. The engagement positioned ExtractionTek Stainless as one of the most widely recognized extraction equipment manufacturers operating in Canada.
+
+---
+
+**The Valens Company**
+Role: Operational Planning, Facility Development
+Significance: Extraction infrastructure for one of Canada's largest cannabis extraction and manufacturing organizations.
+Writeup: Developed facility planning, equipment sourcing, installation oversight, and operational training to support large-scale production of cannabis oils and derivative products. The work contributed to extraction capabilities supplying licensed producers and consumer product manufacturers across Canada.
+
+---
+
+**Organigram**
+Role: Regulatory Compliance, Operational Planning, Facility Development
+Significance: Extraction facility infrastructure and operational compliance for one of Canada's leading publicly traded producers.
+Writeup: Supported facility planning, workflow development, equipment sourcing, and regulatory compliance within a federally regulated production environment. The engagement supported the expansion of extraction and derivative manufacturing capabilities during a period of rapid industry growth.
+
+---
+
+**Veritas Pharma**
+Role: Strategy, Go-to-Market Development, Project Management
+Significance: Cannabinoid research and development through Cannevert Therapeutics, a University of British Columbia research subsidiary.
+Writeup: Contributed to extraction program development, operational planning, and project management activities supporting ongoing cannabinoid research programs. The work helped advance research exploring the clinical and therapeutic potential of cannabis-derived compounds.
+
+---
+
+**Embark Health**
+Role: Regulatory Compliance, Operational Planning, Strategy Development
+Significance: Regulatory approvals and facility development for a cannabis operation serving domestic and international markets.
+Writeup: Led rezoning, permitting, fire code compliance, facility planning, and regulatory strategy development. The project established the foundation required for compliant operation within one of Canada's most highly regulated manufacturing sectors.
+
+---
+
+**Adastra Labs**
+Role: Regulatory Compliance, Operational Planning, Strategy Development
+Significance: Regulatory strategy and compliance architecture for an extraction-focused licensed producer in British Columbia.
+Writeup: Led feasibility analysis, municipal approvals, rezoning support, facility planning, and regulatory pathway development from concept through implementation. The engagement established the operational and regulatory foundation required to support large-scale extraction and manufacturing activities.
