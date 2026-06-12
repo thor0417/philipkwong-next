@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import styles from './page.module.css';
+import { AboutPageContent } from '@/components/About/AboutPageContent';
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'The Operator',
   description:
-    'Philip Kwong is a regulatory compliance and corporate strategy consultant operating between Vancouver and Bangkok. Eight years across market entry, QMS architecture, technical standards, and executive engagement.',
+    'Philip Kwong — regulatory compliance and corporate strategy consultant. Eight years at the intersection of technical standards, quality systems, and organizational strategy. Vancouver and Bangkok.',
   openGraph: {
-    title: 'About — Philip Kwong',
+    title: 'The Operator — Philip Kwong',
     description:
-      'Regulatory compliance and corporate strategy consultant operating between Vancouver and Bangkok.',
+      'Regulatory compliance and corporate strategy at the intersection of technical standards, quality systems, and organizational strategy.',
     url: 'https://philipkwong.com/about',
   },
   alternates: {
@@ -17,14 +17,5 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return (
-    <main>
-      <section className={styles.page}>
-        <div className="grid-stage">
-          <p className="section-label" style={{ gridColumn: '1 / -1' }}>About</p>
-          <h1 className={styles.heading} style={{ gridColumn: '1 / -1' }}>About.</h1>
-        </div>
-      </section>
-    </main>
-  );
+  return <AboutPageContent />;
 }
