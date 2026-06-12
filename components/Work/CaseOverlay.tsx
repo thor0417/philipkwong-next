@@ -130,7 +130,7 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
         <div className={styles.contentLeft}>
           <h2 className={styles.client}>{data?.client ?? ''}</h2>
           <div className={styles.rule} aria-hidden="true" />
-          <p className={styles.editorial}>{data?.editorial ?? ''}</p>
+          <p className={styles.writeup}>{data?.writeup ?? ''}</p>
           {data?.image && (
             <div className={styles.overlayImage}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
