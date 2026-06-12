@@ -16,9 +16,17 @@ export function Cursor() {
 
     dot.style.display = 'block';
 
-    /* ── Position ── */
+    /* ── Position + theme inversion via event-target detection ── */
     const onMove = (e: MouseEvent) => {
       gsap.set(dot, { x: e.clientX, y: e.clientY });
+
+      const target = e.target as Element;
+      const inWorkEntry = !!target.closest?.('.work-entry');
+      const inDark = !!target.closest?.('[data-theme="dark"]');
+
+      gsap.set(dot, {
+        borderColor: inWorkEntry ? '#B34700' : inDark ? '#F9F9F9' : '#0A0A0A',
+      });
     };
 
     /* ── Size on interactive elements ── */
@@ -30,16 +38,6 @@ export function Cursor() {
       gsap.to(dot, { width: 10, height: 10, marginLeft: -5, marginTop: -5, duration: 0.25, ease: 'power2.out' });
     };
 
-    /* ── Orange on work entries ── */
-    const onEnterWorkEntry = () => {
-      gsap.set(dot, { borderColor: '#B34700' });
-    };
-
-    const onLeaveWorkEntry = () => {
-      /* borderColor resets via theme observer below */
-      gsap.set(dot, { borderColor: dot.dataset.theme === 'dark' ? '#F9F9F9' : '#0A0A0A' });
-    };
-
     document.addEventListener('mousemove', onMove);
 
     const interactives = document.querySelectorAll('a, button, [role="button"], input, textarea');
@@ -48,45 +46,12 @@ export function Cursor() {
       el.addEventListener('mouseleave', onLeaveInteractive);
     });
 
-    const workEntries = document.querySelectorAll('.work-entry');
-    workEntries.forEach((el) => {
-      el.addEventListener('mouseenter', onEnterWorkEntry);
-      el.addEventListener('mouseleave', onLeaveWorkEntry);
-    });
-
-    /* ── Theme inversion via IntersectionObserver on dark sections ── */
-    let darkCount = 0;
-
-    const applyTheme = () => {
-      const isDark = darkCount > 0;
-      dot.dataset.theme = isDark ? 'dark' : 'light';
-      gsap.set(dot, { borderColor: isDark ? '#F9F9F9' : '#0A0A0A' });
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) darkCount++;
-          else darkCount = Math.max(0, darkCount - 1);
-        });
-        applyTheme();
-      },
-      { threshold: 0.4 }
-    );
-
-    document.querySelectorAll('[data-theme="dark"]').forEach((el) => observer.observe(el));
-
     return () => {
       document.removeEventListener('mousemove', onMove);
       interactives.forEach((el) => {
         el.removeEventListener('mouseenter', onEnterInteractive);
         el.removeEventListener('mouseleave', onLeaveInteractive);
       });
-      workEntries.forEach((el) => {
-        el.removeEventListener('mouseenter', onEnterWorkEntry);
-        el.removeEventListener('mouseleave', onLeaveWorkEntry);
-      });
-      observer.disconnect();
     };
   }, []);
 

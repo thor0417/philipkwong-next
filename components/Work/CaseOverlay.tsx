@@ -115,6 +115,7 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
       ref={overlayRef}
       className={styles.overlay}
       id="case-overlay"
+      data-theme="dark"
       aria-hidden="true"
       role="dialog"
       aria-modal="true"
