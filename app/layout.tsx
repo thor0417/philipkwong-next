@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 name: 'Philip Kwong',
                 jobTitle: 'Regulatory Compliance and Corporate Strategy Consultant',
                 url: 'https://philipkwong.com',
-                email: 'philip@philipkwong.com',
+                email: 'hello@philipkwong.com',
                 sameAs: [
                   'LINKEDIN_URL_PLACEHOLDER',
                 ],
