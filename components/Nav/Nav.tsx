@@ -80,7 +80,11 @@ export function Nav() {
               className={styles.link}
               onClick={(e) => {
                 e.preventDefault();
-                getLenis()?.scrollTo(document.body.scrollHeight);
+                if (document.documentElement.hasAttribute('data-panel-open')) {
+                  document.dispatchEvent(new CustomEvent('nav-contact-click'));
+                } else {
+                  getLenis()?.scrollTo(document.body.scrollHeight);
+                }
               }}
             >
               Contact
@@ -128,7 +132,11 @@ export function Nav() {
             onClick={(e) => {
               e.preventDefault();
               setIsOverlayOpen(false);
-              getLenis()?.scrollTo(document.body.scrollHeight);
+              if (document.documentElement.hasAttribute('data-panel-open')) {
+                document.dispatchEvent(new CustomEvent('nav-contact-click'));
+              } else {
+                getLenis()?.scrollTo(document.body.scrollHeight);
+              }
             }}
           >
             Contact

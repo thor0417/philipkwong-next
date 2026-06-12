@@ -12,11 +12,12 @@ interface CaseOverlayProps {
 }
 
 export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
-  const overlayRef  = useRef<HTMLDivElement>(null);
-  const topBarRef   = useRef<HTMLDivElement>(null);
-  const contentRef  = useRef<HTMLDivElement>(null);
-  const activeTlRef = useRef<gsap.core.Timeline | null>(null);
-  const isOpenRef   = useRef(false);
+  const overlayRef              = useRef<HTMLDivElement>(null);
+  const topBarRef               = useRef<HTMLDivElement>(null);
+  const contentRef              = useRef<HTMLDivElement>(null);
+  const activeTlRef             = useRef<gsap.core.Timeline | null>(null);
+  const isOpenRef               = useRef(false);
+  const pendingContactScrollRef = useRef(false);
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
@@ -69,6 +70,10 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
             document.body.style.overflow = '';
             document.documentElement.removeAttribute('data-panel-open');
             getLenis()?.start();
+            if (pendingContactScrollRef.current) {
+              pendingContactScrollRef.current = false;
+              getLenis()?.scrollTo(document.body.scrollHeight);
+            }
             onClose();
           },
         },
@@ -108,6 +113,17 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
       overlay.removeEventListener('touchstart', onTouchStart);
       overlay.removeEventListener('touchmove',  onTouchMove);
     };
+  }, [closeOverlay]);
+
+  /* Nav CONTACT click while panel is open — close first, then scroll */
+  useEffect(() => {
+    const onNavContact = () => {
+      if (!isOpenRef.current) return;
+      pendingContactScrollRef.current = true;
+      closeOverlay();
+    };
+    document.addEventListener('nav-contact-click', onNavContact);
+    return () => document.removeEventListener('nav-contact-click', onNavContact);
   }, [closeOverlay]);
 
   const data = caseId ? CASES[caseId] : null;
