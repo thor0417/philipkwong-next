@@ -29,9 +29,11 @@ function ScrambledMasthead() {
 }
 
 export function Hero() {
-  const clockVanRef = useRef<HTMLTimeElement>(null);
-  const clockBkkRef = useRef<HTMLTimeElement>(null);
-  const dateRef     = useRef<HTMLSpanElement>(null);
+  const clockVanRef  = useRef<HTMLTimeElement>(null);
+  const clockBkkRef  = useRef<HTMLTimeElement>(null);
+  const tzVanRef     = useRef<HTMLSpanElement>(null);
+  const tzBkkRef     = useRef<HTMLSpanElement>(null);
+  const dateRef      = useRef<HTMLSpanElement>(null);
 
   /* ── Clock + date engine ── */
   useEffect(() => {
@@ -41,17 +43,35 @@ export function Hero() {
     const fmtBkk = new Intl.DateTimeFormat('en-GB', {
       timeZone: 'Asia/Bangkok', hour: '2-digit', minute: '2-digit',
     });
+    /* Separate formatters for timezone abbreviation only */
+    const fmtVanTz = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'America/Vancouver', hour: '2-digit', minute: '2-digit', timeZoneName: 'short',
+    });
+    const fmtBkkTz = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Bangkok', hour: '2-digit', minute: '2-digit', timeZoneName: 'short',
+    });
 
     const tick = () => {
       const now = new Date();
+
       if (clockVanRef.current) {
         clockVanRef.current.textContent = fmtVan.format(now);
         clockVanRef.current.setAttribute('datetime', now.toISOString());
       }
+      if (tzVanRef.current) {
+        const part = fmtVanTz.formatToParts(now).find(p => p.type === 'timeZoneName');
+        tzVanRef.current.textContent = part?.value ?? '';
+      }
+
       if (clockBkkRef.current) {
         clockBkkRef.current.textContent = fmtBkk.format(now);
         clockBkkRef.current.setAttribute('datetime', now.toISOString());
       }
+      if (tzBkkRef.current) {
+        const part = fmtBkkTz.formatToParts(now).find(p => p.type === 'timeZoneName');
+        tzBkkRef.current.textContent = part?.value ?? '';
+      }
+
       if (dateRef.current) {
         dateRef.current.textContent = formatDate(now);
       }
@@ -83,20 +103,22 @@ export function Hero() {
       <div className={styles.dataStrip}>
         <div className={styles.dataCellLeft}>
           <span className={styles.clockCity}>Vancouver</span>
-          <time ref={clockVanRef} className={styles.clockTime} dateTime="">00:00</time>
+          <div className={styles.clockTimeRow}>
+            <time ref={clockVanRef} className={styles.clockTime} dateTime="">00:00</time>
+            <span ref={tzVanRef} suppressHydrationWarning className={styles.clockTz}></span>
+          </div>
         </div>
         <div className={styles.dataCellCenter}>
-          <span
-            suppressHydrationWarning
-            ref={dateRef}
-            className={styles.dateDisplay}
-          >
+          <span suppressHydrationWarning ref={dateRef} className={styles.dateDisplay}>
             -- --- ----
           </span>
         </div>
         <div className={styles.dataCellRight}>
           <span className={styles.clockCity}>Bangkok</span>
-          <time ref={clockBkkRef} className={styles.clockTime} dateTime="">00:00</time>
+          <div className={styles.clockTimeRow}>
+            <time ref={clockBkkRef} className={styles.clockTime} dateTime="">00:00</time>
+            <span ref={tzBkkRef} suppressHydrationWarning className={styles.clockTz}></span>
+          </div>
         </div>
       </div>
 

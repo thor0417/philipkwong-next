@@ -21,7 +21,7 @@
 .dataCellLeft {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.25rem;
 }
 
 .dataCellCenter {
@@ -32,31 +32,46 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.2rem;
+  gap: 0.25rem;
 }
 
 .clockCity {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--accent);
 }
 
+.clockTimeRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+}
+
 .clockTime {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 0.06em;
+  font-size: 26px;
+  letter-spacing: 0.04em;
   color: var(--text-main);
-  line-height: 1.2;
+  line-height: 1.1;
+}
+
+.clockTz {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  color: rgba(10, 10, 10, 0.45);
+  line-height: 1.1;
 }
 
 .dateDisplay {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-main);
@@ -70,11 +85,11 @@
   padding-inline: 5vw;
 }
 
-/* TUNE: increase font-size until text fills 90vw content width at target viewports */
+/* TUNE: adjust in 0.25vw steps until text fills 90vw content width at 1440 */
 .masthead {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: 9.5vw;
+  font-size: 11.75vw;
   line-height: var(--leading-hero);
   letter-spacing: var(--tracking-hero);
   white-space: nowrap;
@@ -97,6 +112,7 @@
 .classRow :global(.t-registry) {
   display: block;
   margin-bottom: 0;
+  font-size: 18px;
 }
 
 .classRow :global(.t-registry):nth-child(2) {
@@ -123,6 +139,11 @@
     align-items: flex-start;
   }
 
+  .clockTime,
+  .clockTz {
+    font-size: 18px;
+  }
+
   .mastheadArea {
     padding-block: 2rem;
   }
@@ -137,6 +158,10 @@
     grid-template-columns: 1fr;
     gap: 0.5rem;
     padding-block: 1rem 1.5rem;
+  }
+
+  .classRow :global(.t-registry) {
+    font-size: 14px;
   }
 
   .classRow :global(.t-registry):nth-child(2),
