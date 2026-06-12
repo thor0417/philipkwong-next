@@ -116,6 +116,9 @@
   --z-cursor:   9998;
   --z-grain:    9999;
 
+  /* Stamp fill — switch to var(--accent) for orange; var(--text-main) for ink */
+  --stamp-bg: transparent;
+
   --duration-base: 300ms;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -274,12 +277,12 @@ h1, h2 {
 }
 
 /* Anchor scroll offset */
-#hero, #about, #services, #work, #contact, #writing {
+#hero, #draw-in, #work, #contact, #writing {
   scroll-margin-top: 4rem;
 }
 
 @media (max-width: 767px) {
-  #hero, #about, #services, #work, #contact, #writing {
+  #hero, #draw-in, #work, #contact, #writing {
     scroll-margin-top: 3.5rem;
   }
 }
@@ -299,16 +302,16 @@ h1, h2 {
   width: 100%;
 }
 
-#card-hero,
-#card-about,
-#card-services {
+#card-hero {
   position: relative;
   z-index: 2;
   background-color: var(--bg-primary);
 }
 
-#card-about {
-  background-color: var(--bg-warm);
+#card-drawin {
+  position: relative;
+  z-index: 2;
+  background-color: var(--bg-dark);
 }
 
 #card-work {
