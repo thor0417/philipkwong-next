@@ -52,8 +52,7 @@ export function WorkIndex({ onCaseOpen, variant, filter = 'all' }: WorkIndexProp
     const index = indexRef.current;
     if (!index) return;
 
-    const rows     = index.querySelectorAll<HTMLElement>('li[data-category]');
-    const dividers = index.querySelectorAll<HTMLElement>('li[data-divider]');
+    const rows = index.querySelectorAll<HTMLElement>('li[data-category]');
 
     rows.forEach(row => {
       gsap.killTweensOf(row);
@@ -68,21 +67,6 @@ export function WorkIndex({ onCaseOpen, variant, filter = 'all' }: WorkIndexProp
           duration: 0.15,
           ease: 'power1.in',
           onComplete: () => gsap.set(row, { display: 'none' }),
-        });
-      }
-    });
-
-    dividers.forEach(div => {
-      gsap.killTweensOf(div);
-      if (filter === 'all') {
-        gsap.set(div, { clearProps: 'display' });
-        gsap.to(div, { opacity: 1, duration: 0.25, ease: 'power1.out' });
-      } else {
-        gsap.to(div, {
-          opacity: 0,
-          duration: 0.15,
-          ease: 'power1.in',
-          onComplete: () => gsap.set(div, { display: 'none' }),
         });
       }
     });
@@ -161,15 +145,7 @@ export function WorkIndex({ onCaseOpen, variant, filter = 'all' }: WorkIndexProp
         </li>
       )}
 
-      <li className={styles.indexDivider} data-divider="standards" aria-hidden="true">
-        <span className={styles.indexDividerLabel}>Standards</span>
-      </li>
-
       {strategyRows.map(row => renderRow(row, 'standards'))}
-
-      <li className={styles.indexDivider} data-divider="engagements" aria-hidden="true">
-        <span className={styles.indexDividerLabel}>Engagements</span>
-      </li>
 
       {engagementRows.map(row => renderRow(row, 'engagements'))}
     </ul>

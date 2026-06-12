@@ -27,7 +27,7 @@
 .metaTag {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-main);
@@ -48,10 +48,10 @@
 .filterBtn {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 0.5rem 1rem;
+  padding: 0.65rem 1.4rem;
   background: transparent;
   border: 0.5px solid rgba(10, 10, 10, 0.3);
   color: var(--text-main);

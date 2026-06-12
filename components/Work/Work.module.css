@@ -17,26 +17,11 @@
     border-top: 0.5px solid var(--border-light);
   }
 
-  .indexRow,
-  .indexDivider {
+  .indexRow {
     display: grid;
     grid-template-columns: 6% 54% 28% 12%;
     align-items: center;
     border-bottom: 0.5px solid var(--border-light);
-  }
-
-  .indexDivider {
-    padding-block: 2.5rem 0.9rem;
-  }
-
-  .indexDividerLabel {
-    grid-column: 2 / -1;
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: rgba(10, 10, 10, 0.4);
   }
 
   .indexRow {
@@ -132,12 +117,6 @@
     display: none;
   }
 
-  /* Full variant — divider label upgrade */
-  .indexFull .indexDividerLabel {
-    font-size: 14px;
-    color: rgba(10, 10, 10, 0.6);
-  }
-
   /* Header row — full variant, desktop only */
   .indexHeader {
     display: grid;
@@ -150,7 +129,7 @@
   .indexHeader span {
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: rgba(10, 10, 10, 0.7);
@@ -173,21 +152,6 @@
   .index {
     display: block;
     border-top: var(--border-hairline);
-  }
-
-  .indexDivider {
-    display: block;
-    padding-block: 0.75rem 0.5rem;
-    border-bottom: var(--border-hairline);
-  }
-
-  .indexDividerLabel {
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(10, 10, 10, 0.4);
   }
 
   /* globals.css applies display:flex + align-items:center to [role="button"] on mobile.
