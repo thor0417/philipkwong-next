@@ -28,6 +28,7 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
     overlay.setAttribute('aria-hidden', 'false');
     overlay.classList.add(styles.isOpen);
     document.body.style.overflow = 'hidden';
+    document.documentElement.setAttribute('data-panel-open', 'true');
     getLenis()?.stop();
 
     if (activeTlRef.current) activeTlRef.current.kill();
@@ -66,6 +67,7 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
             overlay.classList.remove(styles.isOpen);
             overlay.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            document.documentElement.removeAttribute('data-panel-open');
             getLenis()?.start();
             onClose();
           },

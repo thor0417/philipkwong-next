@@ -286,6 +286,16 @@ h1, h2 {
 }
 
 /* ------------------------------------------------------------
+   PANEL OPEN STATE — hide nav to avoid z-index stacking context clash
+   (#card-work z-index:2 caps overlay descendants below nav z-index:10)
+   ------------------------------------------------------------ */
+html[data-panel-open="true"] #site-nav {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+/* ------------------------------------------------------------
    CARD SCROLL — stacked section effect
    ------------------------------------------------------------ */
 .scroll-stage {

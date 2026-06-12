@@ -63,7 +63,7 @@ export function Nav() {
 
   return (
     <>
-      <nav className={navClass} aria-label="Primary navigation">
+      <nav id="site-nav" className={navClass} aria-label="Primary navigation">
         <Link href={isHome ? '#hero' : '/'} className={styles.wordmark}>
           Philip Kwong
         </Link>
