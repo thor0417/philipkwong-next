@@ -8,9 +8,18 @@ export function DrawIn() {
     <section id="draw-in" className={styles.section} data-theme="dark">
       <div className="grid-stage">
 
-        <p className={styles.statement} style={{ gridColumn: '1 / 9' }}>
-          The company that gets licensed is rarely the company that scales. I build the ones that do both.
-        </p>
+        <div className={styles.statement} style={{ gridColumn: '1 / 9' }}>
+          <span className="reveal" style={{ '--reveal-delay': '0s' } as React.CSSProperties}>
+            <span className="reveal__inner">
+              The company that gets licensed is rarely the company that scales.
+            </span>
+          </span>
+          <span className="reveal" style={{ '--reveal-delay': '0.08s' } as React.CSSProperties}>
+            <span className="reveal__inner">
+              I build the ones that do both.
+            </span>
+          </span>
+        </div>
 
         <div className={styles.stampWrap} style={{ gridColumn: '9 / 13' }}>
           <Stamp href="/about" label="ABOUT" theme="dark" aria-label="About Philip Kwong" />
