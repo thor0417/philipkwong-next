@@ -7,6 +7,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ARTICLES, type Article } from '@/lib/articles';
 import styles from './WritingPage.module.css';
 
+const toTitleCase = (s: string) => s.charAt(0) + s.slice(1).toLowerCase();
+
 /* Group by category, preserving array order within each group */
 function groupByCategory(articles: Article[]): Map<string, Article[]> {
   const map = new Map<string, Article[]>();
@@ -64,7 +66,7 @@ export function WritingPage() {
 
             {/* Category header */}
             <div className={styles.categoryHeader}>
-              <span className={styles.categoryName}>{category}</span>
+              <span className={styles.categoryName}>{toTitleCase(category)}</span>
             </div>
 
             {/* Article rows */}

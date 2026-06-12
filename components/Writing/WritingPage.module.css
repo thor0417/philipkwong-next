@@ -34,19 +34,16 @@
 /* Bold black display-scale category header */
 .categoryHeader {
   padding-inline: 5vw;
-  padding-block: clamp(2rem, 4vw, 3rem) clamp(1rem, 2vw, 1.5rem);
+  padding-block: clamp(4rem, 8vw, 7rem) clamp(1rem, 2vw, 1.5rem);
   border-bottom: 0.5px solid var(--border-light);
 }
 
 .categoryName {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: clamp(3.5rem, 8vw, 9rem);
-  line-height: 0.9;
-  letter-spacing: var(--tracking-display);
+  font-family: var(--font-readable);
+  font-weight: 600;
+  font-size: clamp(2.25rem, 4.5vw, 4.25rem);
+  line-height: 1.05;
   color: var(--text-main);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -114,7 +111,7 @@
   }
 
   .categoryName {
-    font-size: clamp(2.5rem, 12vw, 5rem);
+    font-size: clamp(1.75rem, 8vw, 3rem);
   }
 
   .articleTitle {
