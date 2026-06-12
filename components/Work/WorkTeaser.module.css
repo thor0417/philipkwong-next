@@ -15,7 +15,7 @@
 
   .row {
     display: grid;
-    grid-template-columns: 6% 54% 28% 12%;
+    grid-template-columns: 6% 64% 30%;
     align-items: center;
     padding-block: 2.5rem;
     padding-inline: 1rem;
@@ -52,34 +52,23 @@
     transition: color 0.25s ease;
   }
 
-  .scope {
-    font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: rgba(10, 10, 10, 0.4);
-    transition: color 0.25s ease;
-  }
-
-  .role {
+  .teaserLabel {
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 0.04em;
+    font-size: 15px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--text-main);
+    color: #0A0A0A;
     text-align: right;
     transition: color 0.25s ease;
   }
 
-  .row:hover .num,
-  .row:hover .scope {
+  .row:hover .num {
     color: rgba(249, 249, 249, 0.5);
   }
 
   .row:hover .client,
-  .row:hover .role {
+  .row:hover .teaserLabel {
     color: #F9F9F9;
   }
 
@@ -110,7 +99,7 @@
   }
 
   .num,
-  .role {
+  .teaserLabel {
     display: none;
   }
 
@@ -122,15 +111,6 @@
     color: var(--text-main);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  .scope {
-    font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: rgba(10, 10, 10, 0.6);
   }
 
   .recordWrap {

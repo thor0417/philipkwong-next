@@ -79,8 +79,7 @@ export function WorkTeaser({ onCaseOpen }: WorkTeaserProps) {
             >
               <span className={styles.num}>{String(i + 1).padStart(3, '0')}</span>
               <span className={styles.client}>{entry.client}</span>
-              <span className={styles.scope}>{entry.scope}</span>
-              <span className={styles.role}>{entry.tag}</span>
+              <span className={styles.teaserLabel}>{entry.teaserLabel}</span>
             </li>
           );
         })}
