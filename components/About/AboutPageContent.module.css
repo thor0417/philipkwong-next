@@ -132,8 +132,8 @@
 .serviceDesc {
   font-family: var(--font-readable);
   font-weight: 400;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
-  line-height: 1.55;
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+  line-height: 1.5;
   color: rgba(10, 10, 10, 0.75);
 }
 
