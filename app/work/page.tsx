@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { WorkPageContent } from '@/components/Work/WorkPageContent';
+import { SubpageWithContact } from '@/components/CardScroll/SubpageWithContact';
 
 export const metadata: Metadata = {
   title: 'Selected Work',
   description:
-    'Philip Kwong\'s record across standards leadership and consulting engagements — including ISO IWA 37-1, UL Canada TG 4400-2, and regulatory strategy for companies across the cannabis, pharmaceutical, and technology sectors.',
+    "Philip Kwong's record across standards leadership and consulting engagements — including ISO IWA 37-1, UL Canada TG 4400-2, and regulatory strategy for companies across the cannabis, pharmaceutical, and technology sectors.",
   openGraph: {
     title: 'Selected Work — Philip Kwong',
     description:
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <main>
+    <SubpageWithContact>
       <WorkPageContent />
-    </main>
+    </SubpageWithContact>
   );
 }

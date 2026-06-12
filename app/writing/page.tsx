@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { WritingPage } from '@/components/Writing/WritingPage';
+import { SubpageWithContact } from '@/components/CardScroll/SubpageWithContact';
 
 export const metadata: Metadata = {
   title: 'The Journal',
@@ -17,5 +18,9 @@ export const metadata: Metadata = {
 };
 
 export default function WritingPageRoute() {
-  return <WritingPage />;
+  return (
+    <SubpageWithContact>
+      <WritingPage />
+    </SubpageWithContact>
+  );
 }

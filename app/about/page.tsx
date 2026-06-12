@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { AboutPageContent } from '@/components/About/AboutPageContent';
+import { SubpageWithContact } from '@/components/CardScroll/SubpageWithContact';
 
 export const metadata: Metadata = {
   title: 'The Operator',
@@ -17,5 +18,9 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return <AboutPageContent />;
+  return (
+    <SubpageWithContact>
+      <AboutPageContent />
+    </SubpageWithContact>
+  );
 }
