@@ -24,7 +24,7 @@ export const CASES: Record<string, Case> = {
     type: 'STANDARDS',
     descriptors: 'Vice Convener',
     significance: "One of the world's first international frameworks addressing cannabis safety, security, and sustainability.",
-    chips: ['INTERNATIONAL STANDARD', '22 COUNTRIES', '200+ PARTICIPANTS'],
+    chips: ['INTERNATIONAL WORKSHOP AGREEMENT', '22 COUNTRIES', '200+ PARTICIPANTS'],
     writeup: 'Served as Vice Convener of Working Group 1, bringing together more than 200 participants representing 22 countries to establish a globally recognized foundation for emerging legal cannabis markets. The resulting ISO IWA 37 series became an early reference for governments, regulators, and industry stakeholders developing cannabis regulatory infrastructure worldwide.',
   },
   'ul-canada-tg': {

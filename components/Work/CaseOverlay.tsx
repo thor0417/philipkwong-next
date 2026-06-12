@@ -3,6 +3,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { CASES } from '@/lib/cases';
+import { getLenis } from '@/providers/SmoothScrollProvider';
 import styles from './CaseOverlay.module.css';
 
 interface CaseOverlayProps {
@@ -27,6 +28,7 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
     overlay.setAttribute('aria-hidden', 'false');
     overlay.classList.add(styles.isOpen);
     document.body.style.overflow = 'hidden';
+    getLenis()?.stop();
 
     if (activeTlRef.current) activeTlRef.current.kill();
 
@@ -64,6 +66,7 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
             overlay.classList.remove(styles.isOpen);
             overlay.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            getLenis()?.start();
             onClose();
           },
         },
@@ -128,7 +131,7 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
       </div>
 
       {/* Content — vertical order per spec */}
-      <div ref={contentRef} className={styles.content} id="case-content">
+      <div ref={contentRef} className={styles.content} id="case-content" data-lenis-prevent>
 
         {/* 1. Project name */}
         <h2 className={styles.client}>{data?.client ?? ''}</h2>
@@ -147,15 +150,19 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
           </div>
         )}
 
-        {/* 4. Writeup */}
+        {/* 4. Role */}
+        {data?.descriptors && (
+          <div className={styles.roleLine}>
+            <span className="t-registry">
+              <strong>[ROLE:]</strong> {data.descriptors}
+            </span>
+          </div>
+        )}
+
+        {/* 5. Writeup */}
         {data?.writeup && (
           <p className={styles.writeup}>{data.writeup}</p>
         )}
-
-        {/* 5. Artifact slot */}
-        <div className={styles.artifact} aria-label="Artifact — pending">
-          <span className={styles.artifactLabel}>[ARTIFACT: PENDING]</span>
-        </div>
 
       </div>
     </div>
