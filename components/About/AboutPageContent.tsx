@@ -137,11 +137,11 @@ export function AboutPageContent() {
             </p>
             <p>
               From ISO working groups and national standards committees to licensed
-              manufacturers, healthcare organizations, and emerging industries, the common
+              manufacturers, healthcare organizations, and emerging industries. The common
               challenge remains the same:
             </p>
             <p className={styles.pullquote}>
-              translating complexity into execution.
+              Translating complexity into execution.
             </p>
           </div>
         </div>
