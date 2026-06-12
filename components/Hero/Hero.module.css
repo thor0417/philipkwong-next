@@ -7,10 +7,10 @@
   border-bottom: 0.5px solid var(--border-light);
 }
 
-/* ── Data strip ── */
+/* ── Data strip — Vancouver left, Bangkok right ── */
 .dataStrip {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding-inline: 5vw;
   padding-block: 0.875rem;
@@ -22,10 +22,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-}
-
-.dataCellCenter {
-  text-align: center;
 }
 
 .dataCellRight {
@@ -44,12 +40,6 @@
   color: var(--accent);
 }
 
-.clockTimeRow {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5em;
-}
-
 .clockTime {
   font-family: var(--font-body);
   font-weight: 500;
@@ -57,24 +47,6 @@
   letter-spacing: 0.04em;
   color: var(--text-main);
   line-height: 1.1;
-}
-
-.clockTz {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 26px;
-  letter-spacing: 0.04em;
-  color: rgba(10, 10, 10, 0.45);
-  line-height: 1.1;
-}
-
-.dateDisplay {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 15px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-main);
 }
 
 /* ── Masthead area — grows to fill vertical space ── */
@@ -123,24 +95,17 @@
   text-align: right;
 }
 
-/* ── Mobile — functional, unstyled-new ── */
+/* ── Mobile ── */
 @media (max-width: 767px) {
   .hero {
     padding-top: 3.5rem;
   }
 
   .dataStrip {
-    flex-wrap: wrap;
-    gap: 0.5rem;
     padding-block: 0.75rem;
   }
 
-  .dataCellRight {
-    align-items: flex-start;
-  }
-
-  .clockTime,
-  .clockTz {
+  .clockTime {
     font-size: 18px;
   }
 

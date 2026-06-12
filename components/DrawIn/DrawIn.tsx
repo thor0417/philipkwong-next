@@ -11,12 +11,12 @@ export function DrawIn() {
         <div className={styles.statement} style={{ gridColumn: '1 / 9' }}>
           <span className="reveal" style={{ '--reveal-delay': '0s' } as React.CSSProperties}>
             <span className="reveal__inner">
-              The company that gets licensed is rarely the company that scales.
+              Many organizations get built. Few are built to last.
             </span>
           </span>
-          <span className="reveal" style={{ '--reveal-delay': '0.08s' } as React.CSSProperties}>
+          <span className="reveal" style={{ '--reveal-delay': '0.1s' } as React.CSSProperties}>
             <span className="reveal__inner">
-              I build the ones that do both.
+              My work sits at the intersection of regulation, operations, standards, and growth, creating the systems that turn ambitious ideas into enduring organizations.
             </span>
           </span>
         </div>
