@@ -4,11 +4,7 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { WORK_ENTRIES } from '@/lib/cases';
 import styles from './AboutPageContent.module.css';
-
-const STANDARDS_COUNT   = String(WORK_ENTRIES.strategy.length).padStart(2, '0');
-const ENGAGEMENTS_COUNT = String(WORK_ENTRIES.engagements.length).padStart(2, '0');
 
 const SERVICES = [
   {
@@ -99,7 +95,7 @@ export function AboutPageContent() {
         </div>
       </section>
 
-      {/* ── A2: Thesis ────────────────────────────────────────── */}
+      {/* ── A2: Opening statement ─────────────────────────────── */}
       <section className={styles.thesisSection}>
         <div className="grid-stage">
           <div className={styles.thesis}>
@@ -108,15 +104,9 @@ export function AboutPageContent() {
               style={{ '--reveal-delay': '0s' } as React.CSSProperties}
             >
               <span className="reveal__inner">
-                Many organizations get built. Few are built to last.
-              </span>
-            </span>
-            <span
-              className="reveal"
-              style={{ '--reveal-delay': '0.12s' } as React.CSSProperties}
-            >
-              <span className="reveal__inner">
-                My work sits at the intersection of regulation, operations, standards, and growth, creating the systems that turn ambitious ideas into enduring organizations.
+                Over the last decade, I have worked across international standards development,
+                provincial regulatory frameworks, operational architecture, quality systems,
+                commercialization strategy, and market-entry programs.
               </span>
             </span>
           </div>
@@ -137,36 +127,13 @@ export function AboutPageContent() {
         </div>
       </section>
 
-      {/* ── A4: Dossier ───────────────────────────────────────── */}
+      {/* ── A4: Bio ───────────────────────────────────────────── */}
       <section className={styles.dossierSection}>
         <div className="grid-stage">
-
-          {/* Data rail — left */}
-          <div className={styles.dataRail}>
-            {[
-              ['STATUS:',       'Active'],
-              ['YEARS:',        '08 Yrs'],
-              ['BASE:',         'Vancouver'],
-              ['OPS:',          'Bangkok + SG'],
-              ['STANDARDS:',    STANDARDS_COUNT],
-              ['ENGAGEMENTS:',  ENGAGEMENTS_COUNT],
-            ].map(([key, val]) => (
-              <div key={key} className={styles.dataRow}>
-                <span className="t-registry">
-                  <strong>[{key}]</strong> {val}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Bio — right */}
           <div className={styles.bio}>
             <p>
-              Over the last decade, I have worked across international standards development,
-              provincial regulatory frameworks, operational architecture, quality systems,
-              commercialization strategy, and market-entry programs. My work has supported
-              organizations operating in some of the most highly regulated environments
-              in North America.
+              My work has supported organizations operating in some of the most
+              highly regulated environments in North America.
             </p>
             <p>
               From ISO working groups and national standards committees to licensed
@@ -177,7 +144,6 @@ export function AboutPageContent() {
               translating complexity into execution.
             </p>
           </div>
-
         </div>
       </section>
 
