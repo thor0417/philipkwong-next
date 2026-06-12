@@ -209,7 +209,7 @@ button { cursor: pointer; }
   font-size: 16px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(10, 10, 10, 0.9);
+  color: #0A0A0A;
   margin-bottom: var(--space-4);
 }
 

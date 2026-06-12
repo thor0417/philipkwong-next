@@ -11,7 +11,7 @@
 }
 
 .contact :global(.section-label) {
-  color: rgba(249, 249, 249, 0.4);
+  color: #F9F9F9;
 }
 
 .cta {
