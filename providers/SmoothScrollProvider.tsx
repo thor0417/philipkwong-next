@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState, createContext, useContext } from 'react';
+import { usePathname } from 'next/navigation';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,8 +11,18 @@ gsap.registerPlugin(ScrollTrigger);
 let _lenis: Lenis | null = null;
 export function getLenis() { return _lenis; }
 
+const NavDarkContext = createContext(false);
+export function useNavDark() { return useContext(NavDarkContext); }
+
 export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
+  const [navIsDark, setNavIsDark] = useState(false);
+  const pathname = usePathname();
+
+  /* Reset dark state on every route change */
+  useEffect(() => {
+    setNavIsDark(false);
+  }, [pathname]);
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
@@ -38,7 +49,15 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
       },
     });
 
-    const onScroll = () => ScrollTrigger.update();
+    const checkNavDark = () => {
+      const cardWork = document.getElementById('card-work');
+      setNavIsDark(!!(cardWork && cardWork.getBoundingClientRect().bottom <= 80));
+    };
+
+    const onScroll = () => {
+      ScrollTrigger.update();
+      checkNavDark();
+    };
     lenis.on('scroll', onScroll);
 
     const rafHandler = (time: number) => lenis.raf(time * 1000);
@@ -46,6 +65,7 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     gsap.ticker.lagSmoothing(0);
 
     ScrollTrigger.refresh();
+    checkNavDark();
 
     return () => {
       lenis.off('scroll', onScroll);
@@ -56,5 +76,5 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     };
   }, []);
 
-  return <>{children}</>;
+  return <NavDarkContext.Provider value={navIsDark}>{children}</NavDarkContext.Provider>;
 }

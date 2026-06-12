@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getLenis } from '@/providers/SmoothScrollProvider';
+import { getLenis, useNavDark } from '@/providers/SmoothScrollProvider';
 import styles from './Nav.module.css';
 
 export function Nav() {
@@ -11,30 +11,8 @@ export function Nav() {
   const isHome    = pathname === '/';
   const isSubpage = !isHome;
 
-  const [isDark, setIsDark] = useState(false);
+  const isDark = useNavDark();
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
-
-  /* Dark state — go dark when #card-work has scrolled past the nav (contact underlay exposed).
-     Uses Lenis scroll event; falls back to native scroll on the first render cycle
-     before Lenis has initialised. Re-runs on pathname changes. */
-  useEffect(() => {
-    const check = () => {
-      const cardWork = document.getElementById('card-work');
-      if (!cardWork) { setIsDark(false); return; }
-      setIsDark(cardWork.getBoundingClientRect().bottom <= 80);
-    };
-
-    const lenis = getLenis();
-    if (lenis) {
-      lenis.on('scroll', check);
-      check();
-      return () => lenis.off('scroll', check);
-    }
-
-    window.addEventListener('scroll', check, { passive: true });
-    check();
-    return () => window.removeEventListener('scroll', check);
-  }, [pathname]);
 
   /* Escape key closes mobile nav */
   useEffect(() => {
