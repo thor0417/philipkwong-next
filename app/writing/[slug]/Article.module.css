@@ -51,17 +51,17 @@
 .back {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(10, 10, 10, 0.5);
+  color: var(--text-main);
   transition: color var(--duration-base);
   display: block;
   margin-top: var(--space-8);
 }
 
 .back:hover {
-  color: var(--text-main);
+  color: var(--accent);
 }
 
 .body h2 {

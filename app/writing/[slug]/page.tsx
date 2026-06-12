@@ -43,7 +43,7 @@ export default async function ArticlePage({ params }: Props) {
             <strong>[READ:]</strong> {article.readTime} MIN
           </span>
           <Link href="/writing" className={styles.back}>
-            Back to Writing
+            [ BACK TO WRITING ]
           </Link>
         </aside>
         <div
