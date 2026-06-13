@@ -308,6 +308,11 @@ html[data-nav-open="true"] #hero-class-row {
   visibility: hidden;
 }
 
+/* Overlay is z-index:var(--z-overlay)=50. Lift nav above it so [ CLOSE ] stays tappable. */
+html[data-nav-open="true"] #site-nav {
+  z-index: calc(var(--z-overlay) + 1);
+}
+
 /* ------------------------------------------------------------
    CARD SCROLL — stacked section effect
    ------------------------------------------------------------ */
