@@ -145,12 +145,20 @@
     padding-block: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
   }
 
+  .thesisSection {
+    padding-block: clamp(2.5rem, 8vw, 4rem);
+  }
+
   .thesis {
     font-size: clamp(1.4rem, 5.5vw, 2rem);
   }
 
   .photoWrap {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5; /* portrait crop — more presence for panel photo at objectPosition: center top */
+  }
+
+  .dossierSection {
+    padding-block: clamp(2.5rem, 8vw, 5rem);
   }
 
   .bio {
@@ -159,6 +167,11 @@
 
   .pullquote {
     font-size: clamp(1.4rem, 5.5vw, 2rem);
+    margin-top: 0; /* .bio gap: 1.5em already handles spacing — desktop margin-top would double-stack */
+  }
+
+  .servicesSection {
+    padding-block: clamp(2.5rem, 8vw, 5rem);
   }
 
   /* Single column vertical list, hairlines, no numbers */
