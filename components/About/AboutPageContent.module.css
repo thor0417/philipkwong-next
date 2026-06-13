@@ -169,6 +169,7 @@
 
   .pullquote {
     font-size: clamp(1.5rem, 6vw, 2rem);
+    font-weight: 600;
     color: var(--text-main);
     margin-top: 0;
   }

@@ -302,6 +302,12 @@ html[data-panel-open="true"] #site-nav {
   transition: opacity 0.15s ease;
 }
 
+/* Hide hero registry tags while nav overlay opacity-fades in on mobile.
+   useLayoutEffect in Nav.tsx sets this before browser paints the transition. */
+html[data-nav-open="true"] #hero-class-row {
+  visibility: hidden;
+}
+
 /* ------------------------------------------------------------
    CARD SCROLL — stacked section effect
    ------------------------------------------------------------ */

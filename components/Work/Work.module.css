@@ -203,7 +203,11 @@
 
   /* Full variant mobile: larger client, combined scope·role line */
   .indexRowFull .indexClient {
-    font-size: clamp(2rem, 8vw, 3rem);
+    display: block;
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
   }
 
   .indexRowFull .indexScope {

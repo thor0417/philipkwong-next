@@ -82,4 +82,15 @@
   .heading {
     margin-bottom: var(--space-4);
   }
+
+  .filters {
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+  }
+
+  .filterBtn {
+    font-size: 12px;
+    padding: 0.5rem 0.75rem;
+    letter-spacing: 0.02em;
+  }
 }

@@ -134,9 +134,4 @@
   .classRow :global(.t-registry):last-child {
     text-align: left;
   }
-
-  /* Hide registry tags while nav overlay is transitioning open */
-  :global(html[data-nav-open="true"]) .classRow {
-    visibility: hidden;
-  }
 }
