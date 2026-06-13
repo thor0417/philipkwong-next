@@ -5,7 +5,7 @@
   z-index: var(--z-overlay);
   background: #0A0A0A;
   display: none;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto 1fr; /* dragHandle / topBar / content */
   padding-inline: 5vw;
   overflow: hidden;
   pointer-events: none;
@@ -24,6 +24,7 @@
   justify-content: space-between;
   height: 4rem;
   border-bottom: 0.5px solid #333333;
+  grid-row: 2;
 }
 
 .subsection {
@@ -57,6 +58,7 @@
   overflow-y: auto;
   height: 100%;
   min-height: 0;
+  grid-row: 3;
 }
 
 /* 1. Project name */
@@ -150,6 +152,7 @@
     padding-inline: 5vw;
   }
 
+  /* Drag handle — now own grid row above topBar */
   .dragHandle {
     display: block;
     width: 32px;
@@ -157,6 +160,11 @@
     background: rgba(249, 249, 249, 0.3);
     border-radius: 2px !important;
     margin: 0.75rem auto 0;
+  }
+
+  /* Top bar: just subsection + close, label left-aligned */
+  .subsection {
+    text-align: left;
   }
 
   .client {
