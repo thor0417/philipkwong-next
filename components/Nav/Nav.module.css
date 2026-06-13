@@ -213,4 +213,8 @@
   .overlay {
     background: var(--bg-primary);
   }
+
+  .overlayMeta {
+    display: none;
+  }
 }

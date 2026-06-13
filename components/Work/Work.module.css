@@ -201,6 +201,13 @@
     display: none;
   }
 
+  /* GSAP filter sets inline display:none on hidden rows, but display:flex !important
+     above overrides it. Attribute selector beats inline style when !important is added. */
+  .indexRow[style*="display: none"],
+  .indexRowFull[style*="display: none"] {
+    display: none !important;
+  }
+
   /* Full variant mobile: larger client, combined scope·role line */
   .indexRowFull .indexClient {
     display: block;
