@@ -29,8 +29,16 @@
   margin-top: clamp(3rem, 6vw, 5rem);
 }
 
+.mobileBreak {
+  display: none;
+}
+
 /* ── Mobile — functional fallback ── */
 @media (max-width: 767px) {
+  .mobileBreak {
+    display: block;
+  }
+
   .section :global(.grid-stage) {
     display: flex;
     flex-direction: column;

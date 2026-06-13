@@ -11,7 +11,7 @@ export function DrawIn() {
         <div className={styles.statement} style={{ gridColumn: '1 / -1' }}>
           <span className="reveal reveal--fade" style={{ '--reveal-delay': '0s' } as React.CSSProperties}>
             <span className="reveal__inner">
-              Many organizations get built. Few are built to last.
+              Many organizations get built.<br className={styles.mobileBreak} /> Few are built to last.
             </span>
           </span>
           <span
