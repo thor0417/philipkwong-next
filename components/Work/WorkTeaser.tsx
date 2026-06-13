@@ -69,7 +69,7 @@ export function WorkTeaser({ onCaseOpen }: WorkTeaserProps) {
           return (
             <li
               key={id}
-              className={[styles.row, i >= 2 ? styles.mobileHidden : ''].filter(Boolean).join(' ')}
+              className={[styles.row, i === 3 ? styles.mobileHidden : ''].filter(Boolean).join(' ')}
               data-row={id}
               role="button"
               tabIndex={0}

@@ -140,9 +140,11 @@ export function CaseOverlay({ caseId, onClose }: CaseOverlayProps) {
       aria-label="Case study"
       onClick={(e) => { if (e.target === overlayRef.current) closeOverlay(); }}
     >
-      {/* Top bar */}
+      {/* Drag handle — mobile only, sits in grid row 1 above top bar */}
+      <div className={styles.dragHandle} aria-hidden="true" />
+
+      {/* Top bar — grid row 2: subsection label left, close right */}
       <div ref={topBarRef} className={styles.topBar}>
-        <div className={styles.dragHandle} aria-hidden="true" />
         <span className={styles.subsection}>{data?.subsection ?? ''}</span>
         <button className={styles.closeBtn} onClick={closeOverlay} aria-label="Close case study">
           [ CLOSE ]
