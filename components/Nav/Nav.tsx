@@ -29,6 +29,16 @@ export function Nav() {
     return () => { document.body.style.overflow = ''; };
   }, [isOverlayOpen]);
 
+  /* data-nav-open attribute — lets Hero.module.css hide registry tags during overlay transition */
+  useEffect(() => {
+    if (isOverlayOpen) {
+      document.documentElement.setAttribute('data-nav-open', 'true');
+    } else {
+      document.documentElement.removeAttribute('data-nav-open');
+    }
+    return () => { document.documentElement.removeAttribute('data-nav-open'); };
+  }, [isOverlayOpen]);
+
   const navClass = [
     styles.nav,
     isDark    ? styles.isDark    : '',
