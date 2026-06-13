@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getLenis, useNavDark } from '@/providers/SmoothScrollProvider';
@@ -29,8 +29,10 @@ export function Nav() {
     return () => { document.body.style.overflow = ''; };
   }, [isOverlayOpen]);
 
-  /* data-nav-open attribute — lets Hero.module.css hide registry tags during overlay transition */
-  useEffect(() => {
+  /* data-nav-open attribute — hides hero registry tags before opacity transition starts.
+     useLayoutEffect fires before browser paint so the attribute is set on the same frame
+     as .overlayOpen class, preventing the tags from showing through the transparent overlay. */
+  useLayoutEffect(() => {
     if (isOverlayOpen) {
       document.documentElement.setAttribute('data-nav-open', 'true');
     } else {
