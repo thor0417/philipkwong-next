@@ -377,6 +377,15 @@ html[data-nav-open="true"] #hero-class-row {
     z-index: auto;
   }
 
+  /* Force contact reveals visible on mobile.
+     The reveal system lives in Hero.tsx and is never initialized on subpages.
+     Without this, reveal__inner stays at translateY(105%) clipped by overflow:hidden. */
+  #card-contact .reveal .reveal__inner,
+  #card-contact .reveal--fade .reveal__inner {
+    transform: none;
+    opacity: 1;
+  }
+
   #card-work {
     margin-bottom: 0;
   }
