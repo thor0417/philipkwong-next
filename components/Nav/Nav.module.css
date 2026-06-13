@@ -122,7 +122,11 @@
 /* Mobile overlay */
 .overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
   z-index: var(--z-overlay);
   background: var(--bg-primary);
   display: flex;
@@ -205,10 +209,8 @@
 
   .trigger { display: flex; }
 
-  /* 100dvh follows the dynamic viewport — prevents gap on iOS Safari when the
-     address bar shrinks. Explicit background reinforces opacity during transition. */
+  /* background re-declared to reinforce opacity during transition */
   .overlay {
-    min-height: 100dvh;
     background: var(--bg-primary);
   }
 }
