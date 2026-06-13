@@ -98,6 +98,27 @@
   border-bottom-color: var(--text-main);
 }
 
+/* isDark always wins over isSubpage.
+   Compound selectors declared after isSubpage rules so specificity
+   (0,3,0)+(0,4,0) beats (0,2,0)+(0,2,1) regardless of source order. */
+.nav.isDark .wordmark,
+.nav.isDark .link,
+.nav.isDark .trigger,
+.nav.isSubpage.isDark .link {
+  color: #F9F9F9;
+}
+
+.nav.isDark .link[aria-current='page'],
+.nav.isSubpage.isDark .link[aria-current='page'] {
+  color: #F9F9F9;
+  border-bottom-color: #F9F9F9;
+}
+
+.nav.isDark .link:hover,
+.nav.isSubpage.isDark .link:hover {
+  border-bottom-color: #F9F9F9;
+}
+
 /* Mobile overlay */
 .overlay {
   position: fixed;
