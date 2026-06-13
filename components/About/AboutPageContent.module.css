@@ -151,10 +151,11 @@
 
   .thesis {
     font-size: clamp(1.4rem, 5.5vw, 2rem);
+    line-height: 1.5;
   }
 
   .photoWrap {
-    aspect-ratio: 4 / 5; /* portrait crop — more presence for panel photo at objectPosition: center top */
+    aspect-ratio: 3 / 2;
   }
 
   .dossierSection {
@@ -163,11 +164,13 @@
 
   .bio {
     font-size: clamp(1.2rem, 5vw, 1.75rem);
+    line-height: 1.5;
   }
 
   .pullquote {
-    font-size: clamp(1.4rem, 5.5vw, 2rem);
-    margin-top: 0; /* .bio gap: 1.5em already handles spacing — desktop margin-top would double-stack */
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    color: var(--text-main);
+    margin-top: 0;
   }
 
   .servicesSection {
@@ -182,7 +185,7 @@
 
   .serviceCell {
     border-right: none;
-    border-bottom: 0.5px solid var(--border-light);
+    border-bottom: 0.5px solid #D4D4D4;
     padding-inline: 0;
   }
 
