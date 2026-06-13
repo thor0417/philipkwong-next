@@ -194,6 +194,8 @@
   .nav {
     height: 3.5rem;
     padding-inline: 5vw;
+    background: transparent;
+    border-bottom: none;
   }
 
   .wordmark {

@@ -81,9 +81,13 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
-   MOBILE — functional fallback
+   MOBILE — two entries, Dharma client / DM Mono role, hairlines
    ───────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
+  .mobileHidden {
+    display: none;
+  }
+
   .list {
     display: block;
     border-top: var(--border-hairline);
@@ -98,22 +102,34 @@
     cursor: pointer;
   }
 
-  .num,
-  .teaserLabel {
+  .num {
     display: none;
   }
 
   .client {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: clamp(1.75rem, 8.5vw, 3rem);
+    font-size: clamp(2rem, 8vw, 2.75rem);
     line-height: 0.95;
     color: var(--text-main);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .teaserLabel {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(10, 10, 10, 0.5);
+    margin-top: 0.25rem;
+  }
+
   .recordWrap {
+    display: flex;
+    justify-content: center;
     padding-top: 2rem;
   }
 }

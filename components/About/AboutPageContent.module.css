@@ -161,32 +161,24 @@
     font-size: clamp(1.4rem, 5.5vw, 2rem);
   }
 
-  /* 2×2 on mobile too — 1-col only at very small */
-  .servicesRow {
-    grid-template-columns: repeat(2, 1fr);
-    border-left: none;
-  }
-
-  .serviceCell {
-    border-right: none;
-    padding-inline: 0;
-  }
-
-  .serviceCell:nth-child(odd) {
-    border-right: 0.5px solid var(--border-light);
-    padding-inline: 0 1rem;
-  }
-}
-
-@media (max-width: 480px) {
+  /* Single column vertical list, hairlines, no numbers */
   .servicesRow {
     grid-template-columns: 1fr;
     border-left: none;
   }
 
-  .serviceCell,
+  .serviceCell {
+    border-right: none;
+    border-bottom: 0.5px solid var(--border-light);
+    padding-inline: 0;
+  }
+
   .serviceCell:nth-child(odd) {
     border-right: none;
     padding-inline: 0;
+  }
+
+  .serviceNum {
+    display: none;
   }
 }
