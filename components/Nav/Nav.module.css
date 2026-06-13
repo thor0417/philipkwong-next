@@ -204,4 +204,11 @@
   }
 
   .trigger { display: flex; }
+
+  /* 100dvh follows the dynamic viewport — prevents gap on iOS Safari when the
+     address bar shrinks. Explicit background reinforces opacity during transition. */
+  .overlay {
+    min-height: 100dvh;
+    background: var(--bg-primary);
+  }
 }

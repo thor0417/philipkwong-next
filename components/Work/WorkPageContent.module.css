@@ -75,17 +75,25 @@
 
 @media (max-width: 767px) {
   .page {
-    padding-block: var(--space-16) var(--space-12);
+    padding-block: var(--space-12) var(--space-8); /* 3rem / 2rem — was 4rem / 3rem */
     padding-inline: 5vw;
+    min-height: unset; /* section height = content, no forced 100svh ghost */
   }
 
   .heading {
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-2); /* 0.5rem — was 1rem */
+  }
+
+  /* Registry meta tags wrap to 2-3 lines at narrow widths (~120px wasted).
+     Hidden on mobile — filter tabs and list entries convey the same context. */
+  .meta {
+    display: none;
   }
 
   .filters {
     flex-wrap: nowrap;
     gap: 0.35rem;
+    margin-bottom: var(--space-4); /* 1rem — was 2rem */
   }
 
   .filterBtn {
