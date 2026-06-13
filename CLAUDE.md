@@ -465,35 +465,84 @@ WorkTeaser (home):
 
 ## 5. CURRENT STATE AND PENDING
 
-### Passes Completed (all on branch v3)
+### Site Status
 
-- **R1–R5** — DrawIn (full-width statement, two-scale stanzas, stamp); CaseOverlay (data-lenis-prevent, lenis stop/start, artifact deleted, role line, IWA chip fix); About (opening statement, bio, 2×2 services); Writing (PP Neue article titles, larger category headers); Article back link. Pushed `c5a53e0`.
-- **R6–F7** — Nav contact smooth-scroll; cursor inversion rebuild; DrawIn clip→fade reveal; About body scale; pullquote margin; service description scale; panel writeup scale; writing category semibold title-case; panel z-index fix; Work index scope/role 15px. Pushed `ad274c9`.
-- **Nav dark state bug fix** — moved dark state logic from Nav to SmoothScrollProvider; exposed via NavDarkContext. Pushed `422721d`.
-- **Service description scale** — `clamp(1.2rem, 1.6vw, 1.6rem)`, `line-height: 1.5`. Pushed `941a8e3`.
-- **Copy fix** — About body P2 and pullquote verbatim. Pushed `aa99f53`.
-- **CLAUDE.md rewrite** — this file. Current commit.
+Live at philipkwong.com and www.philipkwong.com — both serving the Next.js rebuild.
+DNS: Cloudflare. Apex A record 76.76.21.21 (Vercel, DNS only, grey cloud). www CNAME points to Vercel. GoDaddy is registrar only.
+Vercel auto-deploys on push to main.
+
+### Completed — Desktop
+
+- Hero: centered headline, clocks left/right, registry tags horizontal, sequential scramble, Framer Motion fade on load
+- About: white background, body paragraph + dossier rows [ACTIVE:] [BASE:] [OPS:], warm background removed
+- Services: GSAP scroll entrance, number left, title right
+- Work: GSAP scroll entrance, right-aligned descriptors, full-screen panels
+- Writing index: category ledger, Dharma titles, full-screen panels
+- Contact: Dennis Snellenberg reveal — contact fixed underneath, work slides away
+- Page transitions: Framer Motion AnimatePresence
+- Nav: dark state triggers correctly over contact section
+- Writing panels: mouse wheel scroll working via getLenis().stop()/start()
+- Panel headers: category label flush left, [ CLOSE ] flush right — all panels
+- SEO: meta tags, Open Graph, Twitter cards, schema markup, sitemap, robots.txt
+
+### Completed — Mobile
+
+- Hero: stacked clocks top left, headline dominant, registry tags below, all in one viewport
+- About: single column, white background, body paragraph + dossier rows
+- Services: DM Mono number label above Dharma title, hairline separated
+- Work: large Dharma client names, DM Mono descriptor below, orange border-left on tap
+- Work panels: full screen, swipe down to close, drag handle, horizontal swipe conflict fixed
+- Writing index: Dharma titles correct, tight category spacing
+- Writing panels: touch scroll working, swipe down to close, horizontal swipe fixed
+- Contact: full width submit, large tap targets, resize: none on textarea
+- Global: 44px minimum touch targets, tap highlight suppressed
+
+### Published Articles
+
+1. `how-ai-changes-regulated-businesses` — TECHNOLOGY — 5 min
+2. `why-compliance-requires-strategy` — COMPLIANCE — 5 min
+3. `qms-architecture-regulatory-frameworks` — STANDARDS — 5 min
 
 ### Known Issues
 
-- **`.work-entry` cursor orange state never fires.** `Cursor.tsx` checks `target.closest?.('.work-entry')` but no element in the codebase carries this plain class — CSS Modules generate hashed names. Orange cursor on work entries is currently broken. Fix: add `work-entry` as a plain `className` string to `WorkTeaser` rows and `WorkIndex` rows, alongside their module class.
-- **`section-label` color on dark sections.** `.section-label` in `globals.css` uses `color: #0A0A0A` — this is correct for light sections but would need override in dark-background contexts if ever used there.
+- **Scroll lag on desktop** — suspected: Framer Motion re-rendering or GSAP ScrollTrigger instances not cleaned up on unmount. Not critical.
+- **`.work-entry` cursor orange state never fires** — `Cursor.tsx` checks plain class `.work-entry` but CSS Modules hash the name. Fix: add `work-entry` as a plain `className` alongside the module class on WorkTeaser and WorkIndex rows.
+- **Desktop services, work, about read as flat vertical lists** — creative direction pass queued.
+- **No graphics in work panels yet** — ExtractionTek blueprint and Grant Leisure images pending.
 
-### Font Preloads (layout.tsx `<head>`)
+### Next Priorities
 
-Four preloaded: `DharmaGothicE_Heavy_R.woff`, `DharmaGothicE_ExBold_R.woff`, `DMMono-Medium.ttf`, `PPNeueMontreal-Regular.otf`. The ExBold and PPNeueMontreal-Semibold are not preloaded — they load on first use.
+1. SEO — meta refinement, heading hierarchy audit, internal linking between articles and work entries
+2. GEO — deepen all three articles, expand to 8 articles over 8 weeks
+3. Agent infrastructure — API routes, lead capture, prospecting workflows, CRM integration
+4. Analytics — Vercel Analytics
+5. Söhne — buy Söhne Buch + Halbfett web licenses from klim.co.nz, replace PP Neue Montreal
+6. Graphics — blueprint PDF into ExtractionTek panel, GL images into Grant Leisure panel
+7. Creative direction pass — elevate desktop and mobile layout to $50k tier
+
+### Editorial Calendar
+
+| Week | Title | Category |
+|------|-------|----------|
+| 1 | What Regulated Market Entry Actually Costs | STRATEGY |
+| 2 | What It Means to Chair a Technical Standards Committee | STANDARDS |
+| 3 | Why AI Compliance Tools Fail in Regulated Industries | TECHNOLOGY |
+| 4 | The Difference Between a Compliance Program and a Compliance Architecture | COMPLIANCE |
+| 5 | Operating Across Canadian and Thai Regulatory Frameworks | STRATEGY |
+| 6 | What the Cannabis Licensing Wave Taught Us About Regulatory Readiness | COMPLIANCE |
+| 7 | Why Founders Treat Compliance as a Cost Centre and Why That's Wrong | STRATEGY |
+| 8 | How Technical Standards Shape Product Markets Before Products Exist | STANDARDS |
 
 ### What Has Been Tried and Rejected
 
-- **Orange on nav, section labels, hover states, form labels** — violates orange restriction
+- **Warm background #F5F0E8 on About** — removed, looked like a design trick not a design decision
+- **Inline display text mixed into About body copy** — removed, unreadable on mobile
+- **`max-width: 68ch` on writing panel content** — too narrow, replaced with full-width padding
+- **IntersectionObserver for nav dark state** — replaced with Lenis scroll listener
+- **Orange Cloudflare proxy on Vercel A record** — causes SSL conflicts, must be DNS only (grey cloud)
 - **`backdrop-filter: blur()` on nav** — caused scroll lag on every composited frame; removed
 - **`clip-path` on CaseOverlay at rest** — caused scroll lag; replaced with `display: none`
-- **`will-change: transform` on bulk display text** — removed
-- **`overflow: hidden` on `.section`** — removed (created unnecessary stacking contexts)
-- **`toLocaleTimeString` in clock** — reconstructed `Intl.DateTimeFormat` every second; replaced with cached formatters
-- **IntersectionObserver for cursor inversion** — replaced with event-target detection in `onMove`
 - **`href="/#contact"` for nav contact link** — broke programmatic scrolling on subpages; replaced with `getLenis()?.scrollTo(document.body.scrollHeight)`
-- **Dark state check in Nav `useEffect`** — Nav fires before SmoothScrollProvider on mount; moved to SmoothScrollProvider
 
 ---
 
