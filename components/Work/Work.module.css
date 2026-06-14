@@ -62,8 +62,8 @@
   .indexScope {
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 15px;
-    letter-spacing: 0.04em;
+    font-size: 14px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #0A0A0A;
     transition: color 0.25s ease;
@@ -72,8 +72,8 @@
   .indexRole {
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 15px;
-    letter-spacing: 0.04em;
+    font-size: 14px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #0A0A0A;
     text-align: right;
@@ -129,8 +129,8 @@
   .indexHeader span {
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 0.2em;
+    font-size: 14px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: rgba(10, 10, 10, 0.7);
   }
