@@ -69,6 +69,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/TestSöhne-Buch.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/TestSöhneBreit-Halbfett.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ------------------------------------------------------------
    DESIGN TOKENS
    ------------------------------------------------------------ */
@@ -86,7 +102,7 @@
 
   --font-display:  'Dharma Gothic E', sans-serif;
   --font-body:     'DM Mono', monospace;
-  --font-readable: 'PPNeueMontreal', sans-serif;
+  --font-readable: 'Sohne', sans-serif;
 
   --text-display-2xl: clamp(5rem, 15vw, 20rem);
   --text-display-xl:  clamp(3.5rem, 10vw, 14rem);
