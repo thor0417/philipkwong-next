@@ -101,6 +101,30 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'PPNeueYork';
+  src: url('/fonts/PPNeueYork-NormalLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PPNeueYork';
+  src: url('/fonts/PPNeueYork-NormalMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PPNeueYork';
+  src: url('/fonts/PPNeueYork-CondensedMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: condensed;
+  font-display: swap;
+}
+
 /* ------------------------------------------------------------
    DESIGN TOKENS
    ------------------------------------------------------------ */
@@ -118,7 +142,7 @@
 
   --font-display:  'Dharma Gothic E', sans-serif;
   --font-body:     'Pitch', monospace;
-  --font-readable: 'Sohne', sans-serif;
+  --font-readable: 'PPNeueYork', sans-serif;
 
   --text-display-2xl: clamp(5rem, 15vw, 20rem);
   --text-display-xl:  clamp(3.5rem, 10vw, 14rem);
