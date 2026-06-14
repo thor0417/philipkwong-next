@@ -104,9 +104,7 @@ export function AboutPageContent() {
               style={{ '--reveal-delay': '0s' } as React.CSSProperties}
             >
               <span className="reveal__inner">
-                Over the last decade, I have worked across international standards development,
-                provincial regulatory frameworks, operational architecture, quality systems,
-                commercialization strategy, and market-entry programs.
+                Building systems for complex environments.
               </span>
             </span>
           </div>
@@ -132,16 +130,13 @@ export function AboutPageContent() {
         <div className="grid-stage">
           <div className={styles.bio}>
             <p>
-              My work has supported organizations operating in some of the most
-              highly regulated environments in North America.
-            </p>
-            <p>
-              From ISO working groups and national standards committees to licensed
-              manufacturers, healthcare organizations, and emerging industries. The common
-              challenge remains the same:
+              I help organizations navigate regulation, operational complexity, and growth.
+              My experience spans international standards, regulatory frameworks, operational
+              architecture, and commercialization strategy, supporting organizations through
+              periods of formation, transformation, and scale.
             </p>
             <p className={styles.pullquote}>
-              Translating complexity into execution.
+              No unnecessary complexity. No shortcuts. Just systems that work.
             </p>
           </div>
         </div>
