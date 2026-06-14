@@ -30,10 +30,10 @@
 .thesis {
   grid-column: 1 / -1;
   font-family: var(--font-readable);
-  font-weight: 600;
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -150,7 +150,7 @@
   }
 
   .thesis {
-    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
   .photoWrap {
