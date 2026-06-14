@@ -4,22 +4,12 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ARTICLES, type Article } from '@/lib/articles';
+import { ARTICLES } from '@/lib/articles';
 import styles from './WritingPage.module.css';
 
-const toTitleCase = (s: string) => s.charAt(0) + s.slice(1).toLowerCase();
-
-/* Group by category, preserving array order within each group */
-function groupByCategory(articles: Article[]): Map<string, Article[]> {
-  const map = new Map<string, Article[]>();
-  for (const a of articles) {
-    if (!map.has(a.category)) map.set(a.category, []);
-    map.get(a.category)!.push(a);
-  }
-  return map;
-}
-
-const grouped = groupByCategory(ARTICLES);
+const sortedArticles = [...ARTICLES].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
 
 export function WritingPage() {
   useEffect(() => {
@@ -59,33 +49,21 @@ export function WritingPage() {
         </div>
       </section>
 
-      {/* B2 + B3: Category sections */}
+      {/* Article list — flat, date descending */}
       <div className={styles.categoryList}>
-        {Array.from(grouped.entries()).map(([category, articles]) => (
-          <section key={category} className={styles.categorySection}>
-
-            {/* Category header */}
-            <div className={styles.categoryHeader}>
-              <span className={styles.categoryName}>{toTitleCase(category)}</span>
-            </div>
-
-            {/* Article rows */}
-            <ul className={styles.articleList}>
-              {articles.map((article) => (
-                <li key={article.slug} data-article-row={article.slug}>
-                  <Link
-                    href={`/writing/${article.slug}`}
-                    className={styles.articleRow}
-                  >
-                    <span className={styles.articleTitle}>{article.title}</span>
-                    <span className={styles.articleRead}>[READ: {article.readTime} MIN]</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-          </section>
-        ))}
+        <ul className={styles.articleList}>
+          {sortedArticles.map((article) => (
+            <li key={article.slug} data-article-row={article.slug}>
+              <Link
+                href={`/writing/${article.slug}`}
+                className={styles.articleRow}
+              >
+                <span className={styles.articleTitle}>{article.title}</span>
+                <span className={styles.articleRead}>[READ: {article.readTime} MIN]</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
     </main>
