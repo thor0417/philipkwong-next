@@ -29,11 +29,11 @@
 
 .thesis {
   grid-column: 1 / -1;
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: var(--font-readable);
+  font-weight: 600;
   font-size: clamp(2rem, 3.5vw, 3.5rem);
-  line-height: var(--leading-display);
-  letter-spacing: var(--tracking-display);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
