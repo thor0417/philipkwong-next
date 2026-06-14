@@ -44,8 +44,8 @@
 .label {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 14px;
-  letter-spacing: var(--tracking-label);
+  font-size: 13px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(249, 249, 249, 0.4);
 }
@@ -54,7 +54,7 @@
 .textarea {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: var(--tracking-body);
   color: var(--bg-primary);
   background: transparent;
@@ -89,8 +89,8 @@
   align-self: flex-start;
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 14px;
-  letter-spacing: var(--tracking-label);
+  font-size: 13px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--bg-primary);
   background: transparent;
