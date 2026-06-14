@@ -35,7 +35,7 @@
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 13px;
-  letter-spacing: var(--tracking-label);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -43,7 +43,7 @@
 .clockTime {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 26px;
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
   letter-spacing: 0.04em;
   color: var(--text-main);
   line-height: 1.1;
