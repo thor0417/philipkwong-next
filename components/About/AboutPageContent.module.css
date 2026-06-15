@@ -6,7 +6,7 @@
 .titleSection {
   padding-block: clamp(5rem, 10vw, 10rem) clamp(2.5rem, 4vw, 4rem);
   border-top: 0.5px solid var(--border-light);
-  text-align: center;
+  text-align: left;
 }
 
 .heading {
