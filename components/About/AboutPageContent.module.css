@@ -23,7 +23,7 @@
    A2 — OPENING STATEMENT
    ───────────────────────────────────────────────────────────── */
 .thesisSection {
-  padding-block: clamp(4rem, 8vw, 8rem) clamp(6rem, 10vw, 10rem);
+  padding-block: clamp(4rem, 8vw, 8rem) clamp(5rem, 9vw, 9rem);
   border-top: 0.5px solid var(--border-light);
 }
 
@@ -61,12 +61,18 @@
   border-top: 0.5px solid var(--border-light);
 }
 
+.dossierRow {
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 0.16em;
+}
+
 .bio {
   grid-column: 1 / -1;
-  max-width: 60ch;
+  max-width: 52ch;
   font-family: var(--font-readable);
   font-weight: 400;
-  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  font-size: clamp(1.15rem, 1.5vw, 1.45rem);
   line-height: 1.7;
   color: var(--text-main);
   display: flex;
@@ -76,12 +82,13 @@
 }
 
 .pullquote {
-  max-width: 60ch;
+  max-width: none;
+  white-space: nowrap;
   font-family: var(--font-readable);
   font-weight: 400;
-  font-size: clamp(1.75rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
   line-height: 1.2;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   color: var(--text-main);
   margin-top: clamp(3rem, 5vw, 4.5rem);
   -webkit-font-smoothing: antialiased;
