@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preload" href="/fonts/DMMono-Medium.woff2"           as="font" type="font/woff2" crossOrigin="anonymous" />
         {/* Secondary fonts — preloaded */}
         <link rel="preload" href="/fonts/DharmaGothicE_ExBold_R.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/PPNeueMontreal-Regular.woff2"  as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/PPNeueYork-NormalRegular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
