@@ -79,7 +79,7 @@
 .significance {
   font-family: var(--font-readable);
   font-weight: 400;
-  font-size: clamp(1.35rem, 1.8vw, 1.75rem);
+  font-size: var(--text-body-lg);
   line-height: 1.65;
   letter-spacing: 0.01em;
   color: #F9F9F9;
@@ -125,9 +125,9 @@
 .writeup {
   font-family: var(--font-readable);
   font-weight: 400;
-  font-size: clamp(1.35rem, 1.8vw, 1.75rem);
+  font-size: var(--text-body-lg);
   line-height: 1.65;
-  color: rgba(249, 249, 249, 0.8);
+  color: rgba(249, 249, 249, 0.85);
   max-width: min(90ch, 92%);
   margin-bottom: clamp(3rem, 6vw, 5rem);
 }
