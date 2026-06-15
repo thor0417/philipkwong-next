@@ -42,8 +42,8 @@
 
 .clockTime {
   font-family: var(--font-body);
-  font-weight: 500;
-  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  font-weight: 400;
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
   letter-spacing: 0.04em;
   color: var(--text-main);
   line-height: 1.1;
