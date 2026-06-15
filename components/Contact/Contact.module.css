@@ -54,7 +54,7 @@
 .textarea {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 17px;
+  font-size: var(--text-body-sm);
   letter-spacing: 0.02em;
   color: var(--bg-primary);
   background: transparent;
