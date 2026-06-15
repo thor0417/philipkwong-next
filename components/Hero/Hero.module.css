@@ -34,8 +34,8 @@
 .clockCity {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 0.2em;
+  font-size: var(--text-meta-lg);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
 }
