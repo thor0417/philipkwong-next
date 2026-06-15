@@ -19,7 +19,8 @@
 }
 
 .stanza2 {
-  max-width: 44%;
+  color: var(--bg-primary);
+  max-width: 62%;
   font-size: var(--text-body-lg);
   line-height: 1.5;
   margin-top: clamp(2rem, 3vw, 3rem);
