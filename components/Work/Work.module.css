@@ -39,9 +39,9 @@
   .indexNo {
     font-family: var(--font-body);
     font-weight: 400;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    color: rgba(10, 10, 10, 0.35);
+    font-size: var(--text-meta-md);
+    letter-spacing: 0.14em;
+    color: #0A0A0A;
     transition: color 0.25s ease;
   }
 
@@ -62,7 +62,7 @@
   .indexScope {
     font-family: var(--font-readable);
     font-weight: 500;
-    font-size: 17px;
+    font-size: 20px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #0A0A0A;
@@ -72,7 +72,7 @@
   .indexRole {
     font-family: var(--font-readable);
     font-weight: 500;
-    font-size: 17px;
+    font-size: 20px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #0A0A0A;
@@ -129,10 +129,10 @@
   .indexHeader span {
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 13px;
+    font-size: var(--text-meta-md);
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(10, 10, 10, 0.7);
+    color: #0A0A0A;
   }
 
   .indexHeader span:last-child {
