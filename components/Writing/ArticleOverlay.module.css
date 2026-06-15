@@ -6,7 +6,6 @@
   background: #0A0A0A;
   display: none;
   flex-direction: column;
-  padding-inline: 5vw;
   overflow: hidden;
   pointer-events: none;
 }
@@ -23,6 +22,7 @@
   justify-content: space-between;
   height: 4rem;
   border-bottom: 0.5px solid #333333;
+  padding-inline: clamp(2rem, 5vw, 5rem);
 }
 
 .category {
@@ -54,10 +54,8 @@
   flex: 1;
   overflow-y: auto;
   width: 100%;
-  padding-left: clamp(2rem, 5vw, 5rem);
-  padding-right: clamp(2rem, 5vw, 5rem);
-  padding-top: clamp(2rem, 4vw, 4rem);
-  padding-bottom: clamp(2rem, 5vw, 5rem);
+  max-width: 100%;
+  padding: clamp(3rem, 5vw, 5rem) clamp(2rem, 5vw, 5rem);
 }
 
 .title {
@@ -94,6 +92,7 @@
   line-height: 1.7;
   color: #F9F9F9;
   width: 100%;
+  max-width: none;
 }
 
 .body h2 {
