@@ -101,10 +101,18 @@
   }
 
   .indexNoFull {
-    color: rgba(10, 10, 10, 0.45);
+    font-family: var(--font-body);
+    font-size: var(--text-meta-md);
+    letter-spacing: 0.14em;
+    color: #0A0A0A;
   }
 
   .indexScopeFull {
+    font-family: var(--font-readable);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     color: #0A0A0A;
   }
 
