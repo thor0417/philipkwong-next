@@ -52,18 +52,30 @@
 }
 
 @font-face {
-  font-family: 'PPNeueMontreal';
-  src: url('/fonts/PPNeueMontreal-Regular.woff2') format('woff2'),
-       url('/fonts/PPNeueMontreal-Regular.otf')   format('opentype');
+  font-family: 'PPNeueYork';
+  src: url('/fonts/PPNeueYork-NormalRegular.woff2') format('woff2'),
+       url('/fonts/PPNeueYork-NormalRegular.woff')  format('woff'),
+       url('/fonts/PPNeueYork-NormalRegular.otf')   format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'PPNeueMontreal';
-  src: url('/fonts/PPNeueMontreal-Semibold.woff2') format('woff2'),
-       url('/fonts/PPNeueMontreal-Semibold.otf')   format('opentype');
+  font-family: 'PPNeueYork';
+  src: url('/fonts/PPNeueYork-NormalMedium.woff2') format('woff2'),
+       url('/fonts/PPNeueYork-NormalMedium.woff')  format('woff'),
+       url('/fonts/PPNeueYork-NormalMedium.otf')   format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PPNeueYork';
+  src: url('/fonts/PPNeueYork-CondensedMedium.woff2') format('woff2'),
+       url('/fonts/PPNeueYork-CondensedMedium.woff')  format('woff'),
+       url('/fonts/PPNeueYork-CondensedMedium.otf')   format('opentype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -101,29 +113,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'PPNeueYork';
-  src: url('/fonts/PPNeueYork-NormalLight.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PPNeueYork';
-  src: url('/fonts/PPNeueYork-NormalMedium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PPNeueYork';
-  src: url('/fonts/PPNeueYork-CondensedMedium.otf') format('opentype');
-  font-weight: 500;
-  font-style: condensed;
-  font-display: swap;
-}
 
 /* ------------------------------------------------------------
    DESIGN TOKENS
