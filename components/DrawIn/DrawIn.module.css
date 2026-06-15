@@ -3,14 +3,14 @@
   background-color: var(--bg-dark);
   border-top: 0.5px solid var(--border-dark);
   border-bottom: 0.5px solid var(--border-dark);
-  padding-block: clamp(6rem, 12vw, 12rem);
+  padding-block: clamp(5rem, 8vw, 8rem);
 }
 
 .statement {
   font-family: var(--font-readable);
   font-weight: 400;
-  font-size: clamp(2.25rem, 4vw, 4.25rem);
-  line-height: 1.25;
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  line-height: 1.05;
   letter-spacing: 0.01em;
   color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
@@ -18,10 +18,10 @@
 }
 
 .stanza2 {
-  max-width: 55%;
-  font-size: clamp(1.25rem, 1.8vw, 1.75rem);
-  line-height: 1.5;
-  margin-top: clamp(3rem, 6vw, 6rem);
+  max-width: 52%;
+  font-size: clamp(1.25rem, 1.7vw, 1.65rem);
+  line-height: 1.55;
+  margin-top: clamp(2rem, 3.5vw, 3.5rem);
 }
 
 .stampWrap {
