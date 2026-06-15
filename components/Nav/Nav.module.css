@@ -22,7 +22,7 @@
 .wordmark {
   font-family: 'PPNeueMontreal', sans-serif;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 18px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   line-height: 1;
@@ -39,8 +39,8 @@
 .link {
   font-family: var(--font-readable);
   font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 0.15em;
+  font-size: 14px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-main);
   border-bottom: 0.5px solid transparent;
@@ -60,7 +60,7 @@
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 13px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-main);
   background: none;
