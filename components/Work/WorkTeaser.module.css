@@ -55,8 +55,8 @@
   .teaserLabel {
     font-family: var(--font-readable);
     font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 0.06em;
+    font-size: 20px;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #0A0A0A;
     text-align: right;
@@ -121,8 +121,8 @@
     display: block;
     font-family: var(--font-readable);
     font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 0.06em;
+    font-size: 20px;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: rgba(10, 10, 10, 0.5);
     margin-top: 0.25rem;
