@@ -163,7 +163,8 @@
   }
 
   .thesis {
-    font-size: clamp(1.5rem, 4.5vw, 2rem);
+    font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+    white-space: normal;
   }
 
   .photoWrap {
@@ -175,12 +176,12 @@
   }
 
   .bio {
-    font-size: clamp(1.2rem, 5vw, 1.75rem);
+    font-size: clamp(0.95rem, 3.5vw, 1.15rem);
     line-height: 1.5;
   }
 
   .pullquote {
-    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem);
     font-weight: 600;
     color: var(--text-main);
     margin-top: 0;
