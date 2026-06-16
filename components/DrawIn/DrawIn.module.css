@@ -41,6 +41,7 @@
 @media (max-width: 767px) {
   .mobileBreak {
     display: block;
+    margin-bottom: 0.5em;
   }
 
   .section :global(.grid-stage) {
