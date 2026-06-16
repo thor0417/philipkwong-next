@@ -38,11 +38,9 @@
 
   .indexNo {
     font-family: var(--font-body);
-    font-weight: 400;
     font-size: var(--text-meta-md);
     letter-spacing: 0.14em;
     color: #0A0A0A;
-    transition: color 0.25s ease;
   }
 
   .indexClient {
@@ -59,16 +57,7 @@
     transition: color 0.25s ease;
   }
 
-  .indexScope {
-    font-family: var(--font-readable);
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #0A0A0A;
-    transition: color 0.25s ease;
-  }
-
+  .indexScope,
   .indexRole {
     font-family: var(--font-readable);
     font-weight: 500;
@@ -76,8 +65,6 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #0A0A0A;
-    text-align: right;
-    transition: color 0.25s ease;
   }
 
   .indexRow:hover .indexNo,
