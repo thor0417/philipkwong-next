@@ -81,38 +81,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Sohne';
-  src: url('/fonts/TestSöhne-Buch.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sohne';
-  src: url('/fonts/TestSöhneBreit-Halbfett.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Pitch';
-  src: url('/fonts/TestPitch-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Pitch';
-  src: url('/fonts/TestPitch-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
 
 /* ------------------------------------------------------------
    DESIGN TOKENS
@@ -130,7 +98,7 @@
   --border-hairline-dark: 0.5px solid #333333;
 
   --font-display:  'Dharma Gothic E', sans-serif;
-  --font-body:     'Pitch', monospace;
+  --font-body:     'DM Mono', monospace;
   --font-readable: 'PPNeueYork', sans-serif;
 
   --text-display-2xl: clamp(5rem, 15vw, 20rem);
@@ -179,7 +147,7 @@
   --text-body-md: clamp(1.15rem, 1.4vw, 1.4rem);
   --text-body-sm: clamp(1rem, 1.2vw, 1.15rem);
 
-  /* Metadata scale — Pitch */
+  /* Metadata scale — DM Mono */
   --text-meta-lg: 15px;
   --text-meta-md: 13px;
   --text-meta-sm: 12px;
