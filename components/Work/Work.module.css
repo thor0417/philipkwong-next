@@ -72,11 +72,12 @@
   .indexRole {
     font-family: var(--font-readable);
     font-weight: 500;
-    font-size: 20px;
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #0A0A0A;
     text-align: right;
+    white-space: normal;
     transition: color 0.25s ease;
   }
 
@@ -110,10 +111,11 @@
   .indexScopeFull {
     font-family: var(--font-readable);
     font-weight: 500;
-    font-size: 20px;
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #0A0A0A;
+    white-space: normal;
   }
 
   .indexRowFull:hover .indexScopeFull {
