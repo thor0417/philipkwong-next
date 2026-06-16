@@ -33,9 +33,10 @@
   grid-column: 1 / -1;
   font-family: var(--font-readable);
   font-weight: 500;
-  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  font-size: clamp(1.5rem, 3.2vw, 3.5rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
+  white-space: nowrap;
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -85,7 +86,7 @@
 
 .pullquote {
   max-width: none;
-  white-space: normal;
+  white-space: nowrap;
   text-align: center;
   font-family: var(--font-readable);
   font-weight: 400;
