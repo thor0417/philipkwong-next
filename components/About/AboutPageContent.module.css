@@ -24,7 +24,7 @@
    A2 — OPENING STATEMENT
    ───────────────────────────────────────────────────────────── */
 .thesisSection {
-  padding-block: clamp(4rem, 8vw, 8rem) clamp(5rem, 9vw, 9rem);
+  padding-block: clamp(6rem, 10vw, 10rem) clamp(6rem, 10vw, 10rem);
   border-top: 0.5px solid var(--border-light);
   text-align: center;
 }
@@ -85,7 +85,7 @@
 
 .pullquote {
   max-width: none;
-  white-space: nowrap;
+  white-space: normal;
   text-align: center;
   font-family: var(--font-readable);
   font-weight: 400;
@@ -162,7 +162,7 @@
   }
 
   .thesis {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(1.75rem, 5.5vw, 2.5rem);
   }
 
   .photoWrap {
