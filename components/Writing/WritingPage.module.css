@@ -92,7 +92,8 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #0A0A0A;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
   transition: color 0.25s ease;
 }
 
