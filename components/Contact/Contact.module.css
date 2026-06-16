@@ -43,30 +43,15 @@
 
 .label {
   font-family: var(--font-body);
-  font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(249, 249, 249, 0.4);
 }
 
 .input,
 .textarea {
-  font-family: var(--font-body);
-  font-weight: 400;
+  font-family: var(--font-readable);
   font-size: var(--text-body-sm);
   letter-spacing: 0.02em;
-  color: var(--bg-primary);
-  background: transparent;
-  border: none;
-  border-bottom: 0.5px solid var(--border-dark);
-  outline: none;
-  width: 100%;
-  padding-block: var(--space-4);
-  line-height: var(--leading-body);
-  transition: border-color var(--duration-base) var(--ease-out-expo);
-  -webkit-box-shadow: 0 0 0 1000px var(--bg-dark) inset;
-  -webkit-text-fill-color: var(--bg-primary);
 }
 
 .input::placeholder,
@@ -86,21 +71,9 @@
 }
 
 .submit {
-  align-self: flex-start;
   font-family: var(--font-body);
-  font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--bg-primary);
-  background: transparent;
-  border: 0.5px solid var(--border-dark);
-  cursor: pointer;
-  padding: var(--space-4) var(--space-8);
-  line-height: 1;
-  transition:
-    border-color var(--duration-base) var(--ease-out-expo),
-    color        var(--duration-base) var(--ease-out-expo);
 }
 
 .submit:hover {
