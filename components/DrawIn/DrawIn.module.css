@@ -11,8 +11,7 @@
   font-weight: 400;
   font-size: clamp(2rem, 3.8vw, 4.5rem);
   line-height: 1.05;
-  white-space: normal;
-  overflow: visible;
+  white-space: nowrap;
   letter-spacing: 0.01em;
   color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
@@ -21,11 +20,6 @@
 
 .stanza2 {
   color: var(--bg-primary);
-  font-family: var(--font-readable);
-  font-weight: 400;
-  white-space: normal;
-  overflow: visible;
-  word-break: normal;
   max-width: 62%;
   font-size: var(--text-body-lg);
   line-height: 1.5;

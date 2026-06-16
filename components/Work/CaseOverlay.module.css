@@ -81,7 +81,12 @@
   font-weight: 400;
   font-size: var(--text-body-lg);
   line-height: 1.65;
+  letter-spacing: 0.01em;
   color: #F9F9F9;
+  max-width: 68ch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: clamp(2rem, 3vw, 2.5rem);
 }
 
 /* 3. Chips */
@@ -123,6 +128,8 @@
   font-size: var(--text-body-lg);
   line-height: 1.65;
   color: rgba(249, 249, 249, 0.85);
+  max-width: min(90ch, 92%);
+  margin-bottom: clamp(3rem, 6vw, 5rem);
 }
 
 /* registry overrides for dark context */

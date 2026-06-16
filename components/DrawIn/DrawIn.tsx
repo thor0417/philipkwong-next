@@ -14,15 +14,14 @@ export function DrawIn() {
               Many organizations get built.<br className={styles.mobileBreak} /> Few are built to last.
             </span>
           </span>
-        </div>
-
-        <div
-          className={`reveal reveal--fade ${styles.stanza2}`}
-          style={{ gridColumn: '1 / -1', '--reveal-delay': '0.15s' } as React.CSSProperties}
-        >
-          <span className="reveal__inner">
-            My work sits at the intersection of regulation, operations, standards, and growth,<br />
-            creating the systems that turn ambitious ideas into enduring organizations.
+          <span
+            className={`reveal reveal--fade ${styles.stanza2}`}
+            style={{ '--reveal-delay': '0.15s' } as React.CSSProperties}
+          >
+            <span className="reveal__inner">
+              My work sits at the intersection of regulation, operations, standards, and growth,<br />
+              creating the systems that turn ambitious ideas into enduring organizations.
+            </span>
           </span>
         </div>
 

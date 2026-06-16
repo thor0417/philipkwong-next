@@ -184,10 +184,6 @@ body {
   overflow-x: clip;
 }
 
-p {
-  font-family: var(--font-readable);
-}
-
 /* Grain layer — SVG data URI, no filter, no backdrop-filter */
 body::before {
   content: '';
