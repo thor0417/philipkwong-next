@@ -75,25 +75,16 @@
 .articleTitle {
   font-family: var(--font-readable);
   font-weight: 500;
-  font-style: condensed;
   font-size: var(--text-body-lg);
   line-height: 1.15;
   letter-spacing: -0.01em;
-  color: var(--text-main);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: color 0.25s ease;
 }
 
 .articleRead {
   font-family: var(--font-body);
-  font-weight: 500;
   font-size: var(--text-meta-md);
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: #0A0A0A;
-  flex-shrink: 0;
-  transition: color 0.25s ease;
 }
 
 /* Hover inversion */
