@@ -94,7 +94,7 @@
   /* ── Full variant overrides (used on /work page) ── */
   .indexRowFull {
     padding-block: 2rem;
-    grid-template-columns: 6% 50% 30% 14%;
+    grid-template-columns: 6% 44% 30% 20%;
   }
 
   .indexClientFull {
@@ -130,7 +130,7 @@
   /* Header row — full variant, desktop only */
   .indexHeader {
     display: grid;
-    grid-template-columns: 6% 50% 30% 14%;
+    grid-template-columns: 6% 44% 30% 20%;
     align-items: center;
     border-bottom: 0.5px solid var(--border-light);
     padding-block: 0.75rem;
