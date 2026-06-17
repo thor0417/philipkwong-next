@@ -59,7 +59,10 @@
 
   .statement {
     font-family: var(--font-readable);
-    font-size: clamp(1.75rem, 6vw, 2.25rem);
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.0;
     color: var(--text-main);
     white-space: normal;
   }
