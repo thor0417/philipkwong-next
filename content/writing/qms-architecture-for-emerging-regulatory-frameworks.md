@@ -4,42 +4,44 @@ date: 2026
 readTime: 5
 ---
 
-Building a quality management system when the regulatory framework is still being written is a different problem than building one for a mature, well-understood environment. The instinct is to wait until the rules are settled. This instinct is wrong, and following it is how organizations end up scrambling under deadline pressure with a compliance architecture that was assembled rather than designed.
+The instinct when operating in an emerging regulatory environment is to wait for the rules to settle before building compliance infrastructure. This instinct is wrong, and the cost of following it is a compliance architecture assembled under deadline pressure rather than designed under operational ones.
 
-## The Problem with Waiting
+Regulatory frameworks do not arrive complete. They arrive in stages, over multi-year timelines, with enforcement postures that shift as the regulator develops experience with the sector. A business that waits for regulatory clarity before building its quality management system will be building under conditions that guarantee poor outcomes: compressed timelines, incomplete guidance, and a regulator that is already forming opinions about which operators take compliance seriously.
 
-Regulatory frameworks don't arrive complete. They arrive in pieces, often over multi-year timelines, with enforcement postures that shift as the regulator gains experience. A sector that is regulated in principle may operate under ambiguous guidance for years before the rules are clear enough that most operators feel confident acting on them.
+## The Wrong Problem
 
-Organizations that wait for clarity before building their QMS are solving the wrong problem. The problem isn't "what does the regulation require?" The problem is "what does a well-run operation in this sector need, and how do we document that in a way that survives regulatory evolution?"
+The question most organizations ask when facing an emerging regulatory framework is: what does the regulation require? This is the wrong question at the wrong time.
 
-## ISO 9001 as Architecture, Not Certification
+The regulation is incomplete. What the regulation will require in its final form is partially knowable and partially not. An organization that builds its quality management system around current regulatory text in an evolving framework will rebuild it every time the framework evolves. In sectors with multi-year regulatory development timelines, this means rebuilding repeatedly.
 
-The most useful framework for QMS development in emerging regulatory environments is ISO 9001:2015, not because of the certification, but because of the governance architecture it provides.
+The right question is: what does a well-run operation in this sector need, and how do we document that in a way that survives regulatory evolution?
 
-ISO 9001's process approach gives you a structure that is regulatory-neutral. The standard doesn't tell you what procedures to write; it tells you what your documentation system needs to be able to do. When you build a QMS on ISO 9001 architecture, you're building something that can absorb new regulatory requirements as an overlay rather than a rebuild.
+This question produces a different architecture. One built on operational requirements rather than current regulatory text, designed to absorb new requirements as they arrive rather than to satisfy the requirements that exist today.
 
-This is what I did for BC pharmacy regulation. The Health Professions and Occupations Act came with three sequential regulatory deadlines across a 24-month window. Waiting until all three were in effect would have compressed a 97-document development project into an impossible timeline. Instead, we built the ISO 9001 architecture first (governance, document control, incident reporting, records management) and then mapped each specific regulatory requirement to the appropriate procedure as the bylaws were finalized.
+## ISO 9001 as Structural Foundation
 
-The result is a QMS that addressed all three deadlines without requiring structural changes between each phase. New requirements arrived into an existing system rather than triggering a new build.
+The most effective foundation for quality management in emerging regulatory environments is ISO 9001:2015, not for the certification, but for the governance architecture the standard provides.
+
+ISO 9001's process approach is regulatory-neutral. The standard defines what a documentation system needs to be capable of doing, not what specific procedures it needs to contain. An organization that builds its quality management system on ISO 9001 architecture has a structure that can receive new regulatory requirements as an overlay rather than requiring a structural rebuild each time the framework evolves.
+
+The practical mechanics work as follows. ISO 9001 defines the governance layer: document control, incident reporting, records management, management review, internal audit. This layer is stable regardless of what the sector-specific regulation requires. Sector-specific requirements arrive into that governance structure and are mapped to existing procedures or documented as new procedures within the existing hierarchy.
+
+New regulatory requirements do not trigger a new build. They trigger an addition to a system already designed to receive them.
 
 ## Document Architecture Principles
 
-A QMS built for regulatory durability follows a few principles that differ from one built purely for compliance.
+Quality management systems designed for regulatory durability follow structural principles that differ from those designed for audit compliance.
 
-**Anchor to mechanism, not outcome.** Procedures should describe what is being done and why, not just the required outcome. "Submit the report" is an outcome. "Initiate the CIRCL report within 24 hours of the triggering event, assign to the designated reporter, obtain supervisor sign-off before submission" is a mechanism. Mechanisms survive when the required outcomes change.
+Procedures anchor to mechanisms, not outcomes. A procedure that states a required outcome is a procedure that must be rewritten whenever the required outcome changes. A procedure that describes the mechanism by which an outcome is achieved is a procedure that survives outcome changes because the mechanism remains valid. The distinction between "submit the report" and "initiate the report within the required window, assign to the designated responsible party, obtain required authorization before submission" is the difference between a procedure that describes work and one that governs it.
 
-**Match document hierarchy to decision authority.** The governance document defines policy. The procedure defines process. The work instruction defines execution. Each level should contain only what belongs at that level. When a policy contains execution detail, it becomes impossible to update execution without triggering a policy review. When a procedure contains policy rationale, the procedure becomes a political document rather than an operational one.
+Document hierarchy matches decision authority. Policy documents define organizational commitments. Procedures define how commitments are fulfilled. Work instructions define how procedures are executed. Each level contains only what belongs at that level. When policy documents contain execution detail, updates to how work is done trigger policy review cycles. When procedures contain policy rationale, they become political documents that resist revision. The hierarchy exists to make the system maintainable. Violating it makes the system rigid.
 
-**Build for real operators, not ideal operators.** A QMS that works only when everyone is well-trained and highly motivated is not a QMS. It is a best-case scenario. Checklists, decision trees, and exception handling aren't signs of distrust in the workforce. They're the mechanisms that make the system reliable across the full range of the people who will actually use it.
-
-## The Standards Development Parallel
-
-I've seen this dynamic from the other side as well. As chair of ULC TG-44002 and vice convener of ISO IWA 37-1, I was on the side of the table that writes the frameworks that QMS architects have to absorb.
-
-The lesson from that work: the organizations that adapted fastest to ISO IWA 37-1 were those that had already built their quality systems on ISO infrastructure. The framework arrived as a set of additional requirements layered onto governance they already had. For organizations that had built compliance-only documentation, the IWA arrived as a mandate to rebuild.
+The system is designed for actual operators, not ideal ones. A quality management system that functions reliably only when staff are well-trained and fully attentive is not a system. It is a best-case scenario. Decision trees, checklists, and explicit exception handling are not signs of distrust in the workforce. They are the mechanisms that make system performance consistent across the full range of conditions under which the work actually occurs.
 
 ## Timing
 
-The right time to build a QMS for an emerging regulatory framework is before the regulation is finalized, not after. The build should anticipate the structure of the regulation: what sectors it will cover, what failure modes it is trying to prevent, what the enforcement posture of the regulator is likely to be. Then create a documentation architecture that can absorb the specific requirements when they arrive.
+The correct time to build a quality management system for an emerging regulatory framework is before the regulation is finalized. The build should anticipate the structure of the regulation: what sectors it will cover, what failure modes it is designed to prevent, what the enforcement priorities of the regulator are likely to be based on the regulator's stated concerns and analogous frameworks in other jurisdictions.
 
-This requires a different kind of work than compliance documentation. It requires strategic judgment about where the regulation is going. It requires understanding regulators as stakeholders with specific concerns, not just as sources of requirements. And it requires building a system that is designed to evolve, because in emerging regulatory environments, evolution is the only certainty.
+A documentation architecture designed around these anticipations can absorb specific regulatory requirements when they arrive without structural revision. Organizations that wait for finalized regulation to begin building are solving a different problem under worse conditions, with less time, less flexibility, and a regulator that has already formed initial assessments of which operators were prepared and which were not.
+
+In emerging regulatory environments, the compliance infrastructure built before the regulation is settled is the compliance infrastructure that positions the organization for the environment that follows.
