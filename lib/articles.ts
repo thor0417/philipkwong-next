@@ -9,6 +9,14 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'the-competence-illusion',
+    title: 'The Competence Illusion',
+    description: 'AI has made expertise look easy. In high-stakes environments, the gap between apparent and actual competence is the most expensive problem in business right now.',
+    date: '2026-06-15',
+    readTime: 6,
+    category: 'TECHNOLOGY',
+  },
+  {
     slug: 'ai-in-regulated-business-operations',
     title: 'How AI Changes the Way Regulated Businesses Operate',
     description: 'The practical implications for compliance, documentation, and operational decision-making.',
