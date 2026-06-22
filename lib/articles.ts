@@ -9,6 +9,14 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'the-verification-problem',
+    title: 'The Verification Problem',
+    description: 'AI has decoupled the production of expert output from the expertise required to verify it. In high-stakes environments, that gap is the risk.',
+    date: '2026-06-22',
+    readTime: 6,
+    category: 'TECHNOLOGY',
+  },
+  {
     slug: 'the-competence-illusion',
     title: 'The Competence Illusion',
     description: 'AI has made expertise look easy. In high-stakes environments, the gap between apparent and actual competence is the most expensive problem in business right now.',
