@@ -159,7 +159,7 @@
   }
 
   .thesisSection {
-    padding-block: clamp(2.5rem, 8vw, 4rem);
+    padding-block: clamp(3rem, 8vw, 5rem) clamp(3rem, 8vw, 5rem);
   }
 
   .thesis {
@@ -176,12 +176,13 @@
   }
 
   .bio {
-    font-size: clamp(0.95rem, 3.5vw, 1.15rem);
-    line-height: 1.5;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    line-height: 1.7;
+    max-width: none;
   }
 
   .pullquote {
-    font-size: clamp(1.25rem, 5vw, 1.65rem);
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
     font-weight: 600;
     color: var(--text-main);
     margin-top: 0;
