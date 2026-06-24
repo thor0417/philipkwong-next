@@ -198,8 +198,8 @@
   .nav {
     height: 3.5rem;
     padding-inline: 5vw;
-    background: transparent;
-    border-bottom: none;
+    background: var(--bg-primary);
+    border-bottom: var(--border-hairline);
   }
 
   .wordmark {
