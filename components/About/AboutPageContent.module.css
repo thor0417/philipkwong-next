@@ -155,11 +155,13 @@
    ───────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
   .titleSection {
-    padding-block: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+    padding-block: clamp(4rem, 10vw, 6rem) clamp(3rem, 8vw, 5rem);
   }
 
   .thesisSection {
-    padding-block: clamp(3rem, 8vw, 5rem) clamp(3rem, 8vw, 5rem);
+    padding-block: clamp(4rem, 10vw, 6rem) clamp(4rem, 10vw, 6rem);
+    border-top: 0.5px solid var(--border-light);
+    text-align: center;
   }
 
   .thesis {
@@ -167,12 +169,17 @@
     white-space: normal;
   }
 
+  .photoSection {
+    margin-block: 0;
+  }
+
   .photoWrap {
     aspect-ratio: 3 / 2;
   }
 
   .dossierSection {
-    padding-block: clamp(2.5rem, 8vw, 5rem);
+    padding-block: clamp(3rem, 8vw, 5rem) clamp(3rem, 8vw, 5rem);
+    border-top: 0.5px solid var(--border-light);
   }
 
   .bio {
@@ -190,7 +197,8 @@
   }
 
   .servicesSection {
-    padding-block: clamp(2.5rem, 8vw, 5rem);
+    padding-block: clamp(3rem, 8vw, 5rem) clamp(3rem, 8vw, 5rem);
+    border-top: 0.5px solid var(--border-light);
   }
 
   /* Single column vertical list, hairlines, no numbers */
