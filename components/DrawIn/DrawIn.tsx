@@ -19,7 +19,7 @@ export function DrawIn() {
             style={{ '--reveal-delay': '0.15s' } as React.CSSProperties}
           >
             <span className="reveal__inner">
-              My work sits at the intersection of regulation, operations, standards, and growth,<br />
+              My work sits at the intersection of regulation, operations, standards, and growth,
               creating the systems that turn ambitious ideas into enduring organizations.
             </span>
           </span>
