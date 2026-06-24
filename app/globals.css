@@ -391,6 +391,10 @@ html[data-nav-open="true"] #site-nav {
     --section-block: clamp(3.5rem, 10vw, 5rem);
   }
 
+  .scroll-stage {
+    padding-top: 3.5rem;
+  }
+
   .reveal__inner {
     transition-duration: 0.75s;
   }
