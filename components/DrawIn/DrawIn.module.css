@@ -59,25 +59,28 @@
 
   .statement {
     font-family: var(--font-readable);
-    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    font-size: clamp(2.25rem, 9vw, 3rem);
     font-weight: 600;
     letter-spacing: -0.02em;
-    line-height: 1.0;
+    line-height: 1.05;
     color: var(--text-main);
+    text-align: left;
     white-space: normal;
   }
 
   .stanza2 {
     font-family: var(--font-readable);
     font-size: clamp(1rem, 4vw, 1.25rem);
-    margin-top: clamp(2rem, 6vw, 3rem);
-    max-width: 100%;
+    line-height: 1.5;
+    margin-top: clamp(2.5rem, 8vw, 4rem);
+    max-width: 60%;
+    text-align: left;
   }
 
   .stampWrap {
-    margin-top: clamp(2rem, 6vw, 3rem);
+    margin-top: clamp(2.5rem, 8vw, 4rem);
     width: auto;
-    align-self: flex-start;
+    align-self: flex-end;
   }
 
   /* Stamp: dark-theme (paper bg, ink text) → light-theme (ink bg, paper text).
