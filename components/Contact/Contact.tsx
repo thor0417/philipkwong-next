@@ -23,10 +23,11 @@ export function Contact() {
 
   const handleSubmit = async () => {
     const name    = (document.getElementById('field-name')    as HTMLInputElement)?.value.trim();
+    const email   = (document.getElementById('field-email')   as HTMLInputElement)?.value.trim();
     const company = (document.getElementById('field-company') as HTMLInputElement)?.value.trim();
     const message = (document.getElementById('field-message') as HTMLTextAreaElement)?.value.trim();
 
-    if (!name || !message) {
+    if (!name || !email || !message) {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
       return;
@@ -38,12 +39,13 @@ export function Contact() {
       const res = await fetch('https://formspree.io/f/xdaypbrk', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ name, company, message }),
+        body: JSON.stringify({ name, email, company, message }),
       });
 
       if (res.ok) {
         setStatus('sent');
         (document.getElementById('field-name')    as HTMLInputElement).value    = '';
+        (document.getElementById('field-email')   as HTMLInputElement).value    = '';
         (document.getElementById('field-company') as HTMLInputElement).value    = '';
         (document.getElementById('field-message') as HTMLTextAreaElement).value = '';
         setTimeout(() => setStatus('idle'), 4000);
@@ -86,6 +88,19 @@ export function Contact() {
               name="name"
               autoComplete="name"
               placeholder="Your name"
+            />
+          </div>
+
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="field-email">Email</label>
+            <input
+              className={styles.input}
+              type="email"
+              id="field-email"
+              name="email"
+              autoComplete="email"
+              placeholder="Your email"
+              required
             />
           </div>
 
