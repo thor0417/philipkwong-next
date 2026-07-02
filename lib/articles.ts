@@ -9,6 +9,14 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'the-liability-transfer',
+    title: 'The Liability Transfer',
+    description: 'When AI-assisted professional work fails, the accountability does not transfer to the AI. It stays with the person who delivered the work and the organization that engaged them.',
+    date: '2026-06-29',
+    readTime: 6,
+    category: 'TECHNOLOGY',
+  },
+  {
     slug: 'the-verification-problem',
     title: 'The Verification Problem',
     description: 'AI has decoupled the production of expert output from the expertise required to verify it. In high-stakes environments, that gap is the risk.',
