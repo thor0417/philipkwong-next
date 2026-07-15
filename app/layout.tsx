@@ -66,7 +66,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 url: 'https://philipkwong.com',
                 email: 'hello@philipkwong.com',
                 sameAs: [
-                  'LINKEDIN_URL_PLACEHOLDER',
+                  'https://www.bloomberg.com/profile/person/21197925',
+                  'https://orcid.org/0000-0001-8920-5667',
+                  'https://www.theglobeandmail.com/cannabis/article-the-oil-barons-of-cannabis-inside-the-illicit-but-lucrative-world-of/',
+                  'https://www.healtheuropa.com/cannabis-extraction-2/91341/',
+                  'https://engage.gov.bc.ca/app/uploads/sites/121/2018/08/Part-2-BC-Cannabis-Stakeholder-Submissions.pdf',
+                  'https://www.vice.com/en/article/the-canadian-government-just-greenlit-dabs-sort-of/',
+                  'https://www.marketscreener.com/insider/PHILIP-KWONG-A2F82H/network/',
+                  'https://www.globenewswire.com/news-release/2018/09/05/1566021/0/en/Veritas-Welcomes-Exclusive-Marketing-Agreement-Between-3-Carbon-Extractions-and-ExtractionTek-Solutions.html',
+                  'https://www.straight.com/life/1145391/industry-expert-local-extraction-whiz-philip-kwong-dishes-his-favourite-vancouver',
+                  'https://www.cannacommerce.ca/about',
+                  'https://www.asianamericansforcannabis.org/news/2020/3/6/aace-interview-philip-kwong',
                 ],
                 knowsAbout: [
                   'Regulatory compliance',
