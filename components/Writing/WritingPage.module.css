@@ -20,30 +20,32 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
-   CATEGORY SECTIONS
+   SERIES SECTIONS — full-bleed background bands
    ───────────────────────────────────────────────────────────── */
-.categoryList {
+.seriesSection {
+  width: 100%;
   border-top: 0.5px solid var(--border-light);
+  background-color: var(--bg-primary);
+}
+
+/* Last section carries the bottom air the flat list used to have */
+.seriesSection:last-child {
   padding-bottom: clamp(6rem, 12vw, 12rem);
 }
 
-.categorySection {
-  /* each category is a block */
-}
-
-/* Bold black display-scale category header */
-.categoryHeader {
+/* Machine-voice series header */
+.seriesHeader {
   padding-inline: 5vw;
-  padding-block: clamp(4rem, 8vw, 7rem) clamp(1rem, 2vw, 1.5rem);
-  border-bottom: 0.5px solid var(--border-light);
+  padding-block: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 2vw, 1.75rem);
 }
 
-.categoryName {
-  font-family: var(--font-readable);
-  font-weight: 600;
-  font-size: clamp(2.25rem, 4.5vw, 4.25rem);
-  line-height: 1.05;
-  color: var(--text-main);
+.seriesName {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-meta-md);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.5);
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -55,6 +57,10 @@
 
 .articleList li {
   border-bottom: 0.5px solid var(--border-light);
+}
+
+.articleList li:first-child {
+  border-top: 0.5px solid var(--border-light);
 }
 
 .articleRow {
@@ -107,6 +113,49 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
+   DARK SERIES SECTION — full inversion
+   Article title sizing, [READ:] format and hairline structure are
+   unchanged; only background and text colors flip.
+   ───────────────────────────────────────────────────────────── */
+.seriesDark {
+  background-color: var(--bg-dark);
+  border-top-color: var(--border-dark);
+}
+
+.seriesDark .seriesName {
+  color: rgba(249, 249, 249, 0.5);
+}
+
+.seriesDark .articleList li {
+  border-bottom-color: var(--border-dark);
+}
+
+.seriesDark .articleList li:first-child {
+  border-top-color: var(--border-dark);
+}
+
+.seriesDark .articleTitle {
+  color: var(--bg-primary);
+}
+
+.seriesDark .articleRead {
+  color: var(--bg-primary);
+}
+
+/* Hover mirrors the light section: light card, ink text */
+.seriesDark .articleRow:hover {
+  background-color: #F9F9F9;
+}
+
+.seriesDark .articleRow:hover .articleTitle {
+  color: #0A0A0A;
+}
+
+.seriesDark .articleRow:hover .articleRead {
+  color: rgba(10, 10, 10, 0.6);
+}
+
+/* ─────────────────────────────────────────────────────────────
    MOBILE — functional fallback
    ───────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
@@ -114,12 +163,8 @@
     padding-block: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
   }
 
-  .categoryHeader {
+  .seriesHeader {
     padding-block: clamp(2.5rem, 8vw, 4rem) clamp(0.75rem, 2vw, 1rem);
-  }
-
-  .categoryName {
-    font-size: clamp(1.75rem, 8vw, 3rem);
   }
 
   .articleRow {

@@ -4,12 +4,21 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ARTICLES } from '@/lib/articles';
+import { ARTICLES, Article } from '@/lib/articles';
 import styles from './WritingPage.module.css';
 
-const sortedArticles = [...ARTICLES].sort(
-  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-);
+/* Series render order: Compliance Architecture first (older body of work,
+   chronologically anchored April–May), then Competence Illusion. */
+const SERIES: { key: string; name: string; dark: boolean }[] = [
+  { key: 'compliance-architecture', name: 'THE COMPLIANCE ARCHITECTURE SERIES', dark: false },
+  { key: 'competence-illusion',     name: 'THE COMPETENCE ILLUSION SERIES',     dark: true  },
+];
+
+const byDateDesc = (a: Article, b: Article) =>
+  new Date(b.date).getTime() - new Date(a.date).getTime();
+
+const seriesArticles = (key: string) =>
+  ARTICLES.filter((a) => a.series === key).sort(byDateDesc);
 
 export function WritingPage() {
   useEffect(() => {
@@ -49,22 +58,37 @@ export function WritingPage() {
         </div>
       </section>
 
-      {/* Article list — flat, date descending */}
-      <div className={styles.categoryList}>
-        <ul className={styles.articleList}>
-          {sortedArticles.map((article) => (
-            <li key={article.slug} data-article-row={article.slug}>
-              <Link
-                href={`/writing/${article.slug}`}
-                className={styles.articleRow}
-              >
-                <span className={styles.articleTitle}>{article.title}</span>
-                <span className={styles.articleRead}>[READ: {article.readTime} MIN]</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* Series sections — Compliance Architecture (light), then Competence Illusion (dark) */}
+      {SERIES.map((series) => {
+        const articles = seriesArticles(series.key);
+        if (!articles.length) return null;
+
+        return (
+          <section
+            key={series.key}
+            className={`${styles.seriesSection} ${series.dark ? styles.seriesDark : ''}`}
+            {...(series.dark ? { 'data-nav-dark': true } : {})}
+          >
+            <header className={styles.seriesHeader}>
+              <span className={styles.seriesName}>{series.name}</span>
+            </header>
+
+            <ul className={styles.articleList}>
+              {articles.map((article) => (
+                <li key={article.slug} data-article-row={article.slug}>
+                  <Link
+                    href={`/writing/${article.slug}`}
+                    className={styles.articleRow}
+                  >
+                    <span className={styles.articleTitle}>{article.title}</span>
+                    <span className={styles.articleRead}>[READ: {article.readTime} MIN]</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })}
 
     </main>
   );

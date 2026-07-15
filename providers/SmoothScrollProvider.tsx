@@ -51,7 +51,18 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
 
     const checkNavDark = () => {
       const cardWork = document.getElementById('card-work');
-      setNavIsDark(!!(cardWork && cardWork.getBoundingClientRect().bottom <= 80));
+      const contactRevealed = !!(cardWork && cardWork.getBoundingClientRect().bottom <= 80);
+
+      /* Dark subpage sections (e.g. the Competence Illusion series band on the
+         writing page) flip the nav dark while they sit under the nav bar. */
+      let overDarkSection = false;
+      const darkSection = document.querySelector('[data-nav-dark]');
+      if (darkSection) {
+        const r = darkSection.getBoundingClientRect();
+        overDarkSection = r.top <= 80 && r.bottom > 80;
+      }
+
+      setNavIsDark(contactRevealed || overDarkSection);
     };
 
     const onScroll = () => {
