@@ -9,6 +9,22 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'the-foundation-problem',
+    title: 'The Foundation Problem',
+    description: 'AI can produce the outputs of expertise. It cannot build the foundation that makes those outputs reliable. Understanding the difference is what separates organizations that use AI well from those accumulating risk they cannot see.',
+    date: '2026-07-14',
+    readTime: 6,
+    category: 'TECHNOLOGY',
+  },
+  {
+    slug: 'the-due-diligence-failure',
+    title: 'The Due Diligence Failure',
+    description: 'The frameworks built to evaluate professional expertise were designed for a world where producing expert-quality output required expert-level competence. That world is gone.',
+    date: '2026-07-03',
+    readTime: 7,
+    category: 'TECHNOLOGY',
+  },
+  {
     slug: 'the-liability-transfer',
     title: 'The Liability Transfer',
     description: 'When AI-assisted professional work fails, the accountability does not transfer to the AI. It stays with the person who delivered the work and the organization that engaged them.',
