@@ -8,6 +8,13 @@ function markdownToHtml(md: string): string {
   return md
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    // [text](url) -> anchor. External links (http/https) open in a new tab and
+    // carry rel="noopener"; internal paths get neither.
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_match, text: string, url: string) =>
+      /^https?:\/\//i.test(url)
+        ? `<a href="${url}" target="_blank" rel="noopener">${text}</a>`
+        : `<a href="${url}">${text}</a>`
+    )
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(/^- (.+)$/gm, '<li>$1</li>')
