@@ -16,7 +16,7 @@ AI does not change this. It makes it more consequential.
 
 Professional accountability has always been asymmetric. The client pays for expertise they cannot fully evaluate. The professional represents that they possess that expertise. The relationship depends on that representation being accurate because the client has no reliable independent means of verification.
 
-This asymmetry is why professional liability exists. It is why regulated professions require licensure, why contracts specify deliverable standards, why errors and omissions insurance is a standard feature of serious professional engagements. The accountability structure is designed to create consequences for misrepresentation of competence because misrepresentation of competence causes real harm.
+This asymmetry is why professional liability exists. It is why [regulated professions require licensure](/writing/why-compliance-work-requires-strategy), why contracts specify deliverable standards, why errors and omissions insurance is a standard feature of serious professional engagements. The accountability structure is designed to create consequences for misrepresentation of competence because misrepresentation of competence causes real harm.
 
 AI has not altered this structure. It has created new ways to misrepresent competence while maintaining the full weight of the existing accountability framework.
 

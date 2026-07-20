@@ -18,7 +18,7 @@ Verification is not proofreading. It is not checking whether a document is inter
 
 Verification in a professional context means something specific: the ability to determine whether the substantive claims, judgments, and recommendations in a piece of work are correct given the actual conditions to which they will be applied.
 
-A market entry analysis can be verified by someone who has executed market entries in that sector and knows where the standard frameworks fail to capture what actually happens. A compliance framework can be verified by someone who understands how the relevant regulator interprets the requirements, not just what the requirements say. A technical specification can be verified by someone who has built what is being specified and knows which tolerances matter and which are theoretical.
+A market entry analysis can be verified by someone who has executed market entries in that sector and knows where the standard frameworks fail to capture what actually happens. A [compliance framework](/writing/compliance-program-versus-compliance-architecture) can be verified by someone who understands how the relevant regulator interprets the requirements, not just what the requirements say. A technical specification can be verified by someone who has built what is being specified and knows which tolerances matter and which are theoretical.
 
 Verification requires domain depth. It requires the ability to identify not just what the document says but what it does not say, what it gets subtly wrong, and where the gap between the written analysis and the operational reality will create problems. These are not skills that come from familiarity with a field. They come from sustained engagement with the failure modes of a field.
 
@@ -26,7 +26,7 @@ Verification requires domain depth. It requires the ability to identify not just
 
 AI has not created a world where verification is impossible. It has created a world where the volume of output requiring verification has increased faster than the supply of people capable of providing it.
 
-This is the operational reality that most organizations have not confronted directly. When a compliance team that previously produced ten documents a month now produces forty, the verification requirement has quadrupled. The number of people with the domain depth to verify those documents has not changed. In most organizations, it has not increased at all.
+This is the operational reality that most organizations have not confronted directly. When a [compliance team](/writing/ai-in-regulated-business-operations) that previously produced ten documents a month now produces forty, the verification requirement has quadrupled. The number of people with the domain depth to verify those documents has not changed. In most organizations, it has not increased at all.
 
 The result is one of two outcomes. Either the same verification capacity is spread across four times the output, reducing the depth of review on each document to a quarter of what it was. Or the organization maintains review depth on a subset of documents and accepts, explicitly or implicitly, that the remainder are going out unverified.
 
