@@ -3,25 +3,25 @@ import { WritingPage } from '@/components/Writing/WritingPage';
 import { SubpageWithContact } from '@/components/CardScroll/SubpageWithContact';
 
 export const metadata: Metadata = {
-  title: 'The Journal',
+  title: 'Compliance Strategy Articles',
   description:
-    'Articles on regulatory compliance, quality management system architecture, technical standards development, and corporate strategy in regulated industries.',
+    'Compliance strategy articles on regulatory architecture, quality management systems, technical standards development, and regulated market entry.',
   alternates: {
     canonical: 'https://philipkwong.com/writing',
   },
   openGraph: {
-    title: 'The Journal — Philip Kwong',
+    title: 'Compliance Strategy Articles | Philip Kwong',
     description:
-      'Articles on regulatory compliance, quality management system architecture, technical standards development, and corporate strategy in regulated industries.',
+      'Compliance strategy articles on regulatory architecture, quality management systems, technical standards development, and regulated market entry.',
     url: 'https://philipkwong.com/writing',
     siteName: 'Philip Kwong',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Journal — Philip Kwong',
+    title: 'Compliance Strategy Articles | Philip Kwong',
     description:
-      'Articles on regulatory compliance, QMS architecture, technical standards development, and corporate strategy in regulated industries.',
+      'Compliance strategy articles on regulatory architecture, quality management systems, technical standards development, and regulated market entry.',
   },
 };
 

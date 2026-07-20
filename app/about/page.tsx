@@ -3,25 +3,25 @@ import { AboutPageContent } from '@/components/About/AboutPageContent';
 import { SubpageWithContact } from '@/components/CardScroll/SubpageWithContact';
 
 export const metadata: Metadata = {
-  title: 'The Operator',
+  title: 'Compliance Strategy Consultant ISO Standards',
   description:
-    'Eight years at the intersection of ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization strategy. Engagements across cannabis, pharmaceutical, and technology sectors in Canada.',
+    'Compliance strategy consultant with eight years in ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization.',
   alternates: {
     canonical: 'https://philipkwong.com/about',
   },
   openGraph: {
-    title: 'The Operator — Philip Kwong',
+    title: 'Compliance Strategy Consultant ISO Standards | Philip Kwong',
     description:
-      'Eight years at the intersection of ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization strategy.',
+      'Compliance strategy consultant with eight years in ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization.',
     url: 'https://philipkwong.com/about',
     siteName: 'Philip Kwong',
     type: 'profile',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Operator — Philip Kwong',
+    title: 'Compliance Strategy Consultant ISO Standards | Philip Kwong',
     description:
-      'Eight years at the intersection of ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization strategy.',
+      'Compliance strategy consultant with eight years in ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization.',
   },
 };
 

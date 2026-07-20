@@ -18,14 +18,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = ARTICLES.find((a) => a.slug === params.slug);
   if (!article) return {};
 
+  // SEO title tag only. Never used for visible copy or JSON-LD — those stay on
+  // article.title so the H1, Article.headline, and breadcrumb remain in sync.
+  const seoTitle = article.seoTitle ?? article.title;
+
   return {
-    title: article.title,
+    title: seoTitle,
     description: article.description,
     alternates: {
       canonical: `https://philipkwong.com/writing/${article.slug}`,
     },
     openGraph: {
-      title: `${article.title} — Philip Kwong`,
+      title: `${seoTitle} | Philip Kwong`,
       description: article.description,
       url: `https://philipkwong.com/writing/${article.slug}`,
       siteName: 'Philip Kwong',
@@ -34,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${article.title} — Philip Kwong`,
+      title: `${seoTitle} | Philip Kwong`,
       description: article.description,
     },
   };

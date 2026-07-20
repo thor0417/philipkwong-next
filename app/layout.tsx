@@ -9,11 +9,11 @@ import { PageTransition } from '@/components/PageTransition/PageTransition';
 export const metadata: Metadata = {
   metadataBase: new URL('https://philipkwong.com'),
   title: {
-    default: 'Philip Kwong — Strategy and Compliance Consultant',
-    template: '%s — Philip Kwong',
+    default: 'Regulatory Compliance Consultant Vancouver Bangkok | Philip Kwong',
+    template: '%s | Philip Kwong',
   },
   description:
-    'Regulatory compliance and corporate strategy consultant with eight years in technical standards development, quality management systems, and market entry across Canadian and international jurisdictions. Vancouver and Bangkok.',
+    'Regulatory compliance consultant working between Vancouver and Bangkok. Eight years in ISO standards development, QMS architecture, and market entry.',
   keywords: [
     'regulatory compliance',
     'corporate strategy',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     'Bangkok',
   ],
   openGraph: {
-    title: 'Philip Kwong — Strategy and Compliance Consultant',
-    description: 'Strategy and regulatory compliance consultant operating between Vancouver and Bangkok.',
+    title: 'Regulatory Compliance Consultant Vancouver Bangkok | Philip Kwong',
+    description: 'Regulatory compliance consultant working between Vancouver and Bangkok. Eight years in ISO standards development, QMS architecture, and market entry.',
     url: 'https://philipkwong.com',
     siteName: 'Philip Kwong',
     locale: 'en_CA',
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Philip Kwong — Regulatory Compliance and Corporate Strategy Consultant',
-    description: 'Regulatory compliance and corporate strategy consultant. Eight years in technical standards, QMS architecture, and market entry. Vancouver and Bangkok.',
+    title: 'Regulatory Compliance Consultant Vancouver Bangkok | Philip Kwong',
+    description: 'Regulatory compliance consultant working between Vancouver and Bangkok. Eight years in ISO standards development, QMS architecture, and market entry.',
   },
   robots: {
     index: true,

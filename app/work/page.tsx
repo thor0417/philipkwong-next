@@ -3,25 +3,25 @@ import { WorkPageContent } from '@/components/Work/WorkPageContent';
 import { SubpageWithContact } from '@/components/CardScroll/SubpageWithContact';
 
 export const metadata: Metadata = {
-  title: 'Selected Work',
+  title: 'International Standards Development Consultant ISO',
   description:
-    'Standards leadership as Vice Convener of ISO IWA 37-1, Chair of UL Canada TG 4400-2, and STP Member of UL/ULC/ANSI/CAN/1389. Consulting engagements across cannabis, pharmaceutical, and technology sectors in Canada and internationally.',
+    'International standards development consultant. Vice Convener of ISO IWA 37-1, Chair of UL Canada TG 4400-2, and STP member of ANSI/CAN/UL 1389.',
   alternates: {
     canonical: 'https://philipkwong.com/work',
   },
   openGraph: {
-    title: 'Selected Work — Philip Kwong',
+    title: 'International Standards Development Consultant ISO | Philip Kwong',
     description:
-      'Standards leadership and consulting engagements across regulatory compliance and corporate strategy. ISO IWA 37-1, UL Canada TG 4400-2, Aurora Cannabis, ExtractionTek Stainless, and more.',
+      'International standards development consultant. Vice Convener of ISO IWA 37-1, Chair of UL Canada TG 4400-2, and STP member of ANSI/CAN/UL 1389.',
     url: 'https://philipkwong.com/work',
     siteName: 'Philip Kwong',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Selected Work — Philip Kwong',
+    title: 'International Standards Development Consultant ISO | Philip Kwong',
     description:
-      'Standards leadership and consulting engagements: ISO IWA 37-1 Vice Convener, UL Canada TG 4400-2 Chair, and 10 consulting engagements across regulated industries.',
+      'International standards development consultant. Vice Convener of ISO IWA 37-1, Chair of UL Canada TG 4400-2, and STP member of ANSI/CAN/UL 1389.',
   },
 };
 
