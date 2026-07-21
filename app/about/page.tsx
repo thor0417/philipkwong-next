@@ -30,7 +30,8 @@ const professionalServiceSchema = {
   '@type': 'ProfessionalService',
   name: 'Philip Kwong Consulting',
   url: 'https://philipkwong.com',
-  provider: { '@id': 'https://philipkwong.com/#person' },
+  // ProfessionalService is an Organization: it has a founder, not a provider.
+  founder: { '@id': 'https://philipkwong.com/#person' },
   areaServed: ['Canada', 'International'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

@@ -86,8 +86,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   'Commercialization',
                 ],
                 workLocation: [
-                  { '@type': 'Place', name: 'Vancouver', addressCountry: 'CA' },
-                  { '@type': 'Place', name: 'Bangkok', addressCountry: 'TH' },
+                  {
+                    '@type': 'Place',
+                    name: 'Vancouver',
+                    // addressCountry belongs on PostalAddress, not directly on Place.
+                    address: { '@type': 'PostalAddress', addressLocality: 'Vancouver', addressCountry: 'CA' },
+                  },
+                  {
+                    '@type': 'Place',
+                    name: 'Bangkok',
+                    address: { '@type': 'PostalAddress', addressLocality: 'Bangkok', addressCountry: 'TH' },
+                  },
                 ],
               },
               {
