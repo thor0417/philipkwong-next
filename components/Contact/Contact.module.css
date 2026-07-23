@@ -131,6 +131,32 @@
   cursor: default;
 }
 
+/* ── Short desktop viewports ──
+   The contact card is a fixed, non-scrollable 100vh box (#card-contact).
+   On short laptops (1280×720, 1366×768) the base rhythm — a ~200px 15vw top
+   pad, 8rem textarea, and 2rem form gaps — pushes SEND below the fold. Shrink
+   the height budget (top pad, gaps, textarea, input padding) so the full form,
+   including the button, fits at viewport heights down to ~700px. Tall
+   viewports (>820px) keep the base rhythm untouched. */
+@media (min-width: 768px) and (max-height: 820px) {
+  .contact {
+    padding-block: clamp(4rem, 8vh, 6rem) clamp(2rem, 5vh, 4rem);
+  }
+
+  .form {
+    gap: clamp(1rem, 2.6vh, 2rem);
+  }
+
+  .input,
+  .textarea {
+    padding-block: clamp(0.6rem, 1.8vh, 1rem);
+  }
+
+  .textarea {
+    min-height: clamp(5rem, 14vh, 8rem);
+  }
+}
+
 /* ── Mobile ── */
 @media (max-width: 767px) {
   .contact {
