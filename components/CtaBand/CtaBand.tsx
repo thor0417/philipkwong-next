@@ -2,7 +2,7 @@ import styles from './CtaBand.module.css';
 
 export default function CtaBand() {
   return (
-    <section className={styles.band} data-theme="dark" aria-label="Engage">
+    <section className={styles.band} aria-label="Engage">
       <div className="grid-stage">
         <span className={`section-label ${styles.label}`}>ENGAGE</span>
         <h2 className={styles.headline}>Start with twenty minutes.</h2>
