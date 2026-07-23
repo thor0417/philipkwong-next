@@ -137,10 +137,20 @@
    pad, 8rem textarea, and 2rem form gaps — pushes SEND below the fold. Shrink
    the height budget (top pad, gaps, textarea, input padding) so the full form,
    including the button, fits at viewport heights down to ~700px. Tall
-   viewports (>820px) keep the base rhythm untouched. */
+   viewports (>820px) keep the base rhythm untouched.
+
+   Composition: center the content within the card's available height instead
+   of top-pinning it (which parked the spare below SEND and left NAME against
+   the nav). Flex column + justify-content: center. The 4rem fixed nav is
+   accounted for in the TOP padding (calc(4rem + p)); with bottom = p, the
+   top/bottom padding differ by exactly the nav height, so the content centers
+   within the region BELOW the nav — equal air above and below the form. */
 @media (min-width: 768px) and (max-height: 820px) {
   .contact {
-    padding-block: clamp(4rem, 8vh, 6rem) clamp(2rem, 5vh, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: calc(4rem + clamp(2.5rem, 5vh, 4rem)) clamp(2.5rem, 5vh, 4rem);
   }
 
   .form {
