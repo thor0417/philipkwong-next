@@ -28,6 +28,9 @@
 
 .bookLink {
   grid-column: 1 / 6;
+  color: var(--bg-primary);
+  display: inline-block;
+  margin-top: calc(-1 * var(--space-8));
 }
 
 .form {
