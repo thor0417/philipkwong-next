@@ -95,10 +95,10 @@ export function Hero() {
       {/* Classification row */}
       <div id="hero-class-row" className={styles.classRow} aria-label="Professional credentials">
         <span className="t-registry">
-          <strong><ScrambledBracket text="[ULC:]" delay={1200} /></strong> CORP. STRATEGY
+          <strong><ScrambledBracket text="[OPS: SYS]" delay={1200} /></strong> OPERATIONS
         </span>
         <span className="t-registry">
-          <strong><ScrambledBracket text="[ISO:]" delay={1600} /></strong> VICE CONVENER
+          <strong><ScrambledBracket text="[STD: INTL]" delay={1600} /></strong> STANDARDS
         </span>
         <span className="t-registry">
           <strong><ScrambledBracket text="[REG: 08.YRS]" delay={2000} /></strong> COMPLIANCE

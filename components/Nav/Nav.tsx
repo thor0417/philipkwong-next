@@ -156,8 +156,8 @@ export function Nav() {
         </nav>
 
         <div className={styles.overlayMeta}>
-          <span className="t-registry"><strong>[ULC: STRAT]</strong> CORP STRATEGY</span>
-          <span className="t-registry"><strong>[ISO: VICE]</strong> CONVENER</span>
+          <span className="t-registry"><strong>[OPS: SYS]</strong> OPERATIONS</span>
+          <span className="t-registry"><strong>[STD: INTL]</strong> STANDARDS</span>
           <span className="t-registry"><strong>[REG: 08.YRS]</strong> COMPLIANCE</span>
         </div>
       </div>

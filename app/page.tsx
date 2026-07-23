@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   // not to this page, so the suffix must be written out in full here.
   title: { absolute: 'Regulatory Compliance Consultant Vancouver Bangkok | Philip Kwong' },
   description:
-    'Regulatory compliance consultant working between Vancouver and Bangkok. Eight years in ISO standards development, QMS architecture, and market entry.',
+    'Regulatory compliance consultant working between Vancouver and Bangkok. ISO standards development, QMS architecture, and emerging regulated industries.',
   alternates: {
     canonical: 'https://philipkwong.com',
   },
   openGraph: {
     title: 'Regulatory Compliance Consultant Vancouver Bangkok | Philip Kwong',
     description:
-      'Regulatory compliance consultant working between Vancouver and Bangkok. Eight years in ISO standards development, QMS architecture, and market entry.',
+      'Regulatory compliance consultant working between Vancouver and Bangkok. ISO standards development, QMS architecture, and emerging regulated industries.',
     url: 'https://philipkwong.com',
     siteName: 'Philip Kwong',
     type: 'website',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Regulatory Compliance Consultant Vancouver Bangkok | Philip Kwong',
     description:
-      'Regulatory compliance consultant working between Vancouver and Bangkok. Eight years in ISO standards development, QMS architecture, and market entry.',
+      'Regulatory compliance consultant working between Vancouver and Bangkok. ISO standards development, QMS architecture, and emerging regulated industries.',
   },
 };
 

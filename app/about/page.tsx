@@ -5,14 +5,14 @@ import { SubpageWithContact } from '@/components/CardScroll/SubpageWithContact';
 export const metadata: Metadata = {
   title: 'Compliance Strategy Consultant ISO Standards',
   description:
-    'Compliance strategy consultant with eight years in ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization.',
+    'Compliance strategy consultant. Eight years across ISO standards development, QMS architecture, and market entry in emerging and regulated industries.',
   alternates: {
     canonical: 'https://philipkwong.com/about',
   },
   openGraph: {
     title: 'Compliance Strategy Consultant ISO Standards | Philip Kwong',
     description:
-      'Compliance strategy consultant with eight years in ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization.',
+      'Compliance strategy consultant. Eight years across ISO standards development, QMS architecture, and market entry in emerging and regulated industries.',
     url: 'https://philipkwong.com/about',
     siteName: 'Philip Kwong',
     type: 'profile',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Compliance Strategy Consultant ISO Standards | Philip Kwong',
     description:
-      'Compliance strategy consultant with eight years in ISO standards development, provincial regulatory frameworks, QMS architecture, and commercialization.',
+      'Compliance strategy consultant. Eight years across ISO standards development, QMS architecture, and market entry in emerging and regulated industries.',
   },
 };
 

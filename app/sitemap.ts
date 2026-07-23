@@ -15,8 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // new Date() here would stamp build time and churn lastmod on every deploy.
   // Bump the relevant entry by hand when a route's visible content changes.
   return [
-    { url: base,                lastModified: new Date('2026-06-25'), changeFrequency: 'monthly' as const, priority: 1.0 },
-    { url: `${base}/about`,     lastModified: new Date('2026-06-24'), changeFrequency: 'yearly'  as const, priority: 0.8 },
+    { url: base,                lastModified: new Date('2026-07-23'), changeFrequency: 'monthly' as const, priority: 1.0 },
+    { url: `${base}/about`,     lastModified: new Date('2026-07-23'), changeFrequency: 'yearly'  as const, priority: 0.8 },
     { url: `${base}/work`,      lastModified: new Date('2026-06-16'), changeFrequency: 'monthly' as const, priority: 0.9 },
     { url: `${base}/writing`,   lastModified: new Date('2026-07-15'), changeFrequency: 'monthly' as const, priority: 0.8 },
     ...articles,

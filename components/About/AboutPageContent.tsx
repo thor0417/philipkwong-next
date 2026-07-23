@@ -11,13 +11,13 @@ const SERVICES = [
     num: '01',
     title: 'Compliance',
     description:
-      'Regulatory architecture, compliance frameworks, licensing pathways, quality management systems, and organizational governance.',
+      'Regulatory architecture, compliance frameworks, licensing pathways, quality management systems, and AI governance frameworks.',
   },
   {
     num: '02',
     title: 'Strategy',
     description:
-      'Commercialization, market entry, stakeholder engagement, positioning, and long-term growth planning for regulated businesses.',
+      'Commercialization, market entry, stakeholder engagement, positioning, and growth planning for emerging and regulated industries.',
   },
   {
     num: '03',
@@ -130,10 +130,11 @@ export function AboutPageContent() {
         <div className="grid-stage">
           <div className={styles.bio}>
             <p>
-              I help organizations navigate regulation, operational complexity, and growth.
-              My experience spans international standards, regulatory frameworks, operational
-              architecture, and commercialization strategy, supporting organizations through
-              periods of formation, transformation, and scale.
+              I help organizations navigate regulation, operational complexity, and growth,
+              in established industries and in markets where the rulebook is still being written.
+              My experience spans international standards development, regulatory frameworks,
+              operational architecture, and commercialization strategy, through formation,
+              transformation, and scale.
             </p>
             <p className={styles.pullquote}>
               No unnecessary complexity. No shortcuts. Just systems that work.
