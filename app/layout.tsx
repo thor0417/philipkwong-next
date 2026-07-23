@@ -84,6 +84,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   'Quality management systems',
                   'Market entry strategy',
                   'Commercialization',
+                  'AI governance',
+                  'ISO/IEC 42001',
+                  'AI management systems',
                 ],
                 workLocation: [
                   {

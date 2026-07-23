@@ -41,13 +41,13 @@ const professionalServiceSchema = {
         '@type': 'Offer',
         name: 'Compliance',
         description:
-          'Regulatory architecture, compliance frameworks, licensing pathways, quality management systems, and organizational governance.',
+          'Regulatory architecture, compliance frameworks, licensing pathways, quality management systems, and AI governance frameworks.',
       },
       {
         '@type': 'Offer',
         name: 'Strategy',
         description:
-          'Commercialization, market entry, stakeholder engagement, positioning, and long-term growth planning for regulated businesses.',
+          'Commercialization, market entry, stakeholder engagement, positioning, and growth planning for emerging and regulated industries.',
       },
       {
         '@type': 'Offer',
