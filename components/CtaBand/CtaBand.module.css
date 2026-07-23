@@ -1,0 +1,26 @@
+.band {
+  background: var(--bg-dark);
+  padding-block: var(--section-block);
+  border-top: var(--border-hairline-dark);
+}
+.label {
+  grid-column: 1 / -1;
+  color: var(--bg-primary); /* section-label is ink by default; dark section needs paper */
+  display: block;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+.headline {
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-display-lg);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--bg-primary);
+  text-transform: uppercase;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
+}
+.link {
+  grid-column: 1 / -1;
+  color: var(--bg-primary);
+}
