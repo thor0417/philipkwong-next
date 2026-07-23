@@ -106,7 +106,12 @@
 /* ── Mobile ── */
 @media (max-width: 767px) {
   .hero {
-    padding-top: 1.25rem;
+    /* Fill the viewport BELOW .scroll-stage's 3.5rem mobile nav padding.
+       Without subtracting it the 100svh box starts 3.5rem down the page and
+       its bottom-pinned classRow is pushed ~56px past the fold — the root
+       cause of the clipped third tag (internal padding cannot fix it). */
+    min-height: calc(100svh - 3.5rem);
+    padding-top: 2rem;
   }
 
   .dataStrip {
@@ -119,7 +124,7 @@
   }
 
   .mastheadArea {
-    padding-block: 0.25rem;
+    padding-block: 2rem;
   }
 
   .masthead {
@@ -131,7 +136,7 @@
   .classRow {
     grid-template-columns: 1fr;
     gap: 0.5rem;
-    padding-block: 0.5rem 0.75rem;
+    padding-block: 1.5rem 2rem;
   }
 
   .classRow :global(.t-registry) {
