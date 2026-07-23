@@ -133,8 +133,8 @@ export function AboutPageContent() {
               I help organizations navigate regulation, operational complexity, and growth,
               in established industries and in markets where the rulebook is still being written.
               My experience spans international standards development, regulatory frameworks,
-              operational architecture, and commercialization strategy, through formation,
-              transformation, and scale.
+              operational architecture, and commercialization strategy. That work has carried
+              organizations through formation, transformation, and scale.
             </p>
             <p className={styles.pullquote}>
               No unnecessary complexity. No shortcuts. Just systems that work.
