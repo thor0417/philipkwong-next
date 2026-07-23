@@ -70,22 +70,23 @@ export function Contact() {
     <section id="contact" className={styles.contact} data-theme="dark" aria-labelledby="contact-heading">
       <div className="grid-stage">
 
-        <h2
-          id="contact-heading"
-          className={`contact-cta reveal ${styles.cta}`}
-          style={{ gridColumn: '1 / 6' }}
-        >
-          <span className="reveal__inner">Let&apos;s talk.</span>
-        </h2>
+        <div className={styles.leftCol}>
+          <h2
+            id="contact-heading"
+            className={`contact-cta reveal ${styles.cta}`}
+          >
+            <span className="reveal__inner">Let&apos;s talk.</span>
+          </h2>
 
-        <a
-          href="https://calendly.com/hello-philipkwong/introductory-call"
-          target="_blank"
-          rel="noopener"
-          className={`t-registry ${styles.bookLink}`}
-        >
-          [ <strong>BOOK</strong>: 20 MIN INTRO ]
-        </a>
+          <a
+            href="https://calendly.com/hello-philipkwong/introductory-call"
+            target="_blank"
+            rel="noopener"
+            className={`t-registry ${styles.bookLink}`}
+          >
+            [ <strong>BOOK</strong>: 20 MIN INTRO ]
+          </a>
+        </div>
 
         <div className={styles.form} style={{ gridColumn: '7 / 13' }}>
           <div className={styles.field}>
